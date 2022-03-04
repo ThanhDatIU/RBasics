@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>9 Utilities | Introduction to DataCamp</title>
+<meta name="author" content="Tran Thanh Dat">
+<meta name="generator" content="bookdown 0.24 with bs4_book()">
+<meta property="og:title" content="9 Utilities | Introduction to DataCamp">
+<meta property="og:type" content="book">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="9 Utilities | Introduction to DataCamp">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/header-attrs-2.12.1/header-attrs.js"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.1.9000/transition.js"></script><script src="libs/bs3compat-0.3.1.9000/tabs.js"></script><script src="libs/bs3compat-0.3.1.9000/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=UA-115082821-1"></script><script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-115082821-1');
+    </script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><meta name="description" content="Mastering R programming is not only about understanding its programming concepts. Having a solid understanding of a wide range of R functions is also important. This chapter introduces you to many...">
+<meta property="og:description" content="Mastering R programming is not only about understanding its programming concepts. Having a solid understanding of a wide range of R functions is also important. This chapter introduces you to many...">
+<meta name="twitter:description" content="Mastering R programming is not only about understanding its programming concepts. Having a solid understanding of a wide range of R functions is also important. This chapter introduces you to many...">
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">Introduction to DataCamp</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html">Welcome to DataCamp</a></li>
+<li class="book-part">R Fundamentals</li>
+<li><a class="" href="data-wrangling.html"><span class="header-section-number">1</span> Data wrangling</a></li>
+<li><a class="" href="data-visualization.html"><span class="header-section-number">2</span> Data visualization</a></li>
+<li><a class="" href="grouping-and-summarizing.html"><span class="header-section-number">3</span> Grouping and summarizing</a></li>
+<li><a class="" href="types-of-visualizations.html"><span class="header-section-number">4</span> Types of visualizations</a></li>
+<li><a class="" href="conditionals-and-control-flow.html"><span class="header-section-number">5</span> Conditionals and Control Flow</a></li>
+<li><a class="" href="loops.html"><span class="header-section-number">6</span> Loops</a></li>
+<li><a class="" href="functions.html"><span class="header-section-number">7</span> Functions</a></li>
+<li><a class="" href="the-apply-family.html"><span class="header-section-number">8</span> The apply family</a></li>
+<li><a class="active" href="utilities.html"><span class="header-section-number">9</span> Utilities</a></li>
+<li><a class="" href="data-wrangling-1.html"><span class="header-section-number">10</span> Data wrangling</a></li>
+<li><a class="" href="data-visualization-1.html"><span class="header-section-number">11</span> Data visualization</a></li>
+<li><a class="" href="grouping-and-summarizing-1.html"><span class="header-section-number">12</span> Grouping and summarizing</a></li>
+<li><a class="" href="types-of-visualizations-1.html"><span class="header-section-number">13</span> Types of visualizations</a></li>
+</ul>
+
+        <div class="book-extra">
+          <p><a id="book-repo" href="https://github.com/hadley/r4ds">View book source <i class="fab fa-github"></i></a></p>
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="utilities" class="section level1" number="9">
+<h1>
+<span class="header-section-number">9</span> Utilities<a class="anchor" aria-label="anchor" href="#utilities"><i class="fas fa-link"></i></a>
+</h1>
+<p>
+Mastering R programming is not only about understanding its programming concepts. Having a solid understanding of a wide range of R functions is also important. This chapter introduces you to many useful functions for data structure manipulation, regular expressions, and working with times and dates.
+</p>
+<div id="useful-functions" class="section level2" number="9.1">
+<h2>
+<span class="header-section-number">9.1</span> Useful Functions<a class="anchor" aria-label="anchor" href="#useful-functions"><i class="fas fa-link"></i></a>
+</h2>
+<div id="mathematical-utilities" class="section level3" number="9.1.1">
+<h3>
+<span class="header-section-number">9.1.1</span> Mathematical utilities<a class="anchor" aria-label="anchor" href="#mathematical-utilities"><i class="fas fa-link"></i></a>
+</h3>
+<div>
+<p>
+Have another look at some useful math functions that R features:
+</p>
+<ul>
+<li>
+<a href="http://www.rdocumentation.org/packages/base/functions/MathFun"><code>abs()</code></a>: Calculate the absolute value.
+</li>
+<li>
+<a href="http://www.rdocumentation.org/packages/base/functions/sum"><code>sum()</code></a>: Calculate the sum of all the values in a data structure.
+</li>
+<li>
+<a href="http://www.rdocumentation.org/packages/base/functions/mean"><code>mean()</code></a>: Calculate the arithmetic mean.
+</li>
+<li>
+<a href="http://www.rdocumentation.org/packages/base/functions/round"><code>round()</code></a>: Round the values to 0 decimal places by default. Try out <code><a href="https://rdrr.io/r/base/Round.html">?round</a></code> in the console for variations of <a href="http://www.rdocumentation.org/packages/base/functions/round"><code>round()</code></a> and ways to change the number of digits to round to.
+</li>
+</ul>
+<p>
+As a data scientist in training, you’ve estimated a regression model on the sales data for the past six months. After evaluating your model, you see that the training error of your model is quite regular, showing both positive and negative values. A vector <code>errors</code> containing the error values has been pre-defined for you.
+</p>
+</div>
+<div class="exercise--instructions__content">
+<p>
+Calculate the sum of the absolute rounded values of the training errors. You can work in parts, or with a single one-liner. There’s no need to store the result in a variable, just have R print it.
+</p>
+</div>
+<div class="sourceCode" id="cb149"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># The errors vector has already been defined for you</span>
+<span class="va">errors</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1.9</span>, <span class="op">-</span><span class="fl">2.6</span>, <span class="fl">4.0</span>, <span class="op">-</span><span class="fl">9.5</span>, <span class="op">-</span><span class="fl">3.4</span>, <span class="fl">7.3</span><span class="op">)</span>
+
+<span class="co"># Sum of absolute rounded values of errors</span>
+<span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/MathFun.html">abs</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/Round.html">round</a></span><span class="op">(</span><span class="va">errors</span><span class="op">)</span><span class="op">)</span><span class="op">)</span>
+<span class="co">#&gt; [1] 29</span></code></pre></div>
+<p class>
+Great! Head over to the next exercise.
+</p>
+</div>
+<div id="find-the-error" class="section level3" number="9.1.2">
+<h3>
+<span class="header-section-number">9.1.2</span> Find the error<a class="anchor" aria-label="anchor" href="#find-the-error"><i class="fas fa-link"></i></a>
+</h3>
+<div>
+<p>
+We went ahead and pre-loaded some code for you, but there’s still an error. Can you trace it and fix it?
+</p>
+<p>
+In times of despair, help with functions such as <a href="http://www.rdocumentation.org/packages/base/functions/sum"><code>sum()</code></a> and <a href="http://www.rdocumentation.org/packages/base/functions/rev"><code>rev()</code></a> are a single command away; simply execute the code <code><a href="https://rdrr.io/r/base/sum.html">?sum</a></code> and <code><a href="https://rdrr.io/r/base/rev.html">?rev</a></code>.
+</p>
+</div>
+<div class="exercise--instructions__content">
+<p>
+Fix the error by <em>including</em> code on the last line. Remember: you want to call <a href="http://www.rdocumentation.org/packages/base/functions/mean"><code>mean()</code></a> only once!
+</p>
+</div>
+<div class="sourceCode" id="cb150"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># Don't edit these two lines</span>
+<span class="va">vec1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1.5</span>, <span class="fl">2.5</span>, <span class="fl">8.4</span>, <span class="fl">3.7</span>, <span class="fl">6.3</span><span class="op">)</span>
+<span class="va">vec2</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/rev.html">rev</a></span><span class="op">(</span><span class="va">vec1</span><span class="op">)</span>
+
+<span class="co"># Fix the error</span>
+<span class="co">#mean(abs(vec1), abs(vec2))</span>
+<span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/MathFun.html">abs</a></span><span class="op">(</span><span class="va">vec1</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/MathFun.html">abs</a></span><span class="op">(</span><span class="va">vec2</span><span class="op">)</span><span class="op">)</span><span class="op">)</span>
+<span class="co">#&gt; [1] 4.48</span></code></pre></div>
+<p class>
+Nice work! If you check out the documentation of <code><a href="https://rdrr.io/r/base/mean.html">mean()</a></code>, you’ll see that only the first argument, <code>x</code>, should be a vector. If you also specify a second argument, R will match the arguments by position and expect a specification of the <code>trim</code> argument. Therefore, merging the two vectors is a must!
+</p>
+</div>
+<div id="data-utilities" class="section level3" number="9.1.3">
+<h3>
+<span class="header-section-number">9.1.3</span> Data Utilities<a class="anchor" aria-label="anchor" href="#data-utilities"><i class="fas fa-link"></i></a>
+</h3>
+<div>
+<p>
+R features a bunch of functions to juggle around with data structures::
+</p>
+<ul>
+<li>
+<a href="http://www.rdocumentation.org/packages/base/functions/seq"><code>seq()</code></a>: Generate sequences, by specifying the <code>from</code>, <code>to</code>, and <code>by</code> arguments.
+</li>
+<li>
+<a href="http://www.rdocumentation.org/packages/base/functions/rep"><code>rep()</code></a>: Replicate elements of vectors and lists.
+</li>
+<li>
+<a href="http://www.rdocumentation.org/packages/base/functions/sort"><code>sort()</code></a>: Sort a vector in ascending order. Works on numerics, but also on character strings and logicals.
+</li>
+<li>
+<a href="http://www.rdocumentation.org/packages/base/functions/rev"><code>rev()</code></a>: Reverse the elements in a data structures for which reversal is defined.
+</li>
+<li>
+<a href="http://www.rdocumentation.org/packages/utils/functions/str"><code>str()</code></a>: Display the structure of any R object.
+</li>
+<li>
+<a href="http://www.rdocumentation.org/packages/base/functions/append"><code>append()</code></a>: Merge vectors or lists.
+</li>
+<li>
+<code>is.*()</code>: Check for the class of an R object.
+</li>
+<li>
+<code>as.*()</code>: Convert an R object from one class to another.
+</li>
+<li>
+<a href="http://www.rdocumentation.org/packages/base/functions/unlist"><code>unlist()</code></a>: Flatten (possibly embedded) lists to produce a vector.
+</li>
+</ul>
+<p>
+Remember the social media profile views data? Your LinkedIn and Facebook view counts for the last seven days have been pre-defined as lists.
+</p>
+</div>
+<li>
+Convert both <code>linkedin</code> and <code>facebook</code> lists to a vector, and store them as <code>li_vec</code> and <code>fb_vec</code> respectively.
+</li>
+<div class="sourceCode" id="cb151"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># The linkedin and facebook lists have already been created for you</span>
+<span class="va">linkedin</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="fl">16</span>, <span class="fl">9</span>, <span class="fl">13</span>, <span class="fl">5</span>, <span class="fl">2</span>, <span class="fl">17</span>, <span class="fl">14</span><span class="op">)</span>
+<span class="va">facebook</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="fl">17</span>, <span class="fl">7</span>, <span class="fl">5</span>, <span class="fl">16</span>, <span class="fl">8</span>, <span class="fl">13</span>, <span class="fl">14</span><span class="op">)</span>
+
+<span class="co"># Convert linkedin and facebook to a vector: li_vec and fb_vec</span>
+<span class="va">li_vec</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/unlist.html">unlist</a></span><span class="op">(</span><span class="va">linkedin</span><span class="op">)</span>
+<span class="va">fb_vec</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/unlist.html">unlist</a></span><span class="op">(</span><span class="va">facebook</span><span class="op">)</span></code></pre></div>
+<li>
+Next, append <code>fb_vec</code> to the <code>li_vec</code> (Facebook data comes last). Save the result as <code>social_vec</code>.
+</li>
+<div class="sourceCode" id="cb152"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># Append fb_vec to li_vec: social_vec</span>
+<span class="va">social_vec</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/append.html">append</a></span><span class="op">(</span><span class="va">li_vec</span>, <span class="va">fb_vec</span><span class="op">)</span></code></pre></div>
+<li>
+Finally, sort <code>social_vec</code> <em>from high to low</em>. Print the resulting vector.
+</li>
+<div class="sourceCode" id="cb153"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># Sort social_vec</span>
+<span class="fu"><a href="https://rdrr.io/r/base/sort.html">sort</a></span><span class="op">(</span><span class="va">social_vec</span>, decreasing <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
+<span class="co">#&gt;  [1] 17 17 16 16 14 14 13 13  9  8  7  5  5  2</span></code></pre></div>
+<p class>
+Wonderful! These instructions required you to solve this challenge in a step-by-step approach. If you’re comfortable with the functions, you can combine some of these steps into powerful one-liners.
+</p>
+</div>
+<div id="find-the-error-2" class="section level3" number="9.1.4">
+<h3>
+<span class="header-section-number">9.1.4</span> Find the error (2)<a class="anchor" aria-label="anchor" href="#find-the-error-2"><i class="fas fa-link"></i></a>
+</h3>
+<div>
+<p>
+Just as before, let’s switch roles. It’s up to you to see what unforgivable mistakes we’ve made. Go fix them!
+</p>
+</div>
+<div class="exercise--instructions__content">
+<p>
+Correct the expression. Make sure that your fix still uses the functions <a href="http://www.rdocumentation.org/packages/base/functions/rep"><code>rep()</code></a> and <a href="http://www.rdocumentation.org/packages/base/functions/seq"><code>seq()</code></a>.
+</p>
+</div>
+<div class="sourceCode" id="cb154"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># Fix me</span>
+<span class="co">#seq(rep(1, 7, by = 2), times = 7)</span>
+<span class="fu"><a href="https://rdrr.io/r/base/rep.html">rep</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">7</span>, by <span class="op">=</span> <span class="fl">2</span><span class="op">)</span>, times <span class="op">=</span> <span class="fl">7</span><span class="op">)</span>
+<span class="co">#&gt;  [1] 1 3 5 7 1 3 5 7 1 3 5 7 1 3 5 7 1 3 5 7 1 3 5 7 1 3 5 7</span></code></pre></div>
+<p class>
+Wonderful! Debugging code is also a big part of the daily routine of a data scientist, and you seem to be great at it!
+</p>
+</div>
+<div id="beat-gauss-using-r" class="section level3" number="9.1.5">
+<h3>
+<span class="header-section-number">9.1.5</span> Beat Gauss using R<a class="anchor" aria-label="anchor" href="#beat-gauss-using-r"><i class="fas fa-link"></i></a>
+</h3>
+<div>
+<p>
+There is a popular story about young Gauss. As a pupil, he had a lazy teacher who wanted to keep the classroom busy by having them add up the numbers 1 to 100. Gauss came up with an answer almost instantaneously, 5050. On the spot, he had developed a formula for calculating the sum of an arithmetic series. There are more general formulas for calculating the sum of an arithmetic series with different starting values and increments. Instead of deriving such a formula, why not use R to calculate the sum of a sequence?
+</p>
+</div>
+<li>
+Using the function <a href="http://www.rdocumentation.org/packages/base/functions/seq"><code>seq()</code></a>, create a sequence that ranges from 1 to 500 in increments of 3. Assign the resulting vector to a variable <code>seq1</code>.
+</li>
+<div class="sourceCode" id="cb155"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># Create first sequence: seq1</span>
+<span class="va">seq1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">500</span>, by <span class="op">=</span> <span class="fl">3</span><span class="op">)</span></code></pre></div>
+<li>
+Again with the function <a href="http://www.rdocumentation.org/packages/base/functions/seq"><code>seq()</code></a>, create a sequence that ranges from 1200 to 900 in increments of -7. Assign it to a variable <code>seq2</code>.
+</li>
+<div class="sourceCode" id="cb156"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># Create second sequence: seq2</span>
+<span class="va">seq2</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">1200</span>, <span class="fl">900</span>, by <span class="op">=</span> <span class="op">-</span><span class="fl">7</span><span class="op">)</span></code></pre></div>
+<li>
+Calculate the total sum of the sequences, either by using the <a href="http://www.rdocumentation.org/packages/base/functions/sum"><code>sum()</code></a> function twice and adding the two results, or by first concatenating the sequences and then using the <a href="http://www.rdocumentation.org/packages/base/functions/sum"><code>sum()</code></a> function once. Print the result to the console.
+</li>
+<div class="sourceCode" id="cb157"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># Calculate total sum of the sequences</span>
+<span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">seq1</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">seq2</span><span class="op">)</span>
+<span class="co">#&gt; [1] 87029</span></code></pre></div>
+<p class>
+Nice! Head over to the next video and learn more about regular expressions!
+</p>
+</div>
+</div>
+<div id="regular-expressions" class="section level2" number="9.2">
+<h2>
+<span class="header-section-number">9.2</span> Regular Expressions<a class="anchor" aria-label="anchor" href="#regular-expressions"><i class="fas fa-link"></i></a>
+</h2>
+<div id="grepl-grep" class="section level3" number="9.2.1">
+<h3>
+<span class="header-section-number">9.2.1</span> grepl &amp; grep<a class="anchor" aria-label="anchor" href="#grepl-grep"><i class="fas fa-link"></i></a>
+</h3>
+<div>
+<p>
+In their most basic form, regular expressions can be used to see whether a pattern exists inside a character string or a vector of character strings. For this purpose, you can use:
+</p>
+<ul>
+<li>
+<a href="http://www.rdocumentation.org/packages/base/functions/grep"><code>grepl()</code></a>, which returns <code>TRUE</code> when a pattern is found in the corresponding character string.
+</li>
+<li>
+<a href="http://www.rdocumentation.org/packages/base/functions/grep"><code>grep()</code></a>, which returns a vector of indices of the character strings that contains the pattern.
+</li>
+</ul>
+<p>
+Both functions need a <code>pattern</code> and an <code>x</code> argument, where <code>pattern</code> is the regular expression you want to match for, and the <code>x</code> argument is the character vector from which matches should be sought.
+</p>
+<p>
+In this and the following exercises, you’ll be querying and manipulating a character vector of email addresses! The vector <code>emails</code> has been pre-defined so you can begin with the instructions straight away!
+</p>
+</div>
+<li>
+Use <a href="http://www.rdocumentation.org/packages/base/functions/grep"><code>grepl()</code></a> to generate a vector of logicals that indicates whether these email addressess contain <code>“edu”</code>. Print the result to the output.
+</li>
+<div class="sourceCode" id="cb158"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># The emails vector has already been defined for you</span>
+<span class="va">emails</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"john.doe@ivyleague.edu"</span>, <span class="st">"education@world.gov"</span>, <span class="st">"dalai.lama@peace.org"</span>,
+            <span class="st">"invalid.edu"</span>, <span class="st">"quant@bigdatacollege.edu"</span>, <span class="st">"cookie.monster@sesame.tv"</span><span class="op">)</span>
+
+<span class="co"># Use grepl() to match for "edu"</span>
+<span class="fu"><a href="https://rdrr.io/r/base/grep.html">grepl</a></span><span class="op">(</span><span class="st">"edu"</span>, <span class="va">emails</span><span class="op">)</span>
+<span class="co">#&gt; [1]  TRUE  TRUE FALSE  TRUE  TRUE FALSE</span></code></pre></div>
+<li>
+Do the same thing with <a href="http://www.rdocumentation.org/packages/base/functions/grep"><code>grep()</code></a>, but this time save the resulting indexes in a variable <code>hits</code>.
+</li>
+<div class="sourceCode" id="cb159"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># Use grep() to match for "edu", save result to hits</span>
+<span class="va">hits</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/grep.html">grep</a></span><span class="op">(</span><span class="st">"edu"</span>, <span class="va">emails</span><span class="op">)</span></code></pre></div>
+<li>
+Use the variable <code>hits</code> to select from the <code>emails</code> vector only the emails that contain <code>“edu”</code>.
+</li>
+<div class="sourceCode" id="cb160"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># Subset emails using hits</span>
+<span class="va">emails</span><span class="op">[</span><span class="va">hits</span><span class="op">]</span>
+<span class="co">#&gt; [1] "john.doe@ivyleague.edu"   "education@world.gov"     </span>
+<span class="co">#&gt; [3] "invalid.edu"              "quant@bigdatacollege.edu"</span></code></pre></div>
+<p class>
+Bellissimo! You can probably guess what we’re trying to achieve here: select all the emails that end with “.edu”. However, the strings <code><a href="mailto:education@world.gov" class="email">education@world.gov</a></code> and <code>invalid.edu</code> were also matched. Let’s see in the next exercise what you can do to improve our pattern and remove these false positives.
+</p>
+</div>
+<div id="grepl-grep-2" class="section level3" number="9.2.2">
+<h3>
+<span class="header-section-number">9.2.2</span> grepl &amp; grep (2)<a class="anchor" aria-label="anchor" href="#grepl-grep-2"><i class="fas fa-link"></i></a>
+</h3>
+<div>
+<p>
+You can use the caret, <code>^</code>, and the dollar sign, <code>$</code> to match the content located in the start and end of a string, respectively. This could take us one step closer to a correct pattern for matching only the “.edu” email addresses from our list of emails. But there’s more that can be added to make the pattern more robust:
+</p>
+<ul>
+<li>
+<code>@</code>, because a valid email must contain an at-sign.
+</li>
+<li>
+<code>.<em></em></code>, which matches any character (.) zero or more times (). Both the dot and the asterisk are metacharacters. You can use them to match any character between the at-sign and the “.edu” portion of an email address.
+</li>
+<li>
+<code>\.edu$</code>, to match the “.edu” part of the email at the end of the string. The <code>\</code> part <em>escapes</em> the dot: it tells R that you want to use the <code>.</code> as an actual character.
+</li>
+</ul>
+</div>
+<li>
+Use <a href="http://www.rdocumentation.org/packages/base/functions/grep"><code>grepl()</code></a> with the more advanced regular expression to return a logical vector. Simply print the result.
+</li>
+<div class="sourceCode" id="cb161"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># The emails vector has already been defined for you</span>
+<span class="va">emails</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"john.doe@ivyleague.edu"</span>, <span class="st">"education@world.gov"</span>, <span class="st">"dalai.lama@peace.org"</span>,
+            <span class="st">"invalid.edu"</span>, <span class="st">"quant@bigdatacollege.edu"</span>, <span class="st">"cookie.monster@sesame.tv"</span><span class="op">)</span>
+
+<span class="co"># Use grepl() to match for .edu addresses more robustly</span>
+<span class="fu"><a href="https://rdrr.io/r/base/grep.html">grepl</a></span><span class="op">(</span><span class="st">"@.*\\.edu$"</span>, <span class="va">emails</span><span class="op">)</span>
+<span class="co">#&gt; [1]  TRUE FALSE FALSE FALSE  TRUE FALSE</span></code></pre></div>
+<li>
+Do a similar thing with <a href="http://www.rdocumentation.org/packages/base/functions/grep"><code>grep()</code></a> to create a vector of indices. Store the result in the variable <code>hits</code>.
+</li>
+<div class="sourceCode" id="cb162"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># Use grep() to match for .edu addresses more robustly, save result to hits</span>
+<span class="va">hits</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/grep.html">grep</a></span><span class="op">(</span><span class="st">"@.*\\.edu$"</span>, <span class="va">emails</span><span class="op">)</span></code></pre></div>
+<li>
+Use <code>emails[hits]</code> again to subset the <code>emails</code> vector.
+</li>
+<div class="sourceCode" id="cb163"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># Subset emails using hits</span>
+<span class="va">emails</span><span class="op">[</span><span class="va">hits</span><span class="op">]</span>
+<span class="co">#&gt; [1] "john.doe@ivyleague.edu"   "quant@bigdatacollege.edu"</span></code></pre></div>
+<p class>
+Great! A careful construction of our regular expression leads to more meaningful matches. However, even our robust email selector will often match some incorrect email addresses (for instance kiara@<span class="citation">@fakemail.edu</span>). Let’s not worry about this too much and continue with <code><a href="https://rdrr.io/r/base/grep.html">sub()</a></code> and <code><a href="https://rdrr.io/r/base/grep.html">gsub()</a></code> to actually edit the email addresses!
+</p>
+</div>
+<div id="sub-gsub" class="section level3" number="9.2.3">
+<h3>
+<span class="header-section-number">9.2.3</span> sub &amp; gsub<a class="anchor" aria-label="anchor" href="#sub-gsub"><i class="fas fa-link"></i></a>
+</h3>
+<div>
+<p>
+While <a href="http://www.rdocumentation.org/packages/base/functions/grep"><code>grep()</code></a> and <a href="http://www.rdocumentation.org/packages/base/functions/grep"><code>grepl()</code></a> were used to simply check whether a regular expression could be matched with a character vector, <a href="http://www.rdocumentation.org/packages/base/functions/grep"><code>sub()</code></a> and <a href="http://www.rdocumentation.org/packages/base/functions/grep"><code>gsub()</code></a> take it one step further: you can specify a <code>replacement</code> argument. If inside the character vector <code>x</code>, the regular expression <code>pattern</code> is found, the matching element(s) will be replaced with <code>replacement</code>.<a href="http://www.rdocumentation.org/packages/base/functions/grep"><code>sub()</code></a> only replaces the first match, whereas <a href="http://www.rdocumentation.org/packages/base/functions/grep"><code>gsub()</code></a> replaces all matches.
+</p>
+<p>
+Suppose that <code>emails</code> vector you’ve been working with is an excerpt of DataCamp’s email database. Why not offer the owners of the .edu email addresses a new email address on the datacamp.edu domain? This could be quite a powerful marketing stunt: Online education is taking over traditional learning institutions! Convert your email and be a part of the new generation!
+</p>
+</div>
+<div class="exercise--instructions__content">
+<p>
+With the advanced regular expression <code>“@.*\.edu$“</code>, use <code><a href="https://rdrr.io/r/base/grep.html">sub()</a></code> to replace the match with <code>”<span class="citation">@datacamp.edu</span>“</code>. Since there will only be one match per character string, <code><a href="https://rdrr.io/r/base/grep.html">gsub()</a></code> is not necessary here. Inspect the resulting output.
+</p>
+</div>
+<div class="sourceCode" id="cb164"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># Use sub() to convert the email domains to datacamp.edu</span>
+<span class="fu"><a href="https://rdrr.io/r/base/grep.html">sub</a></span><span class="op">(</span><span class="st">"@.*\\.edu$"</span>, <span class="st">"@datacamp.edu"</span>, <span class="va">emails</span><span class="op">)</span>
+<span class="co">#&gt; [1] "john.doe@datacamp.edu"    "education@world.gov"     </span>
+<span class="co">#&gt; [3] "dalai.lama@peace.org"     "invalid.edu"             </span>
+<span class="co">#&gt; [5] "quant@datacamp.edu"       "cookie.monster@sesame.tv"</span></code></pre></div>
+<p class>
+Awesome! Notice how only the valid .edu addresses are changed while the other emails remain unchanged. To get a taste of other things you can accomplish with regex, head over to the next exercise.
+</p>
+</div>
+<div id="sub-gsub-2" class="section level3" number="9.2.4">
+<h3>
+<span class="header-section-number">9.2.4</span> sub &amp; gsub (2)<a class="anchor" aria-label="anchor" href="#sub-gsub-2"><i class="fas fa-link"></i></a>
+</h3>
+<div>
+<p>
+Regular expressions are a typical concept that you’ll learn by doing and by seeing other examples. Before you rack your brains over the regular expression in this exercise, have a look at the new things that will be used:
+</p>
+<ul>
+<li>
+<code>.*</code>: A usual suspect! It can be read as “any character that is matched zero or more times”.
+</li>
+<li>
+<code>\s</code>: Match a space. The “s” is normally a character, escaping it (<code>\</code>) makes it a metacharacter.
+</li>
+<li>
+<code>[0-9]+</code>: Match the numbers 0 to 9, at least once (+).
+</li>
+<li>
+<code>([0-9]+)</code>: The parentheses are used to make parts of the matching string available to define the replacement. The <code>\1</code> in the <code>replacement</code> argument of <a href="http://www.rdocumentation.org/packages/base/functions/grep"><code>sub()</code></a> gets set to the string that is captured by the regular expression <code>[0-9]+</code>.
+</li>
+</ul>
+<pre><code>awards &lt;- c("Won 1 Oscar.",
+  "Won 1 Oscar. Another 9 wins &amp; 24 nominations.",
+  "1 win and 2 nominations.",
+  "2 wins &amp; 3 nominations.",
+  "Nominated for 2 Golden Globes. 1 more win &amp; 2 nominations.",
+  "4 wins &amp; 1 nomination.")
+
+sub(".*\\s([0-9]+)\\snomination.*$", "\\1", awards)
+</code></pre>
+<p>
+What does this code chunk return? <code>awards</code> is already defined in the workspace so you can start playing in the console straight away.
+</p>
+</div>
+<ul>
+<li>
+<div class="dc-input-radio__text">
+A vector of integers containing: 1, 24, 2, 3, 2, 1.
+</div>
+</li>
+<li>
+<div class="dc-input-radio__text">
+The vector <code>awards</code> gets returned as there isn’t a single element in <code>awards</code> that matches the regular expression.
+</div>
+</li>
+<li>
+<div class="dc-input-radio__text">
+A vector of character strings containing “1”, “24”, “2”, “3”, “2”, “1”.
+</div>
+</li>
+<strong>
+<li>
+<div class="dc-input-radio__text">
+A vector of character strings containing “Won 1 Oscar.”, “24”, “2”, “3”, “2”, “1”.
+</div>
+</li>
+</strong>
+</ul>
+<p class>
+Great! Can you explain why all of this happened? The <code>([0-9]+)</code> selects the entire number that comes before the word “nomination” in the string, and the entire match gets replaced by this number because of the <code>\1</code> that reference to the content inside the parentheses. The next video will get you up to speed with times and dates in R!
+</p>
+</div>
+</div>
+<div id="times-dates" class="section level2" number="9.3">
+<h2>
+<span class="header-section-number">9.3</span> Times &amp; Dates<a class="anchor" aria-label="anchor" href="#times-dates"><i class="fas fa-link"></i></a>
+</h2>
+<div id="right-here-right-now" class="section level3" number="9.3.1">
+<h3>
+<span class="header-section-number">9.3.1</span> Right here, right now<a class="anchor" aria-label="anchor" href="#right-here-right-now"><i class="fas fa-link"></i></a>
+</h3>
+<div>
+<p>
+In R, dates are represented by <code>Date</code> objects, while times are represented by <code>POSIXct</code> objects. Under the hood, however, these dates and times are simple numerical values. <code>Date</code> objects store the number of days since the 1st of January in 1970. <code>POSIXct</code> objects on the other hand, store the number of seconds since the 1st of January in 1970.
+</p>
+<p>
+The 1st of January in 1970 is the common origin for representing times and dates in a wide range of programming languages. There is no particular reason for this; it is a simple convention. Of course, it’s also possible to create dates and times before 1970; the corresponding numerical values are simply negative in this case.
+</p>
+</div>
+<li>
+Ask R for the current date, and store the result in a variable <code>today</code>.
+</li>
+<div class="sourceCode" id="cb165"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># Get the current date: today</span>
+<span class="va">today</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/Sys.time.html">Sys.Date</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
+<li>
+To see what <code>today</code> looks like under the hood, call <a href="http://www.rdocumentation.org/packages/base/functions/class"><code>unclass()</code></a> on it.
+</li>
+<div class="sourceCode" id="cb166"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># See what today looks like under the hood</span>
+<span class="fu"><a href="https://rdrr.io/r/base/class.html">unclass</a></span><span class="op">(</span><span class="va">today</span><span class="op">)</span>
+<span class="co">#&gt; [1] 19055</span></code></pre></div>
+<li>
+Ask R for the current time, and store the result in a variable, <code>now</code>.
+</li>
+<div class="sourceCode" id="cb167"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># Get the current time: now</span>
+<span class="va">now</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/Sys.time.html">Sys.time</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
+<li>
+To see the numerical value that corresponds to <code>now</code>, call <a href="http://www.rdocumentation.org/packages/base/functions/class"><code>unclass()</code></a> on it.
+</li>
+<div class="sourceCode" id="cb168"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># See what now looks like under the hood</span>
+<span class="fu"><a href="https://rdrr.io/r/base/class.html">unclass</a></span><span class="op">(</span><span class="va">now</span><span class="op">)</span>
+<span class="co">#&gt; [1] 1646400292</span></code></pre></div>
+<p class>
+Great! Using R to get the current date and time is nice, but you should also know how to create dates and times from character strings. Find out how in the next exercises!
+</p>
+</div>
+<div id="create-and-format-dates" class="section level3" number="9.3.2">
+<h3>
+<span class="header-section-number">9.3.2</span> Create and format dates<a class="anchor" aria-label="anchor" href="#create-and-format-dates"><i class="fas fa-link"></i></a>
+</h3>
+<div>
+<p>
+To create a <code>Date</code> object from a simple character string in R, you can use the <a href="http://www.rdocumentation.org/packages/base/functions/as.Date"><code>as.Date()</code></a> function. The character string has to obey a format that can be defined using a set of symbols (the examples correspond to 13 January, 1982):
+</p>
+<ul>
+<li>
+<code>%Y</code>: 4-digit year (1982)
+</li>
+<li>
+<code>%y</code>: 2-digit year (82)
+</li>
+<li>
+<code>%m</code>: 2-digit month (01)
+</li>
+<li>
+<code>%d</code>: 2-digit day of the month (13)
+</li>
+<li>
+<code>%A</code>: weekday (Wednesday)
+</li>
+<li>
+<code>%a</code>: abbreviated weekday (Wed)
+</li>
+<li>
+<code>%B</code>: month (January)
+</li>
+<li>
+<code>%b</code>: abbreviated month (Jan)
+</li>
+</ul>
+<p>
+The following R commands will all create the same <code>Date</code> object for the 13th day in January of 1982:
+</p>
+<pre><code>as.Date("1982-01-13")
+as.Date("Jan-13-82", format = "%b-%d-%y")
+as.Date("13 January, 1982", format = "%d %B, %Y")
+</code></pre>
+<p>
+Notice that the first line here did not need a format argument, because by default R matches your character string to the formats <code>“%Y-%m-%d”</code> or <code>“%Y/%m/%d”</code>.
+</p>
+<p>
+In addition to creating dates, you can also convert dates to character strings that use a different date notation. For this, you use the <a href="http://www.rdocumentation.org/packages/base/functions/format"><code>format()</code></a> function. Try the following lines of code:
+</p>
+<pre><code>today &lt;- Sys.Date()
+format(Sys.Date(), format = "%d %B, %Y")
+format(Sys.Date(), format = "Today is a %A!")
+</code></pre>
+</div>
+<li>
+Three character strings representing dates have been created for you. Convert them to dates using <a href="http://www.rdocumentation.org/packages/base/functions/as.Date"><code>as.Date()</code></a>, and assign them to <code>date1</code>, <code>date2</code>, and <code>date3</code> respectively. The code for <code>date1</code> is already included.
+</li>
+<div class="sourceCode" id="cb169"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># Definition of character strings representing dates</span>
+<span class="va">str1</span> <span class="op">&lt;-</span> <span class="st">"May 23, '96"</span>
+<span class="va">str2</span> <span class="op">&lt;-</span> <span class="st">"2012-03-15"</span>
+<span class="va">str3</span> <span class="op">&lt;-</span> <span class="st">"30/January/2006"</span>
+
+<span class="co"># Convert the strings to dates: date1, date2, date3</span>
+<span class="va">date1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/as.Date.html">as.Date</a></span><span class="op">(</span><span class="va">str1</span>, format <span class="op">=</span> <span class="st">"%b %d, '%y"</span><span class="op">)</span>
+<span class="va">date2</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/as.Date.html">as.Date</a></span><span class="op">(</span><span class="va">str2</span><span class="op">)</span>
+<span class="va">date3</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/as.Date.html">as.Date</a></span><span class="op">(</span><span class="va">str3</span>, format <span class="op">=</span> <span class="st">"%d/%B/%Y"</span><span class="op">)</span></code></pre></div>
+<li>
+Extract useful information from the dates as character strings using <a href="http://www.rdocumentation.org/packages/base/functions/format"><code>format()</code></a>. From the first date, select the weekday. From the second date, select the day of the month. From the third date, you should select the abbreviated month and the 4-digit year, separated by a space.
+</li>
+<div class="sourceCode" id="cb170"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># Convert dates to formatted strings</span>
+<span class="fu"><a href="https://rdrr.io/r/base/format.html">format</a></span><span class="op">(</span><span class="va">date1</span>, <span class="st">"%A"</span><span class="op">)</span>
+<span class="co">#&gt; [1] "Thursday"</span>
+<span class="fu"><a href="https://rdrr.io/r/base/format.html">format</a></span><span class="op">(</span><span class="va">date2</span>, <span class="st">"%d"</span><span class="op">)</span>
+<span class="co">#&gt; [1] "15"</span>
+<span class="fu"><a href="https://rdrr.io/r/base/format.html">format</a></span><span class="op">(</span><span class="va">date3</span>, <span class="st">"%b %Y"</span><span class="op">)</span>
+<span class="co">#&gt; [1] "Jan 2006"</span></code></pre></div>
+<p class>
+You’re a date magician! You can use <code>POSIXct</code> objects, i.e. Time objects in R, in a similar fashion. Give it a try in the next exercise.
+</p>
+</div>
+<div id="create-and-format-times" class="section level3" number="9.3.3">
+<h3>
+<span class="header-section-number">9.3.3</span> Create and format times<a class="anchor" aria-label="anchor" href="#create-and-format-times"><i class="fas fa-link"></i></a>
+</h3>
+<div>
+<p>
+Similar to working with dates, you can use <a href="http://www.rdocumentation.org/packages/base/functions/as.POSIXlt"><code>as.POSIXct()</code></a> to convert from a character string to a <code>POSIXct</code> object, and <a href="http://www.rdocumentation.org/packages/base/functions/format"><code>format()</code></a> to convert from a <code>POSIXct</code> object to a character string. Again, you have a wide variety of symbols:
+</p>
+<ul>
+<li>
+<code>%H</code>: hours as a decimal number (00-23)
+</li>
+<li>
+<code>%I</code>: hours as a decimal number (01-12)
+</li>
+<li>
+<code>%M</code>: minutes as a decimal number
+</li>
+<li>
+<code>%S</code>: seconds as a decimal number
+</li>
+<li>
+<code>%T</code>: shorthand notation for the typical format <code>%H:%M:%S</code>
+</li>
+<li>
+<code>%p</code>: AM/PM indicator
+</li>
+</ul>
+<p>
+For a full list of conversion symbols, consult the <code>strptime</code> documentation in the console:
+</p>
+<pre><code><a href="https://rdrr.io/r/base/strptime.html">?strptime
+</a></code></pre>
+<p>
+Again,<a href="http://www.rdocumentation.org/packages/base/functions/as.POSIXlt"><code>as.POSIXct()</code></a> uses a default format to match character strings. In this case, it’s <code>%Y-%m-%d %H:%M:%S</code>. In this exercise, abstraction is made of different time zones.
+</p>
+</div>
+<li>
+Convert two strings that represent timestamps, <code>str1</code> and <code>str2</code>, to <code>POSIXct</code> objects called <code>time1</code> and <code>time2</code>.
+</li>
+<div class="sourceCode" id="cb171"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># Definition of character strings representing times</span>
+<span class="va">str1</span> <span class="op">&lt;-</span> <span class="st">"May 23, '96 hours:23 minutes:01 seconds:45"</span>
+<span class="va">str2</span> <span class="op">&lt;-</span> <span class="st">"2012-3-12 14:23:08"</span></code></pre></div>
+<li>
+Using <a href="http://www.rdocumentation.org/packages/base/functions/format"><code>format()</code></a>, create a string from <code>time1</code> containing only the minutes.
+</li>
+<div class="sourceCode" id="cb172"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># Convert the strings to POSIXct objects: time1, time2</span>
+<span class="va">time1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/as.POSIXlt.html">as.POSIXct</a></span><span class="op">(</span><span class="va">str1</span>, format <span class="op">=</span> <span class="st">"%B %d, '%y hours:%H minutes:%M seconds:%S"</span><span class="op">)</span>
+<span class="va">time2</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/as.POSIXlt.html">as.POSIXct</a></span><span class="op">(</span><span class="va">str2</span><span class="op">)</span></code></pre></div>
+<li>
+From <code>time2</code>, extract the hours and minutes as “hours:minutes AM/PM”. Refer to the assignment text above to find the correct conversion symbols!
+</li>
+<div class="sourceCode" id="cb173"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># Convert times to formatted strings</span>
+<span class="fu"><a href="https://rdrr.io/r/base/format.html">format</a></span><span class="op">(</span><span class="va">time1</span>, <span class="st">"%M"</span><span class="op">)</span>
+<span class="co">#&gt; [1] "01"</span>
+<span class="fu"><a href="https://rdrr.io/r/base/format.html">format</a></span><span class="op">(</span><span class="va">time2</span>, <span class="st">"%I:%M %p"</span><span class="op">)</span>
+<span class="co">#&gt; [1] "02:23 PM"</span></code></pre></div>
+<p class>
+Great!
+</p>
+</div>
+<div id="calculations-with-dates" class="section level3" number="9.3.4">
+<h3>
+<span class="header-section-number">9.3.4</span> Calculations with Dates<a class="anchor" aria-label="anchor" href="#calculations-with-dates"><i class="fas fa-link"></i></a>
+</h3>
+<div>
+<p>
+Both <code>Date</code> and <code>POSIXct</code> R objects are represented by simple numerical values under the hood. This makes calculation with time and date objects very straightforward: R performs the calculations using the underlying numerical values, and then converts the result back to human-readable time information again.
+</p>
+<p>
+You can increment and decrement <code>Date</code> objects, or do actual calculations with them:
+</p>
+<pre><code>today &lt;- Sys.Date()
+today + 1
+today - 1
+
+as.Date("2015-03-12") - as.Date("2015-02-27")
+</code></pre>
+<p>
+To control your eating habits, you decided to write down the dates of the last five days that you ate pizza. In the workspace, these dates are defined as five <code>Date</code> objects, <code>day1</code> to <code>day5</code>. A vector <code>pizza</code> containing these 5 <code>Date</code> objects has been pre-defined for you.
+</p>
+</div>
+<li>
+Calculate the number of days that passed between the last and the first day you ate pizza. Print the result.
+</li>
+<div class="sourceCode" id="cb174"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># day1, day2, day3, day4 and day5 are already available in the workspace</span>
+<span class="va">day1</span><span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/as.Date.html">as.Date</a></span><span class="op">(</span><span class="st">"2022-02-11"</span><span class="op">)</span>
+<span class="va">day2</span><span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/as.Date.html">as.Date</a></span><span class="op">(</span><span class="st">"2022-02-13"</span><span class="op">)</span>
+<span class="va">day3</span><span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/as.Date.html">as.Date</a></span><span class="op">(</span><span class="st">"2022-02-18"</span><span class="op">)</span>
+<span class="va">day4</span><span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/as.Date.html">as.Date</a></span><span class="op">(</span><span class="st">"2022-02-24"</span><span class="op">)</span>
+<span class="va">day5</span><span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/as.Date.html">as.Date</a></span><span class="op">(</span><span class="st">"2022-03-01"</span><span class="op">)</span>
+
+<span class="co"># Difference between last and first pizza day</span>
+<span class="va">day5</span> <span class="op">-</span> <span class="va">day1</span>
+<span class="co">#&gt; Time difference of 18 days</span></code></pre></div>
+<li>
+Use the function <a href="http://www.rdocumentation.org/packages/base/functions/diff"><code>diff()</code></a> on <code>pizza</code> to calculate the differences between consecutive pizza days. Store the result in a new variable <code>day_diff</code>.
+</li>
+<div class="sourceCode" id="cb175"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># Create vector pizza</span>
+<span class="va">pizza</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">day1</span>, <span class="va">day2</span>, <span class="va">day3</span>, <span class="va">day4</span>, <span class="va">day5</span><span class="op">)</span>
+
+<span class="co"># Create differences between consecutive pizza days: day_diff</span>
+<span class="va">day_diff</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/diff.html">diff</a></span><span class="op">(</span><span class="va">pizza</span><span class="op">)</span></code></pre></div>
+<li>
+Calculate the average period between two consecutive pizza days. Print the result.
+</li>
+<div class="sourceCode" id="cb176"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># Average period between two consecutive pizza days</span>
+<span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">day_diff</span><span class="op">)</span>
+<span class="co">#&gt; Time difference of 4.5 days</span></code></pre></div>
+<p class>
+Great! Head over to the next exercise.
+</p>
+</div>
+<div id="calculations-with-times" class="section level3" number="9.3.5">
+<h3>
+<span class="header-section-number">9.3.5</span> Calculations with Times<a class="anchor" aria-label="anchor" href="#calculations-with-times"><i class="fas fa-link"></i></a>
+</h3>
+<div>
+<p>
+Calculations using <code>POSIXct</code> objects are completely analogous to those using <code>Date</code> objects. Try to experiment with this code to increase or decrease <code>POSIXct</code> objects:
+</p>
+<pre><code>now &lt;- Sys.time()
+now + 3600          # add an hour
+now - 3600 * 24     # subtract a day
+</code></pre>
+<p>
+Adding or subtracting time objects is also straightforward:
+</p>
+<pre><code>birth &lt;- as.POSIXct("1879-03-14 14:37:23")
+death &lt;- as.POSIXct("1955-04-18 03:47:12")
+einstein &lt;- death - birth
+einstein
+</code></pre>
+<p>
+You’re developing a website that requires users to log in and out. You want to know what is the total and average amount of time a particular user spends on your website. This user has logged in 5 times and logged out 5 times as well. These times are gathered in the vectors <code>login</code> and <code>logout</code>, which are already defined in the workspace.
+</p>
+</div>
+<li>
+Calculate the difference between the two vectors <code>logout</code> and <code>login</code>, i.e. the time the user was online in each independent session. Store the result in a variable <code>time_online</code>.
+</li>
+<div class="sourceCode" id="cb177"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># login and logout are already defined in the workspace</span>
+<span class="va">login</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/as.POSIXlt.html">as.POSIXct</a></span><span class="op">(</span><span class="st">"2017-03-16 10:18:04 UTC"</span><span class="op">)</span>, 
+            <span class="fu"><a href="https://rdrr.io/r/base/as.POSIXlt.html">as.POSIXct</a></span><span class="op">(</span><span class="st">"2017-03-21 09:14:18 UTC"</span><span class="op">)</span>,
+            <span class="fu"><a href="https://rdrr.io/r/base/as.POSIXlt.html">as.POSIXct</a></span><span class="op">(</span><span class="st">"2017-03-21 12:21:51 UTC"</span><span class="op">)</span>, 
+            <span class="fu"><a href="https://rdrr.io/r/base/as.POSIXlt.html">as.POSIXct</a></span><span class="op">(</span><span class="st">"2017-03-21 12:37:24 UTC"</span><span class="op">)</span>,
+            <span class="fu"><a href="https://rdrr.io/r/base/as.POSIXlt.html">as.POSIXct</a></span><span class="op">(</span><span class="st">"2017-03-23 21:37:55 UTC"</span><span class="op">)</span><span class="op">)</span>
+
+<span class="va">logout</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/as.POSIXlt.html">as.POSIXct</a></span><span class="op">(</span><span class="st">"2017-03-16 10:56:29 UTC"</span><span class="op">)</span>,
+            <span class="fu"><a href="https://rdrr.io/r/base/as.POSIXlt.html">as.POSIXct</a></span><span class="op">(</span><span class="st">"2017-03-21 09:14:52 UTC"</span><span class="op">)</span>,
+            <span class="fu"><a href="https://rdrr.io/r/base/as.POSIXlt.html">as.POSIXct</a></span><span class="op">(</span><span class="st">"2017-03-21 12:35:48 UTC"</span><span class="op">)</span>, 
+            <span class="fu"><a href="https://rdrr.io/r/base/as.POSIXlt.html">as.POSIXct</a></span><span class="op">(</span><span class="st">"2017-03-21 13:17:22 UTC"</span><span class="op">)</span>,
+            <span class="fu"><a href="https://rdrr.io/r/base/as.POSIXlt.html">as.POSIXct</a></span><span class="op">(</span><span class="st">"2017-03-23 22:08:47 UTC"</span><span class="op">)</span><span class="op">)</span>
+
+<span class="co"># Calculate the difference between login and logout: time_online</span>
+<span class="va">time_online</span> <span class="op">&lt;-</span> <span class="va">logout</span> <span class="op">-</span> <span class="va">login</span></code></pre></div>
+<li>
+Inspect the variable <code>time_online</code> by printing it.
+</li>
+<div class="sourceCode" id="cb178"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># Inspect the variable time_online</span>
+<span class="va">time_online</span>
+<span class="co">#&gt; Time differences in secs</span>
+<span class="co">#&gt; [1] 2305   34  837 2398 1852</span></code></pre></div>
+<li>
+Calculate the total time that the user was online. Print the result.
+</li>
+<div class="sourceCode" id="cb179"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># Calculate the total time online</span>
+<span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">time_online</span><span class="op">)</span>
+<span class="co">#&gt; Time difference of 7426 secs</span></code></pre></div>
+<li>
+Calculate the average time the user was online. Print the result.
+</li>
+<div class="sourceCode" id="cb180"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># Calculate the average time online</span>
+<span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">time_online</span><span class="op">)</span>
+<span class="co">#&gt; Time difference of 1485.2 secs</span></code></pre></div>
+<p class>
+Great! Time to tackle the final exercise of this course!
+</p>
+</div>
+<div id="time-is-of-the-essence" class="section level3" number="9.3.6">
+<h3>
+<span class="header-section-number">9.3.6</span> Time is of the essence<a class="anchor" aria-label="anchor" href="#time-is-of-the-essence"><i class="fas fa-link"></i></a>
+</h3>
+<div>
+<p>
+The dates when a season begins and ends can vary depending on who you ask. People in Australia will tell you that spring starts on September 1st. The Irish people in the Northern hemisphere will swear that spring starts on February 1st, with the celebration of St. Brigid’s Day. Then there’s also the difference between astronomical and meteorological seasons: while astronomers are used to equinoxes and solstices, meteorologists divide the year into 4 fixed seasons that are each three months long. (source: www.timeanddate.com)
+</p>
+<p>
+A vector <code>astro</code>, which contains character strings representing the dates on which the 4 astronomical seasons start, has been defined on your workspace. Similarly, a vector <code>meteo</code> has already been created for you, with the meteorological beginnings of a season.
+</p>
+</div>
+<li>
+Use <code><a href="https://rdrr.io/r/base/as.Date.html">as.Date()</a></code> to convert the <code>astro</code> vector to a vector containing <code>Date</code> objects. You will need the <code>%d</code>, <code>%b</code> and <code>%Y</code> symbols to specify the <code>format</code>. Store the resulting vector as <code>astro_dates</code>.
+</li>
+<div class="sourceCode" id="cb181"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">astro</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"20-Mar-2015"</span>, <span class="st">"25-Jun-2015"</span>, <span class="st">"23-Sep-2015"</span>, <span class="st">"22-Dec-2015"</span><span class="op">)</span>
+<span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">astro</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"spring"</span>, <span class="st">"summer"</span>,<span class="st">"fall"</span>,<span class="st">"winter"</span><span class="op">)</span> 
+<span class="va">astro</span>
+<span class="co">#&gt;        spring        summer          fall        winter </span>
+<span class="co">#&gt; "20-Mar-2015" "25-Jun-2015" "23-Sep-2015" "22-Dec-2015"</span>
+
+<span class="co"># Convert astro to vector of Date objects: astro_dates</span>
+<span class="va">astro_dates</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/as.Date.html">as.Date</a></span><span class="op">(</span><span class="va">astro</span>, format <span class="op">=</span> <span class="st">"%d-%b-%Y"</span><span class="op">)</span></code></pre></div>
+<li>
+Use <code><a href="https://rdrr.io/r/base/as.Date.html">as.Date()</a></code> to convert the <code>meteo</code> vector to a vector with <code>Date</code> objects. This time, you will need the <code>%B</code>, <code>%d</code> and <code>%y</code> symbols for the <code>format</code> argument. Store the resulting vector as <code>meteo_dates</code>.
+</li>
+<div class="sourceCode" id="cb182"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">meteo</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"March 1, 15"</span>, <span class="st">"June 1, 15"</span>, <span class="st">"September 1, 15"</span>, <span class="st">"December 1, 15"</span><span class="op">)</span>
+<span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">meteo</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"spring"</span>, <span class="st">"summer"</span>, <span class="st">"fall"</span>, <span class="st">"winter"</span><span class="op">)</span>
+<span class="va">meteo</span>
+<span class="co">#&gt;            spring            summer              fall            winter </span>
+<span class="co">#&gt;     "March 1, 15"      "June 1, 15" "September 1, 15"  "December 1, 15"</span>
+
+<span class="co"># Convert meteo to vector of Date objects: meteo_dates</span>
+<span class="va">meteo_dates</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/as.Date.html">as.Date</a></span><span class="op">(</span><span class="va">meteo</span>, format <span class="op">=</span> <span class="st">"%B %d, %y"</span><span class="op">)</span></code></pre></div>
+<li>
+With a combination of <code><a href="https://rdrr.io/r/base/Extremes.html">max()</a></code>, <code><a href="https://rdrr.io/r/base/MathFun.html">abs()</a></code> and <code>-</code>, calculate the maximum absolute difference between the astronomical and the meteorological beginnings of a season, i.e. <code>astro_dates</code> and <code>meteo_dates</code>. Simply print this maximum difference to the console output.
+</li>
+<div class="sourceCode" id="cb183"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># Calculate the maximum absolute difference between astro_dates and meteo_dates</span>
+<span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">max</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/MathFun.html">abs</a></span><span class="op">(</span><span class="va">meteo_dates</span> <span class="op">-</span> <span class="va">astro_dates</span><span class="op">)</span><span class="op">)</span>
+<span class="co">#&gt; Time difference of 24 days</span></code></pre></div>
+<p class>
+Impressive! Great job on finishing this course!
+</p>
+
+</div>
+</div>
+</div>
+  <div class="chapter-nav">
+<div class="prev"><a href="the-apply-family.html"><span class="header-section-number">8</span> The apply family</a></div>
+<div class="next"><a href="data-wrangling-1.html"><span class="header-section-number">10</span> Data wrangling</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#utilities"><span class="header-section-number">9</span> Utilities</a></li>
+<li>
+<a class="nav-link" href="#useful-functions"><span class="header-section-number">9.1</span> Useful Functions</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#mathematical-utilities"><span class="header-section-number">9.1.1</span> Mathematical utilities</a></li>
+<li><a class="nav-link" href="#find-the-error"><span class="header-section-number">9.1.2</span> Find the error</a></li>
+<li><a class="nav-link" href="#data-utilities"><span class="header-section-number">9.1.3</span> Data Utilities</a></li>
+<li><a class="nav-link" href="#find-the-error-2"><span class="header-section-number">9.1.4</span> Find the error (2)</a></li>
+<li><a class="nav-link" href="#beat-gauss-using-r"><span class="header-section-number">9.1.5</span> Beat Gauss using R</a></li>
+</ul>
+</li>
+<li>
+<a class="nav-link" href="#regular-expressions"><span class="header-section-number">9.2</span> Regular Expressions</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#grepl-grep"><span class="header-section-number">9.2.1</span> grepl &amp; grep</a></li>
+<li><a class="nav-link" href="#grepl-grep-2"><span class="header-section-number">9.2.2</span> grepl &amp; grep (2)</a></li>
+<li><a class="nav-link" href="#sub-gsub"><span class="header-section-number">9.2.3</span> sub &amp; gsub</a></li>
+<li><a class="nav-link" href="#sub-gsub-2"><span class="header-section-number">9.2.4</span> sub &amp; gsub (2)</a></li>
+</ul>
+</li>
+<li>
+<a class="nav-link" href="#times-dates"><span class="header-section-number">9.3</span> Times &amp; Dates</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#right-here-right-now"><span class="header-section-number">9.3.1</span> Right here, right now</a></li>
+<li><a class="nav-link" href="#create-and-format-dates"><span class="header-section-number">9.3.2</span> Create and format dates</a></li>
+<li><a class="nav-link" href="#create-and-format-times"><span class="header-section-number">9.3.3</span> Create and format times</a></li>
+<li><a class="nav-link" href="#calculations-with-dates"><span class="header-section-number">9.3.4</span> Calculations with Dates</a></li>
+<li><a class="nav-link" href="#calculations-with-times"><span class="header-section-number">9.3.5</span> Calculations with Times</a></li>
+<li><a class="nav-link" href="#time-is-of-the-essence"><span class="header-section-number">9.3.6</span> Time is of the essence</a></li>
+</ul>
+</li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+<li><a id="book-source" href="https://github.com/hadley/r4ds/blob/master/intermediater.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/hadley/r4ds/edit/master/intermediater.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>Introduction to DataCamp</strong>" was written by Tran Thanh Dat. </p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
+</script>
+</body>
+</html>

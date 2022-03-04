@@ -1,0 +1,962 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>7 Functions | Introduction to DataCamp</title>
+<meta name="author" content="Tran Thanh Dat">
+<meta name="generator" content="bookdown 0.24 with bs4_book()">
+<meta property="og:title" content="7 Functions | Introduction to DataCamp">
+<meta property="og:type" content="book">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="7 Functions | Introduction to DataCamp">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/header-attrs-2.12.1/header-attrs.js"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.1.9000/transition.js"></script><script src="libs/bs3compat-0.3.1.9000/tabs.js"></script><script src="libs/bs3compat-0.3.1.9000/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=UA-115082821-1"></script><script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-115082821-1');
+    </script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><meta name="description" content="Functions are an extremely important concept in almost every programming language, and R is no different. Learn what functions are and how to use them—then take charge by writing your own...">
+<meta property="og:description" content="Functions are an extremely important concept in almost every programming language, and R is no different. Learn what functions are and how to use them—then take charge by writing your own...">
+<meta name="twitter:description" content="Functions are an extremely important concept in almost every programming language, and R is no different. Learn what functions are and how to use them—then take charge by writing your own...">
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">Introduction to DataCamp</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html">Welcome to DataCamp</a></li>
+<li class="book-part">R Fundamentals</li>
+<li><a class="" href="data-wrangling.html"><span class="header-section-number">1</span> Data wrangling</a></li>
+<li><a class="" href="data-visualization.html"><span class="header-section-number">2</span> Data visualization</a></li>
+<li><a class="" href="grouping-and-summarizing.html"><span class="header-section-number">3</span> Grouping and summarizing</a></li>
+<li><a class="" href="types-of-visualizations.html"><span class="header-section-number">4</span> Types of visualizations</a></li>
+<li><a class="" href="conditionals-and-control-flow.html"><span class="header-section-number">5</span> Conditionals and Control Flow</a></li>
+<li><a class="" href="loops.html"><span class="header-section-number">6</span> Loops</a></li>
+<li><a class="active" href="functions.html"><span class="header-section-number">7</span> Functions</a></li>
+<li><a class="" href="the-apply-family.html"><span class="header-section-number">8</span> The apply family</a></li>
+<li><a class="" href="utilities.html"><span class="header-section-number">9</span> Utilities</a></li>
+<li><a class="" href="data-wrangling-1.html"><span class="header-section-number">10</span> Data wrangling</a></li>
+<li><a class="" href="data-visualization-1.html"><span class="header-section-number">11</span> Data visualization</a></li>
+<li><a class="" href="grouping-and-summarizing-1.html"><span class="header-section-number">12</span> Grouping and summarizing</a></li>
+<li><a class="" href="types-of-visualizations-1.html"><span class="header-section-number">13</span> Types of visualizations</a></li>
+</ul>
+
+        <div class="book-extra">
+          <p><a id="book-repo" href="https://github.com/hadley/r4ds">View book source <i class="fab fa-github"></i></a></p>
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="functions" class="section level1" number="7">
+<h1>
+<span class="header-section-number">7</span> Functions<a class="anchor" aria-label="anchor" href="#functions"><i class="fas fa-link"></i></a>
+</h1>
+<p>
+Functions are an extremely important concept in almost every programming language, and R is no different. Learn what functions are and how to use them—then take charge by writing your own functions.
+</p>
+<div id="introduction-to-functions" class="section level2" number="7.1">
+<h2>
+<span class="header-section-number">7.1</span> Introduction to Functions<a class="anchor" aria-label="anchor" href="#introduction-to-functions"><i class="fas fa-link"></i></a>
+</h2>
+<div id="function-documentation" class="section level3" number="7.1.1">
+<h3>
+<span class="header-section-number">7.1.1</span> Function documentation<a class="anchor" aria-label="anchor" href="#function-documentation"><i class="fas fa-link"></i></a>
+</h3>
+<div>
+<p>
+Before even thinking of using an R function, you should clarify which arguments it expects. All the relevant details such as a description, usage, and arguments can be found in the documentation. To consult the documentation on the <a href="http://www.rdocumentation.org/packages/base/functions/sample"><code>sample()</code></a> function, for example, you can use one of following R commands:
+</p>
+<pre><code><a href="https://rdrr.io/r/base/sample.html">help(sample)
+?sample
+</a></code></pre>
+<p>
+If you execute these commands, you’ll be redirected to www.rdocumentation.org.
+</p>
+<p>
+A quick hack to see the arguments of the <a href="http://www.rdocumentation.org/packages/base/functions/sample"><code>sample()</code></a> function is the <a href="http://www.rdocumentation.org/packages/base/functions/args"><code>args()</code></a> function. Try it out in the console:
+</p>
+<pre><code>args(sample)
+</code></pre>
+<p>
+In the next exercises, you’ll be learning how to use the <a href="http://www.rdocumentation.org/packages/base/functions/mean"><code>mean()</code></a> function with increasing complexity. The first thing you’ll have to do is get acquainted with the <a href="http://www.rdocumentation.org/packages/base/functions/mean"><code>mean()</code></a> function.
+</p>
+</div>
+<li>
+Consult the documentation on the <a href="http://www.rdocumentation.org/packages/base/functions/mean"><code>mean()</code></a> function: <code><a href="https://rdrr.io/r/base/mean.html">?mean</a></code> or <code><a href="https://rdrr.io/r/base/mean.html">help(mean)</a></code>.
+</li>
+<div class="sourceCode" id="cb93"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># Consult the documentation on the mean() function</span>
+<span class="op">?</span><span class="va">mean</span>
+<span class="fu"><a href="https://rdrr.io/r/utils/help.html">help</a></span><span class="op">(</span><span class="va">mean</span><span class="op">)</span></code></pre></div>
+<li>
+Inspect the arguments of the <a href="http://www.rdocumentation.org/packages/base/functions/mean"><code>mean()</code></a> function using the <a href="http://www.rdocumentation.org/packages/base/functions/args"><code>args()</code></a> function.
+</li>
+<div class="sourceCode" id="cb94"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># Inspect the arguments of the mean() function</span>
+<span class="fu"><a href="https://rdrr.io/r/base/args.html">args</a></span><span class="op">(</span><span class="va">mean</span><span class="op">)</span>
+<span class="co">#&gt; function (x, ...) </span>
+<span class="co">#&gt; NULL</span></code></pre></div>
+<p class>
+Great! That wasn’t too hard, was it? Take a look at the documentation and head over to the next exercise.
+</p>
+</div>
+<div id="use-a-function" class="section level3" number="7.1.2">
+<h3>
+<span class="header-section-number">7.1.2</span> Use a function<a class="anchor" aria-label="anchor" href="#use-a-function"><i class="fas fa-link"></i></a>
+</h3>
+<div>
+<p>
+The documentation on the <a href="http://www.rdocumentation.org/packages/base/functions/mean"><code>mean()</code></a> function gives us quite some information:
+</p>
+<ul>
+<li>
+The <a href="http://www.rdocumentation.org/packages/base/functions/mean"><code>mean()</code></a> function computes the arithmetic mean.
+</li>
+<li>
+The most general method takes multiple arguments: <code>x</code> and <code>…</code>.
+</li>
+<li>
+The <code>x</code> argument should be a vector containing numeric, logical or time-related information.
+</li>
+</ul>
+<p>
+Remember that R can match arguments both by position and by name. Can you still remember the difference? You’ll find out in this exercise!
+</p>
+<p>
+Once more, you’ll be working with the view counts of your social network profiles for the past 7 days. These are stored in the <code>linkedin</code> and <code>facebook</code> vectors and have already been created for you.
+</p>
+</div>
+<div class="sourceCode" id="cb95"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># The linkedin and facebook vectors have already been created for you</span>
+<span class="va">linkedin</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">16</span>, <span class="fl">9</span>, <span class="fl">13</span>, <span class="fl">5</span>, <span class="fl">2</span>, <span class="fl">17</span>, <span class="fl">14</span><span class="op">)</span>
+<span class="va">facebook</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">17</span>, <span class="fl">7</span>, <span class="fl">5</span>, <span class="fl">16</span>, <span class="fl">8</span>, <span class="fl">13</span>, <span class="fl">14</span><span class="op">)</span></code></pre></div>
+<li>
+Calculate the average number of views for both <code>linkedin</code> and <code>facebook</code> and assign the result to <code>avg_li</code> and <code>avg_fb</code>, respectively. Experiment with different types of argument matching!
+</li>
+<div class="sourceCode" id="cb96"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># Calculate average number of views</span>
+<span class="va">avg_li</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">linkedin</span><span class="op">)</span>
+<span class="va">avg_fb</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">facebook</span><span class="op">)</span></code></pre></div>
+<li>
+Print out both <code>avg_li</code> and <code>avg_fb</code>.
+</li>
+<div class="sourceCode" id="cb97"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># Inspect avg_li and avg_fb</span>
+<span class="va">avg_li</span>
+<span class="co">#&gt; [1] 10.85714</span>
+<span class="va">avg_fb</span>
+<span class="co">#&gt; [1] 11.42857</span></code></pre></div>
+<p class>
+Nice! I’m sure you’ve already called more advanced R functions in your history as a programmer. Now you also know what actually happens under the hood ;-)
+</p>
+</div>
+<div id="use-a-function-2" class="section level3" number="7.1.3">
+<h3>
+<span class="header-section-number">7.1.3</span> Use a function (2)<a class="anchor" aria-label="anchor" href="#use-a-function-2"><i class="fas fa-link"></i></a>
+</h3>
+<div>
+<p>
+Check the documentation on the <a href="http://www.rdocumentation.org/packages/base/functions/mean"><code>mean()</code></a> function again:
+</p>
+<pre><code><a href="https://rdrr.io/r/base/mean.html">?mean
+</a></code></pre>
+<p>
+The Usage section of the documentation includes two versions of the <a href="http://www.rdocumentation.org/packages/base/functions/mean"><code>mean()</code></a> function. The first usage,
+</p>
+<pre><code>mean(x, ...)
+</code></pre>
+<p>
+is the most general usage of the mean function. The ‘Default S3 method’, however, is:
+</p>
+<pre><code>mean(x, trim = 0, na.rm = FALSE, ...)
+</code></pre>
+<p>
+The <code>…</code> is called the ellipsis. It is a way for R to pass arguments along without the function having to name them explicitly. The ellipsis will be treated in more detail in future courses.
+</p>
+<p>
+For the remainder of this exercise, just work with the second usage of the mean function. Notice that both <code>trim</code> and <code>na.rm</code> have default values. This makes them <strong>optional arguments</strong>.
+</p>
+</div>
+<li>
+Calculate the mean of the element-wise sum of <code>linkedin</code> and <code>facebook</code> and store the result in a variable <code>avg_sum</code>.
+</li>
+<div class="sourceCode" id="cb98"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># Calculate the mean of the sum</span>
+<span class="va">avg_sum</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">linkedin</span> <span class="op">+</span> <span class="va">facebook</span><span class="op">)</span></code></pre></div>
+<li>
+Calculate the mean once more, but this time set the <code>trim</code> argument equal to 0.2 and assign the result to <code>avg_sum_trimmed</code>.
+</li>
+<div class="sourceCode" id="cb99"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># Calculate the trimmed mean of the sum</span>
+<span class="va">avg_sum_trimmed</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">linkedin</span> <span class="op">+</span> <span class="va">facebook</span>, trim <span class="op">=</span> <span class="fl">0.2</span><span class="op">)</span></code></pre></div>
+<li>
+Print out both <code>avg_sum</code> and <code>avg_sum_trimmed</code>; can you spot the difference?
+</li>
+<div class="sourceCode" id="cb100"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># Inspect both new variables</span>
+<span class="va">avg_sum</span>
+<span class="co">#&gt; [1] 22.28571</span>
+<span class="va">avg_sum_trimmed</span>
+<span class="co">#&gt; [1] 22.6</span></code></pre></div>
+<p class>
+Nice! When the <code>trim</code> argument is not zero, it chops off a fraction (equal to <code>trim</code>) of the vector you pass as argument <code>x</code>.
+</p>
+</div>
+<div id="use-a-function-3" class="section level3" number="7.1.4">
+<h3>
+<span class="header-section-number">7.1.4</span> Use a function (3)<a class="anchor" aria-label="anchor" href="#use-a-function-3"><i class="fas fa-link"></i></a>
+</h3>
+<div>
+<p>
+In the video, Filip guided you through the example of specifying arguments of the <a href="http://www.rdocumentation.org/packages/stats/functions/sd"><code>sd()</code></a> function. The <a href="http://www.rdocumentation.org/packages/stats/functions/sd"><code>sd()</code></a> function has an optional argument, <code>na.rm</code> that specified whether or not to remove missing values from the input vector before calculating the standard deviation.
+</p>
+<p>
+If you’ve had a good look at the documentation, you’ll know by now that the <a href="http://www.rdocumentation.org/packages/base/functions/mean"><code>mean()</code></a> function also has this argument, <code>na.rm</code>, and it does the exact same thing. By default, it is set to <code>FALSE</code>, as the Usage of the default S3 method shows:
+</p>
+<pre><code>mean(x, trim = 0, na.rm = FALSE, ...)
+</code></pre>
+<p>
+Let’s see what happens if your vectors <code>linkedin</code> and <code>facebook</code> contain missing values (<code>NA</code>).
+</p>
+</div>
+<div class="sourceCode" id="cb101"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># The linkedin and facebook vectors have already been created for you</span>
+<span class="va">linkedin</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">16</span>, <span class="fl">9</span>, <span class="fl">13</span>, <span class="fl">5</span>, <span class="cn">NA</span>, <span class="fl">17</span>, <span class="fl">14</span><span class="op">)</span>
+<span class="va">facebook</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">17</span>, <span class="cn">NA</span>, <span class="fl">5</span>, <span class="fl">16</span>, <span class="fl">8</span>, <span class="fl">13</span>, <span class="fl">14</span><span class="op">)</span></code></pre></div>
+<li>
+Calculate the average number of LinkedIn profile views, without specifying any optional arguments. Simply print the result to the console.
+</li>
+<div class="sourceCode" id="cb102"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># Basic average of linkedin</span>
+<span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">linkedin</span><span class="op">)</span>
+<span class="co">#&gt; [1] NA</span></code></pre></div>
+<li>
+Calculate the average number of LinkedIn profile views, but this time tell R to strip missing values from the input vector.
+</li>
+<div class="sourceCode" id="cb103"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># Advanced average of linkedin</span>
+<span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">linkedin</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
+<span class="co">#&gt; [1] 12.33333</span></code></pre></div>
+<p class>
+Awesome! Up to the next exercise!
+</p>
+</div>
+<div id="functions-inside-functions" class="section level3" number="7.1.5">
+<h3>
+<span class="header-section-number">7.1.5</span> Functions inside functions<a class="anchor" aria-label="anchor" href="#functions-inside-functions"><i class="fas fa-link"></i></a>
+</h3>
+<div>
+<p>
+You already know that R functions return objects that you can then use somewhere else. This makes it easy to use functions inside functions, as you’ve seen before:
+</p>
+<pre><code>speed &lt;- 31
+print(paste("Your speed is", speed))
+</code></pre>
+<p>
+Notice that both the <a href="http://www.rdocumentation.org/packages/base/functions/print"><code>print()</code></a> and <a href="http://www.rdocumentation.org/packages/base/functions/paste"><code>paste()</code></a> functions use the ellipsis - <code>…</code> - as an argument. Can you figure out how they’re used?
+</p>
+</div>
+<div class="exercise--instructions__content">
+<p>
+Use <code><a href="https://rdrr.io/r/base/MathFun.html">abs()</a></code> on <code>linkedin - facebook</code> to get the absolute differences between the daily Linkedin and Facebook profile views. Place the call to <code><a href="https://rdrr.io/r/base/MathFun.html">abs()</a></code> <em>inside</em> <code><a href="https://rdrr.io/r/base/mean.html">mean()</a></code> to calculate the Mean Absolute Deviation. In the <code><a href="https://rdrr.io/r/base/mean.html">mean()</a></code> call, make sure to specify <code>na.rm</code> to treat missing values correctly!
+</p>
+</div>
+<div class="sourceCode" id="cb104"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># Calculate the mean absolute deviation</span>
+<span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/MathFun.html">abs</a></span><span class="op">(</span><span class="va">linkedin</span> <span class="op">-</span> <span class="va">facebook</span><span class="op">)</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
+<span class="co">#&gt; [1] 4.8</span></code></pre></div>
+<p class>
+Excellent! Proceed to the next exercise.
+</p>
+</div>
+<div id="required-or-optional" class="section level3" number="7.1.6">
+<h3>
+<span class="header-section-number">7.1.6</span> Required, or optional?<a class="anchor" aria-label="anchor" href="#required-or-optional"><i class="fas fa-link"></i></a>
+</h3>
+<div>
+<p>
+By now, you will probably have a good understanding of the difference between required and optional arguments. Let’s refresh this difference by having one last look at the <a href="http://www.rdocumentation.org/packages/base/functions/mean"><code>mean()</code></a> function:
+</p>
+<pre><code>mean(x, trim = 0, na.rm = FALSE, ...)
+</code></pre>
+<p>
+<code>x</code> is required; if you do not specify it, R will throw an error. <code>trim</code> and <code>na.rm</code> are optional arguments: they have a default value which is used if the arguments are not explicitly specified.
+</p>
+<p>
+Which of the following statements about the <a href="http://www.rdocumentation.org/packages/utils/functions/read.table"><code>read.table()</code></a> function are true?
+</p>
+<ol>
+<li>
+<code>header</code>, <code>sep</code> and <code>quote</code> are all optional arguments.
+</li>
+<li>
+<code>row.names</code> and <code>fileEncoding</code> don’t have default values.
+</li>
+<li>
+<code>read.table(“myfile.txt”, “-”, TRUE)</code> will throw an error.
+</li>
+<li>
+<code>read.table(“myfile.txt”, sep = “-”, header = TRUE)</code> will throw an error.
+</li>
+</ol>
+</div>
+<ul>
+<strong>
+<li>
+<div class="dc-input-radio__text">
+<ol style="list-style-type: decimal"><li>and (3)
+</li></ol>
+</div>
+</li>
+</strong>
+<li>
+<div class="dc-input-radio__text">
+<ol start="2" style="list-style-type: decimal"><li>and (4)
+</li></ol>
+</div>
+</li>
+<li>
+<div class="dc-input-radio__text">
+(1), (2), and (3)
+</div>
+</li>
+<li>
+<div class="dc-input-radio__text">
+(1), (2), and (4)
+</div>
+</li>
+</ul>
+<p class>
+Great! Using functions that are already available in R is pretty straightforward, but how about writing your own functions to supercharge your R programs? The next video will tell you how.
+</p>
+</div>
+</div>
+<div id="writing-functions" class="section level2" number="7.2">
+<h2>
+<span class="header-section-number">7.2</span> Writing Functions<a class="anchor" aria-label="anchor" href="#writing-functions"><i class="fas fa-link"></i></a>
+</h2>
+<div id="write-your-own-function" class="section level3" number="7.2.1">
+<h3>
+<span class="header-section-number">7.2.1</span> Write your own function<a class="anchor" aria-label="anchor" href="#write-your-own-function"><i class="fas fa-link"></i></a>
+</h3>
+<div>
+<p>
+Wow, things are getting serious… you’re about to write your own function! Before you have a go at it, have a look at the following function template:
+</p>
+<pre><code>my_fun &lt;- function(arg1, arg2) {
+  body
+}
+</code></pre>
+<p>
+Notice that this recipe uses the assignment operator (<code>&lt;-</code>) just as if you were assigning a vector to a variable for example. This is not a coincidence. Creating a function in R basically is the assignment of a function object to a variable! In the recipe above, you’re creating a new R variable <code>my_fun</code>, that becomes available in the workspace as soon as you execute the definition. From then on, you can use the <code>my_fun</code> as a function.
+</p>
+</div>
+<li>
+Create a function <code>pow_two()</code>: it takes one argument and returns that number squared (that number times itself).
+</li>
+<div class="sourceCode" id="cb105"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># Create a function pow_two()</span>
+<span class="va">pow_two</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="op">{</span>
+  <span class="va">x</span> <span class="op">^</span> <span class="fl">2</span>
+<span class="op">}</span></code></pre></div>
+<li>
+Call this newly defined function with <code>12</code> as input.
+</li>
+<div class="sourceCode" id="cb106"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># Use the function</span>
+<span class="fu">pow_two</span><span class="op">(</span><span class="fl">12</span><span class="op">)</span>
+<span class="co">#&gt; [1] 144</span></code></pre></div>
+<li>
+Next, create a function <code>sum_abs()</code>, that takes two arguments and returns the sum of the absolute values of both arguments.
+</li>
+<div class="sourceCode" id="cb107"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># Create a function sum_abs()</span>
+<span class="va">sum_abs</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">x</span>, <span class="va">y</span><span class="op">)</span> <span class="op">{</span>
+  <span class="fu"><a href="https://rdrr.io/r/base/MathFun.html">abs</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://rdrr.io/r/base/MathFun.html">abs</a></span><span class="op">(</span><span class="va">y</span><span class="op">)</span>
+<span class="op">}</span></code></pre></div>
+<li>
+Finally, call the function <code>sum_abs()</code> with arguments <code>-2</code> and <code>3</code> afterwards.
+</li>
+<div class="sourceCode" id="cb108"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># Use the function</span>
+<span class="fu">sum_abs</span><span class="op">(</span><span class="op">-</span><span class="fl">2</span>, <span class="fl">3</span><span class="op">)</span>
+<span class="co">#&gt; [1] 5</span></code></pre></div>
+<p class>
+Great! Step it up a notch in the next exercise!
+</p>
+</div>
+<div id="write-your-own-function-2" class="section level3" number="7.2.2">
+<h3>
+<span class="header-section-number">7.2.2</span> Write your own function (2)<a class="anchor" aria-label="anchor" href="#write-your-own-function-2"><i class="fas fa-link"></i></a>
+</h3>
+<div>
+<p>
+There are situations in which your function does not require an input. Let’s say you want to write a function that gives us the random outcome of throwing a fair die:
+</p>
+<pre><code>throw_die &lt;- function() {
+  number &lt;- sample(1:6, size = 1)
+  number
+}
+
+throw_die()
+</code></pre>
+<p>
+Up to you to code a function that doesn’t take any arguments!
+</p>
+</div>
+<li>
+Define a function, <code>hello()</code>. It prints out “Hi there!” and returns <code>TRUE</code>. It has no arguments.
+</li>
+<div class="sourceCode" id="cb109"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># Define the function hello()</span>
+<span class="va">hello</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="op">)</span> <span class="op">{</span>
+  <span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="st">"Hi there!"</span><span class="op">)</span>
+  <span class="cn">TRUE</span>
+<span class="op">}</span></code></pre></div>
+<li>
+Call the function <code>hello()</code>, without specifying arguments of course.
+</li>
+<div class="sourceCode" id="cb110"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># Call the function hello()</span>
+<span class="fu">hello</span><span class="op">(</span><span class="op">)</span>
+<span class="co">#&gt; [1] "Hi there!"</span>
+<span class="co">#&gt; [1] TRUE</span></code></pre></div>
+<p class>
+Truly impressive! Head over to the next exercise.
+</p>
+</div>
+<div id="write-your-own-function-3" class="section level3" number="7.2.3">
+<h3>
+<span class="header-section-number">7.2.3</span> Write your own function (3)<a class="anchor" aria-label="anchor" href="#write-your-own-function-3"><i class="fas fa-link"></i></a>
+</h3>
+<div>
+<p>
+Do you still remember the difference between an argument with and without default values? The usage section in the <code><a href="https://rdrr.io/r/stats/sd.html">sd()</a></code> documentation shows the following information:
+</p>
+<pre><code>sd(x, na.rm = FALSE)
+</code></pre>
+<p>
+This tells us that <code>x</code> has to be defined for the <code><a href="https://rdrr.io/r/stats/sd.html">sd()</a></code> function to be called correctly, however, <code>na.rm</code> already has a default value. Not specifying this argument won’t cause an error.
+</p>
+<p>
+You can define default argument values in your own R functions as well. You can use the following recipe to do so:
+</p>
+<pre><code>my_fun &lt;- function(arg1, arg2 = val2) {
+  body
+}
+</code></pre>
+<p>
+The editor on the right already includes an extended version of the <code>pow_two()</code> function from before. Can you finish it?
+</p>
+</div>
+<li>
+Add an optional argument, named <code>print_info</code>, that is <code>TRUE</code> by default.
+</li>
+<li>
+Wrap an <code>if</code> construct around the <code><a href="https://rdrr.io/r/base/print.html">print()</a></code> function: this function should only be executed if <code>print_info</code> is <code>TRUE</code>.
+</li>
+<div class="sourceCode" id="cb111"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># Finish the pow_two() function</span>
+<span class="va">pow_two</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">x</span>, <span class="va">print_info</span> <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span> <span class="op">{</span>
+  <span class="va">y</span> <span class="op">&lt;-</span> <span class="va">x</span> <span class="op">^</span> <span class="fl">2</span>
+  <span class="kw">if</span> <span class="op">(</span><span class="va">print_info</span><span class="op">)</span> <span class="op">{</span>
+    <span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span><span class="op">(</span><span class="va">x</span>, <span class="st">"to the power two equals"</span>, <span class="va">y</span><span class="op">)</span><span class="op">)</span>
+  <span class="op">}</span>
+  <span class="kw"><a href="https://rdrr.io/r/base/function.html">return</a></span><span class="op">(</span><span class="va">y</span><span class="op">)</span>
+<span class="op">}</span></code></pre></div>
+<li>
+Feel free to experiment with the <code>pow_two()</code> function you’ve just coded.
+</li>
+<div class="sourceCode" id="cb112"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># Some calls of the pow_two() function</span>
+<span class="fu">pow_two</span><span class="op">(</span><span class="fl">5</span><span class="op">)</span>
+<span class="co">#&gt; [1] "5 to the power two equals 25"</span>
+<span class="co">#&gt; [1] 25</span>
+<span class="fu">pow_two</span><span class="op">(</span><span class="fl">5</span>, <span class="cn">FALSE</span><span class="op">)</span>
+<span class="co">#&gt; [1] 25</span>
+<span class="fu">pow_two</span><span class="op">(</span><span class="fl">5</span>, <span class="cn">TRUE</span><span class="op">)</span>
+<span class="co">#&gt; [1] "5 to the power two equals 25"</span>
+<span class="co">#&gt; [1] 25</span></code></pre></div>
+<p class>
+Wonderful! Have you tried calling this <code>pow_two()</code> function? Try <code>pow_two(5)</code>, <code>pow_two(5, TRUE)</code> and <code>pow_two(5, FALSE)</code>. Which ones give different results?
+</p>
+</div>
+<div id="function-scoping" class="section level3" number="7.2.4">
+<h3>
+<span class="header-section-number">7.2.4</span> Function scoping<a class="anchor" aria-label="anchor" href="#function-scoping"><i class="fas fa-link"></i></a>
+</h3>
+<div>
+<p>
+An issue that Filip did not discuss in the video is function scoping. It implies that variables that are defined inside a function are not accessible outside that function. Try running the following code and see if you understand the results:
+</p>
+<pre><code>pow_two &lt;- function(x) {
+  y &lt;- x ^ 2
+  return(y)
+}
+pow_two(4)
+y
+x
+</code></pre>
+<p>
+<code>y</code> was defined inside the <code>pow_two()</code> function and therefore it is not accessible outside of that function. This is also true for the function’s arguments of course - <code>x</code> in this case.
+</p>
+<p>
+Which statement is correct about the following chunk of code? The function <code>two_dice()</code> is already available in the workspace.
+</p>
+<pre><code>two_dice &lt;- function() {
+  possibilities &lt;- 1:6
+  dice1 &lt;- sample(possibilities, size = 1)
+  dice2 &lt;- sample(possibilities, size = 1)
+  dice1 + dice2
+}
+</code></pre>
+</div>
+<ul>
+<li>
+<div class="dc-input-radio__text">
+Executing <code>two_dice()</code> causes an error.
+</div>
+</li>
+<li>
+<div class="dc-input-radio__text">
+Executing <code>res &lt;- two_dice()</code> makes the contents of <code>dice1</code> and <code>dice2</code> available outside the function.
+</div>
+</li>
+<strong>
+<li>
+<div class="dc-input-radio__text">
+Whatever the way of calling the <code>two_dice()</code> function, R won’t have access to <code>dice1</code> and <code>dice2</code> outside the function.
+</div>
+</li>
+</strong>
+</ul>
+<div class="dc-input-radio__text">
+Whatever the way of calling the <code>two_dice()</code> function, R won’t have access to <code>dice1</code> and <code>dice2</code> outside the function.
+</div>
+</div>
+<div id="r-passes-arguments-by-value" class="section level3" number="7.2.5">
+<h3>
+<span class="header-section-number">7.2.5</span> R passes arguments by value<a class="anchor" aria-label="anchor" href="#r-passes-arguments-by-value"><i class="fas fa-link"></i></a>
+</h3>
+<div>
+<p>
+The title gives it away already: R passes arguments by value. What does this mean? Simply put, it means that an R function cannot change the variable that you input to that function. Let’s look at a simple example (try it in the console):
+</p>
+<pre><code>triple &lt;- function(x) {
+  x &lt;- 3*x
+  x
+}
+a &lt;- 5
+triple(a)
+a
+</code></pre>
+<p>
+Inside the <code>triple()</code> function, the argument <code>x</code> gets overwritten with its value times three. Afterwards this new <code>x</code> is returned. If you call this function with a variable <code>a</code> set equal to 5, you obtain 15. But did the value of <code>a</code> change? If R were to pass <code>a</code> to <code>triple()</code> <em>by reference</em>, the override of the <code>x</code> <em>inside</em> the function would ripple through to the variable <code>a</code>, outside the function. However, R passes <em>by value</em>, so the R objects you pass to a function can never change unless you do an explicit assignment. <code>a</code> remains equal to 5, even after calling <code>triple(a)</code>.
+</p>
+<p>
+Can you tell which one of the following statements is <u>false</u> about the following piece of code?
+</p>
+<pre><code>increment &lt;- function(x, inc = 1) {
+  x &lt;- x + inc
+  x
+}
+count &lt;- 5
+a &lt;- increment(count, 2)
+b &lt;- increment(count)
+count &lt;- increment(count, 2)
+</code></pre>
+</div>
+<ul>
+<li>
+<div class="dc-input-radio__text">
+<code>a</code> and <code>b</code> equal 7 and 6 respectively after executing this code block.
+</div>
+</li>
+<li>
+<div class="dc-input-radio__text">
+After the first call of <code>increment()</code>, where <code>a</code> is defined, <code>a</code> equals 7 and <code>count</code> equals 5.
+</div>
+</li>
+<strong>
+<li>
+<div class="dc-input-radio__text">
+In the end, <code>count</code> will equal 10.
+</div>
+</li>
+</strong>
+<li>
+<div class="dc-input-radio__text">
+In the last expression, the value of <code>count</code> was actually changed because of the explicit assignment.
+</div>
+</li>
+</ul>
+<p class>
+Well done! Given that R passes arguments <i>by value</i> and not <i>by reference</i>, the value of <code>count</code> is not changed after the first two calls of <code>increment()</code>. Only in the final expression, where <code>count</code> is re-assigned explicitly, does the value of <code>count</code> change.
+</p>
+</div>
+<div id="r-you-functional" class="section level3" number="7.2.6">
+<h3>
+<span class="header-section-number">7.2.6</span> R you functional?<a class="anchor" aria-label="anchor" href="#r-you-functional"><i class="fas fa-link"></i></a>
+</h3>
+<div>
+<p>
+Now that you’ve acquired some skills in defining functions with different types of arguments and return values, you should try to create more advanced functions. As you’ve noticed in the previous exercises, it’s perfectly possible to add control-flow constructs, loops and even other functions to your function body.
+</p>
+<p>
+Remember our social media example? The vectors <code>linkedin</code> and <code>facebook</code> are already defined in the workspace so you can get your hands dirty straight away. As a first step, you will be writing a function that can interpret a single value of this vector. In the next exercise, you will write another function that can handle an entire vector at once.
+</p>
+</div>
+<div class="sourceCode" id="cb113"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">linkedin</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">16</span>, <span class="fl">9</span>, <span class="fl">13</span>, <span class="fl">5</span>, <span class="fl">2</span>, <span class="fl">17</span>, <span class="fl">14</span><span class="op">)</span>
+<span class="va">facebook</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">17</span>, <span class="fl">7</span>, <span class="fl">5</span>, <span class="fl">16</span>, <span class="fl">8</span>, <span class="fl">13</span>, <span class="fl">14</span><span class="op">)</span></code></pre></div>
+<li>
+Finish the function definition for <code>interpret()</code>, that interprets the number of profile views on a single day:
+</li>
+<li>
+The function takes one argument, <code>num_views</code>.
+</li>
+<li>
+If <code>num_views</code> is greater than 15, the function prints out “You’re popular!” to the console and returns <code>num_views</code>.
+</li>
+<li>
+Else, the function prints out “Try to be more visible!” and returns 0.
+</li>
+<div class="sourceCode" id="cb114"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># The linkedin and facebook vectors have already been created for you</span>
+
+<span class="co"># Define the interpret function</span>
+<span class="va">interpret</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">num_views</span><span class="op">)</span> <span class="op">{</span>
+  <span class="kw">if</span> <span class="op">(</span><span class="va">num_views</span> <span class="op">&gt;</span> <span class="fl">15</span><span class="op">)</span> <span class="op">{</span>
+    <span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="st">"You're popular!"</span><span class="op">)</span>
+    <span class="kw"><a href="https://rdrr.io/r/base/function.html">return</a></span><span class="op">(</span><span class="va">num_views</span><span class="op">)</span>
+  <span class="op">}</span> <span class="kw">else</span> <span class="op">{</span>
+    <span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="st">"Try to be more visible!"</span><span class="op">)</span>
+    <span class="kw"><a href="https://rdrr.io/r/base/function.html">return</a></span><span class="op">(</span><span class="fl">0</span><span class="op">)</span>
+  <span class="op">}</span>
+<span class="op">}</span></code></pre></div>
+<li>
+Finally, call the <code>interpret()</code> function twice: on the first value of the <code>linkedin</code> vector and on the second element of the <code>facebook</code> vector.
+</li>
+<div class="sourceCode" id="cb115"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># Call the interpret function twice</span>
+<span class="fu">interpret</span><span class="op">(</span><span class="va">linkedin</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span><span class="op">)</span>
+<span class="co">#&gt; [1] "You're popular!"</span>
+<span class="co">#&gt; [1] 16</span>
+<span class="fu">interpret</span><span class="op">(</span><span class="va">facebook</span><span class="op">[</span><span class="fl">2</span><span class="op">]</span><span class="op">)</span>
+<span class="co">#&gt; [1] "Try to be more visible!"</span>
+<span class="co">#&gt; [1] 0</span></code></pre></div>
+<p class>
+Funkadelic! The annoying thing here is that <code>interpret()</code> only takes one argument. Proceed to the next exercise to implement something more useful.
+</p>
+</div>
+<div id="r-you-functional-2" class="section level3" number="7.2.7">
+<h3>
+<span class="header-section-number">7.2.7</span> R you functional? (2)<a class="anchor" aria-label="anchor" href="#r-you-functional-2"><i class="fas fa-link"></i></a>
+</h3>
+<div>
+<p>
+A possible implementation of the <code>interpret()</code> function has been provided for you. In this exercise you’ll be writing another function that will use the <code>interpret()</code> function to interpret <em>all</em> the data from your daily profile views inside a vector. Furthermore, your function will return the sum of views on popular days, if asked for. A <code>for</code> loop is ideal for iterating over all the vector elements. The ability to return the sum of views on popular days is something you can code through a function argument with a default value.
+</p>
+</div>
+<div class="exercise--instructions__content">
+<p>
+Finish the template for the <code>interpret_all()</code> function:
+</p>
+<li>
+Make <code>return_sum</code> an optional argument, that is <code>TRUE</code> by default.
+</li>
+<li>
+Inside the <code>for</code> loop, iterate over all <code>views</code>: on every iteration, add the result of <code>interpret(v)</code> to <code>count</code>. Remember that <code>interpret(v)</code> returns <code>v</code> for popular days, and <code>0</code> otherwise. At the same time, <code>interpret(v)</code> will also do some printouts.
+</li>
+<li>
+Finish the <code>if</code> construct:
+</li>
+<li>
+If <code>return_sum</code> is <code>TRUE</code>, return <code>count</code>.
+</li>
+<li>
+Else, return <code>NULL</code>.
+</li>
+<div class="sourceCode" id="cb116"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># Define the interpret_all() function</span>
+<span class="co"># views: vector with data to interpret</span>
+<span class="co"># return_sum: return total number of views on popular days?</span>
+<span class="va">interpret_all</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">views</span>, <span class="va">return_sum</span> <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span> <span class="op">{</span>
+  <span class="va">count</span> <span class="op">&lt;-</span> <span class="fl">0</span>
+
+  <span class="kw">for</span> <span class="op">(</span><span class="va">v</span> <span class="kw">in</span> <span class="va">views</span><span class="op">)</span> <span class="op">{</span>
+    <span class="va">count</span> <span class="op">&lt;-</span> <span class="va">count</span> <span class="op">+</span> <span class="fu">interpret</span><span class="op">(</span><span class="va">v</span><span class="op">)</span>
+  <span class="op">}</span>
+
+  <span class="kw">if</span> <span class="op">(</span><span class="va">return_sum</span><span class="op">)</span> <span class="op">{</span>
+    <span class="kw"><a href="https://rdrr.io/r/base/function.html">return</a></span><span class="op">(</span><span class="va">count</span><span class="op">)</span>
+  <span class="op">}</span> <span class="kw">else</span> <span class="op">{</span>
+    <span class="kw"><a href="https://rdrr.io/r/base/function.html">return</a></span><span class="op">(</span><span class="cn">NULL</span><span class="op">)</span>
+  <span class="op">}</span>
+<span class="op">}</span></code></pre></div>
+<p>
+Call this newly defined function on both <code>linkedin</code> and <code>facebook</code>.
+</p>
+<div class="sourceCode" id="cb117"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># Call the interpret_all() function on both linkedin and facebook</span>
+<span class="fu">interpret_all</span><span class="op">(</span><span class="va">linkedin</span><span class="op">)</span>
+<span class="co">#&gt; [1] "You're popular!"</span>
+<span class="co">#&gt; [1] "Try to be more visible!"</span>
+<span class="co">#&gt; [1] "Try to be more visible!"</span>
+<span class="co">#&gt; [1] "Try to be more visible!"</span>
+<span class="co">#&gt; [1] "Try to be more visible!"</span>
+<span class="co">#&gt; [1] "You're popular!"</span>
+<span class="co">#&gt; [1] "Try to be more visible!"</span>
+<span class="co">#&gt; [1] 33</span>
+<span class="fu">interpret_all</span><span class="op">(</span><span class="va">facebook</span><span class="op">)</span>
+<span class="co">#&gt; [1] "You're popular!"</span>
+<span class="co">#&gt; [1] "Try to be more visible!"</span>
+<span class="co">#&gt; [1] "Try to be more visible!"</span>
+<span class="co">#&gt; [1] "You're popular!"</span>
+<span class="co">#&gt; [1] "Try to be more visible!"</span>
+<span class="co">#&gt; [1] "Try to be more visible!"</span>
+<span class="co">#&gt; [1] "Try to be more visible!"</span>
+<span class="co">#&gt; [1] 33</span></code></pre></div>
+</div>
+<p class>
+Perfect! Have a look at the results; it appears that the sum of views on popular days are the same for Facebook and LinkedIn, what a coincidence! Your different social profiles must be fairly balanced ;-) Head over to the next video!
+</p>
+</div>
+</div>
+<div id="r-packages" class="section level2" number="7.3">
+<h2>
+<span class="header-section-number">7.3</span> R Packages<a class="anchor" aria-label="anchor" href="#r-packages"><i class="fas fa-link"></i></a>
+</h2>
+<div id="load-an-r-package" class="section level3" number="7.3.1">
+<h3>
+<span class="header-section-number">7.3.1</span> Load an R Package<a class="anchor" aria-label="anchor" href="#load-an-r-package"><i class="fas fa-link"></i></a>
+</h3>
+<div>
+<p>
+There are basically two extremely important functions when it comes down to R packages:
+</p>
+<ul>
+<li>
+<a href="http://www.rdocumentation.org/packages/utils/functions/install.packages"><code>install.packages()</code></a>, which as you can expect, installs a given package.
+</li>
+<li>
+<a href="http://www.rdocumentation.org/packages/base/functions/library"><code>library()</code></a> which loads packages, i.e. attaches them to the search list on your R workspace.
+</li>
+</ul>
+<p>
+To install packages, you need administrator privileges. This means that <a href="http://www.rdocumentation.org/packages/utils/functions/install.packages"><code>install.packages()</code></a> will thus not work in the DataCamp interface. However, almost all CRAN packages are installed on our servers. You can load them with <a href="http://www.rdocumentation.org/packages/base/functions/library"><code>library()</code></a>.
+</p>
+<p>
+In this exercise, you’ll be learning how to load the <code>ggplot2</code> package, a powerful package for data visualization. You’ll use it to create a plot of two variables of the <code>mtcars</code> data frame. The data has already been prepared for you in the workspace.
+</p>
+<p>
+Before starting, execute the following commands in the console:
+</p>
+<ul>
+<li>
+<code><a href="https://rdrr.io/r/base/search.html">search()</a></code>, to look at the currently attached packages and
+</li>
+<li>
+<code>qplot(mtcars<span class="math inline">\(wt, mtcars\)</span>hp)</code>, to build a plot of two variables of the <code>mtcars</code> data frame.
+</li>
+</ul>
+<p>
+An error should occur, because you haven’t loaded the <code>ggplot2</code> package yet!
+</p>
+</div>
+<li>
+To fix the error you saw in the console, <strong>load</strong> the <a href="http://www.rdocumentation.org/packages/ggplot2"><code>ggplot2</code></a> package. Make sure you are <em>loading</em> (and not <em>installing</em>) the package!
+</li>
+<div class="sourceCode" id="cb118"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># Load the ggplot2 package</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="st"><a href="https://ggplot2.tidyverse.org">"ggplot2"</a></span><span class="op">)</span></code></pre></div>
+<li>
+Now, retry calling the <a href="http://www.rdocumentation.org/packages/ggplot2/functions/qplot"><code>qplot()</code></a> function with the same arguments.
+</li>
+<div class="sourceCode" id="cb119"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># Retry the qplot() function</span>
+<span class="fu"><a href="https://ggplot2.tidyverse.org/reference/qplot.html">qplot</a></span><span class="op">(</span><span class="va">mtcars</span><span class="op">$</span><span class="va">wt</span>, <span class="va">mtcars</span><span class="op">$</span><span class="va">hp</span><span class="op">)</span></code></pre></div>
+<img src="intermediater_files/figure-html/unnamed-chunk-116-1.png" width="672"><li>
+Finally, check out the currently attached packages again.
+</li>
+<div class="sourceCode" id="cb120"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># Check out the currently attached packages again</span>
+<span class="fu"><a href="https://rdrr.io/r/base/search.html">search</a></span><span class="op">(</span><span class="op">)</span>
+<span class="co">#&gt;  [1] ".GlobalEnv"        "package:ggplot2"   "package:stats"    </span>
+<span class="co">#&gt;  [4] "package:graphics"  "package:grDevices" "package:utils"    </span>
+<span class="co">#&gt;  [7] "package:datasets"  "package:methods"   "Autoloads"        </span>
+<span class="co">#&gt; [10] "package:base"</span></code></pre></div>
+<p class>
+Awesome! Notice how <code><a href="https://rdrr.io/r/base/search.html">search()</a></code> and <code><a href="https://rdrr.io/r/base/library.html">library()</a></code> are closely interconnected functions. Head over to the next exercise.
+</p>
+</div>
+<div id="different-ways-to-load-a-package" class="section level3" number="7.3.2">
+<h3>
+<span class="header-section-number">7.3.2</span> Different ways to load a package<a class="anchor" aria-label="anchor" href="#different-ways-to-load-a-package"><i class="fas fa-link"></i></a>
+</h3>
+<div>
+<p>
+The <a href="http://www.rdocumentation.org/packages/base/functions/library"><code>library()</code></a> and <a href="http://www.rdocumentation.org/packages/base/functions/library"><code>require()</code></a> functions are not very picky when it comes down to argument types: both <code><a href="https://github.com/alexcb/rjson">library(rjson)</a></code> and <code>library(“rjson”)</code> work perfectly fine for loading a package.
+</p>
+<p>
+Have a look at some more code chunks that (attempt to) load one or more packages:
+</p>
+<pre><code><a href="https://r-datatable.com"># Chunk 1
+library(data.table)
+require(rjson)
+
+# Chunk 2
+library("data.table")
+require(rjson)
+
+# Chunk 3
+library(data.table)
+require(rjson, character.only = TRUE)
+
+# Chunk 4
+library(c("data.table", "rjson"))
+</a></code></pre>
+<p>
+Select the option that lists <u>all</u> of the chunks that do not generate an error. The console is yours to experiment in.
+</p>
+</div>
+<ul>
+<li>
+<div class="dc-input-radio__text">
+Only (1)
+</div>
+</li>
+<strong>
+<li>
+<div class="dc-input-radio__text">
+<ol style="list-style-type: decimal"><li>and (2)
+</li></ol>
+</div>
+</li>
+</strong>
+<li>
+<div class="dc-input-radio__text">
+(1), (2) and (3)
+</div>
+</li>
+<li>
+<div class="dc-input-radio__text">
+All of them are valid
+</div>
+</li>
+</ul>
+<p class>
+Great! Indeed, only chunk 1 and chunk 2 are correct. Can you figure out why the last two aren’t valid? This exercise concludes the chapter on functions. Well done!
+</p>
+</div>
+</div>
+</div>
+  <div class="chapter-nav">
+<div class="prev"><a href="loops.html"><span class="header-section-number">6</span> Loops</a></div>
+<div class="next"><a href="the-apply-family.html"><span class="header-section-number">8</span> The apply family</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#functions"><span class="header-section-number">7</span> Functions</a></li>
+<li>
+<a class="nav-link" href="#introduction-to-functions"><span class="header-section-number">7.1</span> Introduction to Functions</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#function-documentation"><span class="header-section-number">7.1.1</span> Function documentation</a></li>
+<li><a class="nav-link" href="#use-a-function"><span class="header-section-number">7.1.2</span> Use a function</a></li>
+<li><a class="nav-link" href="#use-a-function-2"><span class="header-section-number">7.1.3</span> Use a function (2)</a></li>
+<li><a class="nav-link" href="#use-a-function-3"><span class="header-section-number">7.1.4</span> Use a function (3)</a></li>
+<li><a class="nav-link" href="#functions-inside-functions"><span class="header-section-number">7.1.5</span> Functions inside functions</a></li>
+<li><a class="nav-link" href="#required-or-optional"><span class="header-section-number">7.1.6</span> Required, or optional?</a></li>
+</ul>
+</li>
+<li>
+<a class="nav-link" href="#writing-functions"><span class="header-section-number">7.2</span> Writing Functions</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#write-your-own-function"><span class="header-section-number">7.2.1</span> Write your own function</a></li>
+<li><a class="nav-link" href="#write-your-own-function-2"><span class="header-section-number">7.2.2</span> Write your own function (2)</a></li>
+<li><a class="nav-link" href="#write-your-own-function-3"><span class="header-section-number">7.2.3</span> Write your own function (3)</a></li>
+<li><a class="nav-link" href="#function-scoping"><span class="header-section-number">7.2.4</span> Function scoping</a></li>
+<li><a class="nav-link" href="#r-passes-arguments-by-value"><span class="header-section-number">7.2.5</span> R passes arguments by value</a></li>
+<li><a class="nav-link" href="#r-you-functional"><span class="header-section-number">7.2.6</span> R you functional?</a></li>
+<li><a class="nav-link" href="#r-you-functional-2"><span class="header-section-number">7.2.7</span> R you functional? (2)</a></li>
+</ul>
+</li>
+<li>
+<a class="nav-link" href="#r-packages"><span class="header-section-number">7.3</span> R Packages</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#load-an-r-package"><span class="header-section-number">7.3.1</span> Load an R Package</a></li>
+<li><a class="nav-link" href="#different-ways-to-load-a-package"><span class="header-section-number">7.3.2</span> Different ways to load a package</a></li>
+</ul>
+</li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+<li><a id="book-source" href="https://github.com/hadley/r4ds/blob/master/intermediater.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/hadley/r4ds/edit/master/intermediater.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>Introduction to DataCamp</strong>" was written by Tran Thanh Dat. </p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
+</script>
+</body>
+</html>

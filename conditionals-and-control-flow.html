@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>5 Conditionals and Control Flow | Introduction to DataCamp</title>
+<meta name="author" content="Tran Thanh Dat">
+<meta name="generator" content="bookdown 0.24 with bs4_book()">
+<meta property="og:title" content="5 Conditionals and Control Flow | Introduction to DataCamp">
+<meta property="og:type" content="book">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="5 Conditionals and Control Flow | Introduction to DataCamp">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/header-attrs-2.12.1/header-attrs.js"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.1.9000/transition.js"></script><script src="libs/bs3compat-0.3.1.9000/tabs.js"></script><script src="libs/bs3compat-0.3.1.9000/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=UA-115082821-1"></script><script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-115082821-1');
+    </script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><meta name="description" content="In this chapter, you’ll learn about relational operators for comparing R objects, and logical operators like “and” and “or” for combining TRUE and FALSE values. Then, you’ll use this knowledge to...">
+<meta property="og:description" content="In this chapter, you’ll learn about relational operators for comparing R objects, and logical operators like “and” and “or” for combining TRUE and FALSE values. Then, you’ll use this knowledge to...">
+<meta name="twitter:description" content="In this chapter, you’ll learn about relational operators for comparing R objects, and logical operators like “and” and “or” for combining TRUE and FALSE values. Then, you’ll use this knowledge to...">
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">Introduction to DataCamp</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html">Welcome to DataCamp</a></li>
+<li class="book-part">R Fundamentals</li>
+<li><a class="" href="data-wrangling.html"><span class="header-section-number">1</span> Data wrangling</a></li>
+<li><a class="" href="data-visualization.html"><span class="header-section-number">2</span> Data visualization</a></li>
+<li><a class="" href="grouping-and-summarizing.html"><span class="header-section-number">3</span> Grouping and summarizing</a></li>
+<li><a class="" href="types-of-visualizations.html"><span class="header-section-number">4</span> Types of visualizations</a></li>
+<li><a class="active" href="conditionals-and-control-flow.html"><span class="header-section-number">5</span> Conditionals and Control Flow</a></li>
+<li><a class="" href="loops.html"><span class="header-section-number">6</span> Loops</a></li>
+<li><a class="" href="functions.html"><span class="header-section-number">7</span> Functions</a></li>
+<li><a class="" href="the-apply-family.html"><span class="header-section-number">8</span> The apply family</a></li>
+<li><a class="" href="utilities.html"><span class="header-section-number">9</span> Utilities</a></li>
+<li><a class="" href="data-wrangling-1.html"><span class="header-section-number">10</span> Data wrangling</a></li>
+<li><a class="" href="data-visualization-1.html"><span class="header-section-number">11</span> Data visualization</a></li>
+<li><a class="" href="grouping-and-summarizing-1.html"><span class="header-section-number">12</span> Grouping and summarizing</a></li>
+<li><a class="" href="types-of-visualizations-1.html"><span class="header-section-number">13</span> Types of visualizations</a></li>
+</ul>
+
+        <div class="book-extra">
+          <p><a id="book-repo" href="https://github.com/hadley/r4ds">View book source <i class="fab fa-github"></i></a></p>
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="conditionals-and-control-flow" class="section level1" number="5">
+<h1>
+<span class="header-section-number">5</span> Conditionals and Control Flow<a class="anchor" aria-label="anchor" href="#conditionals-and-control-flow"><i class="fas fa-link"></i></a>
+</h1>
+<p>
+In this chapter, you’ll learn about relational operators for comparing R objects, and logical operators like “and” and “or” for combining TRUE and FALSE values. Then, you’ll use this knowledge to build conditional statements.
+</p>
+<div id="relational-operators" class="section level2" number="5.1">
+<h2>
+<span class="header-section-number">5.1</span> Relational Operators<a class="anchor" aria-label="anchor" href="#relational-operators"><i class="fas fa-link"></i></a>
+</h2>
+<div id="equality" class="section level3" number="5.1.1">
+<h3>
+<span class="header-section-number">5.1.1</span> Equality<a class="anchor" aria-label="anchor" href="#equality"><i class="fas fa-link"></i></a>
+</h3>
+<div>
+<p>
+The most basic form of comparison is equality. Let’s briefly recap its syntax. The following statements all evaluate to <code>TRUE</code> (feel free to try them out in the console).
+</p>
+<pre><code>3 == (2 + 1)
+"intermediate" != "r"
+TRUE != FALSE
+"Rchitect" != "rchitect"
+</code></pre>
+<p>
+Notice from the last expression that R is case sensitive: “R” is not equal to “r”. Keep this in mind when solving the exercises in this chapter!
+</p>
+</div>
+<li>
+In the editor on the right, write R code to see if <code>TRUE</code> equals <code>FALSE</code>.
+</li>
+<div class="sourceCode" id="cb44"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># Comparison of logicals</span>
+<span class="cn">TRUE</span> <span class="op">==</span> <span class="cn">FALSE</span>
+<span class="co">#&gt; [1] FALSE</span></code></pre></div>
+<li>
+Likewise, check if <code>-6 * 14</code> is <em>not</em> equal to <code>17 - 101</code>.
+</li>
+<div class="sourceCode" id="cb45"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># Comparison of numerics</span>
+<span class="op">-</span><span class="fl">6</span> <span class="op">*</span> <span class="fl">14</span> <span class="op">!=</span> <span class="fl">17</span> <span class="op">-</span> <span class="fl">101</span>
+<span class="co">#&gt; [1] FALSE</span></code></pre></div>
+<li>
+Next up: comparison of character strings. Ask R whether the strings “useR” and “user” are equal.
+</li>
+<div class="sourceCode" id="cb46"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># Comparison of character strings</span>
+<span class="st">"useR"</span> <span class="op">==</span> <span class="st">"user"</span>
+<span class="co">#&gt; [1] FALSE</span></code></pre></div>
+<li>
+Finally, find out what happens if you compare logicals to numerics: are <code>TRUE</code> and 1 equal?
+</li>
+<div class="sourceCode" id="cb47"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># Compare a logical with a numeric</span>
+<span class="cn">TRUE</span> <span class="op">==</span> <span class="fl">1</span>
+<span class="co">#&gt; [1] TRUE</span></code></pre></div>
+<p class>
+Awesome! Since <code>TRUE</code> coerces to <code>1</code> under the hood, <code>TRUE == 1</code> evaluates to <code>TRUE</code>. Make sure not to mix up <code>==</code> (comparison) and <code>=</code> (assignment), <code>==</code> is what need to check the equality of R objects.
+</p>
+</div>
+<div id="greater-and-less-than" class="section level3" number="5.1.2">
+<h3>
+<span class="header-section-number">5.1.2</span> Greater and less than<a class="anchor" aria-label="anchor" href="#greater-and-less-than"><i class="fas fa-link"></i></a>
+</h3>
+<div>
+<p>
+Apart from equality operators, Filip also introduced the <em>less than</em> and <em>greater than</em> operators: <code>&lt;</code> and <code>&gt;</code>. You can also add an equal sign to express <em>less than or equal to</em> or <em>greater than or equal to</em>, respectively. Have a look at the following R expressions, that all evaluate to <code>FALSE</code>:
+</p>
+<pre><code>(1 + 2) &gt; 4
+"dog" &lt; "Cats"
+TRUE &lt;= FALSE
+</code></pre>
+<p>
+Remember that for string comparison, R determines the <em>greater than</em> relationship based on alphabetical order. Also, keep in mind that <code>TRUE</code> is treated as <code>1</code> for arithmetic, and <code>FALSE</code> is treated as <code>0</code>. Therefore, <code>FALSE &lt; TRUE</code> is <code>TRUE</code>.
+</p>
+</div>
+<div class="exercise--instructions__content">
+<p>
+Write R expressions to check whether:
+</p>
+<li>
+<code>-6 * 5 + 2</code> is greater than or equal to <code>-10 + 1</code>.
+</li>
+<div class="sourceCode" id="cb48"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># Comparison of numerics</span>
+<span class="op">-</span><span class="fl">6</span> <span class="op">*</span> <span class="fl">5</span> <span class="op">+</span> <span class="fl">2</span> <span class="op">&gt;=</span> <span class="op">-</span><span class="fl">10</span> <span class="op">+</span> <span class="fl">1</span>
+<span class="co">#&gt; [1] FALSE</span></code></pre></div>
+<li>
+“raining” is less than or equal to “raining dogs”.
+</li>
+<div class="sourceCode" id="cb49"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># Comparison of character strings</span>
+<span class="st">"raining"</span> <span class="op">&lt;=</span> <span class="st">"raining dogs"</span>
+<span class="co">#&gt; [1] TRUE</span></code></pre></div>
+<li>
+TRUE is greater than FALSE.
+</li>
+<div class="sourceCode" id="cb50"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># Comparison of logicals</span>
+<span class="cn">TRUE</span> <span class="op">&gt;</span> <span class="cn">FALSE</span>
+<span class="co">#&gt; [1] TRUE</span></code></pre></div>
+</div>
+<p class>
+Great job! Make sure to have a look at the console output to see if R returns the results you expected.
+</p>
+</div>
+<div id="compare-vectors" class="section level3" number="5.1.3">
+<h3>
+<span class="header-section-number">5.1.3</span> Compare vectors<a class="anchor" aria-label="anchor" href="#compare-vectors"><i class="fas fa-link"></i></a>
+</h3>
+<div>
+<p>
+You are already aware that R is very good with vectors. Without having to change anything about the syntax, R’s relational operators also work on vectors.
+</p>
+<p>
+Let’s go back to the example that was started in the video. You want to figure out whether your activity on social media platforms have paid off and decide to look at your results for LinkedIn and Facebook. The sample code in the editor initializes the vectors <code>linkedin</code> and <code>facebook</code>. Each of the vectors contains the number of profile views your LinkedIn and Facebook profiles had over the last seven days.
+</p>
+</div>
+<div class="exercise--instructions__content">
+<div class="sourceCode" id="cb51"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># The linkedin and facebook vectors have already been created for you</span>
+<span class="va">linkedin</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">16</span>, <span class="fl">9</span>, <span class="fl">13</span>, <span class="fl">5</span>, <span class="fl">2</span>, <span class="fl">17</span>, <span class="fl">14</span><span class="op">)</span>
+<span class="va">facebook</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">17</span>, <span class="fl">7</span>, <span class="fl">5</span>, <span class="fl">16</span>, <span class="fl">8</span>, <span class="fl">13</span>, <span class="fl">14</span><span class="op">)</span></code></pre></div>
+<p>
+Using relational operators, find a logical answer, i.e. <code>TRUE</code> or <code>FALSE</code>, for the following questions:
+</p>
+<ul>
+<li>
+On which days did the number of LinkedIn profile views exceed 15?
+</li>
+<div class="sourceCode" id="cb52"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># Popular days</span>
+<span class="va">linkedin</span> <span class="op">&gt;</span> <span class="fl">15</span>
+<span class="co">#&gt; [1]  TRUE FALSE FALSE FALSE FALSE  TRUE FALSE</span></code></pre></div>
+<li>
+When was your LinkedIn profile viewed only 5 times or fewer?
+</li>
+<div class="sourceCode" id="cb53"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># Quiet days</span>
+<span class="va">linkedin</span> <span class="op">&lt;=</span> <span class="fl">5</span>
+<span class="co">#&gt; [1] FALSE FALSE FALSE  TRUE  TRUE FALSE FALSE</span></code></pre></div>
+<li>
+When was your LinkedIn profile visited more often than your Facebook profile?
+</li>
+<div class="sourceCode" id="cb54"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># LinkedIn more popular than Facebook</span>
+<span class="va">linkedin</span> <span class="op">&gt;</span> <span class="va">facebook</span>
+<span class="co">#&gt; [1] FALSE  TRUE  TRUE FALSE FALSE  TRUE FALSE</span></code></pre></div>
+</ul>
+</div>
+<p class>
+Wonderful! Have a look at the console output. Your LinkedIn profile was pretty popular on the sixth day, but less so on the fourth and fifth day.
+</p>
+</div>
+<div id="compare-matrices" class="section level3" number="5.1.4">
+<h3>
+<span class="header-section-number">5.1.4</span> Compare matrices<a class="anchor" aria-label="anchor" href="#compare-matrices"><i class="fas fa-link"></i></a>
+</h3>
+<div>
+<p>
+R’s ability to deal with different data structures for comparisons does not stop at vectors. Matrices and relational operators also work together seamlessly!
+</p>
+<p>
+Instead of in vectors (as in the previous exercise), the LinkedIn and Facebook data is now stored in a matrix called <code>views</code>. The first row contains the LinkedIn information; the second row the Facebook information. The original vectors <code>facebook</code> and <code>linkedin</code> are still available as well.
+</p>
+</div>
+<div class="exercise--instructions__content">
+<div class="sourceCode" id="cb55"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># The social data has been created for you</span>
+<span class="va">linkedin</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">16</span>, <span class="fl">9</span>, <span class="fl">13</span>, <span class="fl">5</span>, <span class="fl">2</span>, <span class="fl">17</span>, <span class="fl">14</span><span class="op">)</span>
+<span class="va">facebook</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">17</span>, <span class="fl">7</span>, <span class="fl">5</span>, <span class="fl">16</span>, <span class="fl">8</span>, <span class="fl">13</span>, <span class="fl">14</span><span class="op">)</span>
+<span class="va">views</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/matrix.html">matrix</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">linkedin</span>, <span class="va">facebook</span><span class="op">)</span>, nrow <span class="op">=</span> <span class="fl">2</span>, byrow <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></code></pre></div>
+<p>
+Using the relational operators you’ve learned so far, try to discover the following:
+</p>
+<li>
+When were the views exactly equal to 13? Use the <code>views</code> matrix to return a logical matrix.
+</li>
+<div class="sourceCode" id="cb56"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># When does views equal 13?</span>
+<span class="va">views</span> <span class="op">==</span> <span class="fl">13</span>
+<span class="co">#&gt;       [,1]  [,2]  [,3]  [,4]  [,5]  [,6]  [,7]</span>
+<span class="co">#&gt; [1,] FALSE FALSE  TRUE FALSE FALSE FALSE FALSE</span>
+<span class="co">#&gt; [2,] FALSE FALSE FALSE FALSE FALSE  TRUE FALSE</span></code></pre></div>
+<li>
+For which days were the number of views less than or equal to 14? Again, have R return a logical matrix.
+</li>
+<div class="sourceCode" id="cb57"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># When is views less than or equal to 14?</span>
+<span class="va">views</span> <span class="op">&lt;=</span> <span class="fl">14</span>
+<span class="co">#&gt;       [,1] [,2] [,3]  [,4] [,5]  [,6] [,7]</span>
+<span class="co">#&gt; [1,] FALSE TRUE TRUE  TRUE TRUE FALSE TRUE</span>
+<span class="co">#&gt; [2,] FALSE TRUE TRUE FALSE TRUE  TRUE TRUE</span></code></pre></div>
+</div>
+<p class>
+Nice job! This exercise concludes the part on comparators. Now that you know how to query the relation between R objects, the next step will be to use the results to alter the behavior of your programs. Find out all about that in the next video!
+</p>
+</div>
+</div>
+<div id="logical-operators" class="section level2" number="5.2">
+<h2>
+<span class="header-section-number">5.2</span> Logical Operators<a class="anchor" aria-label="anchor" href="#logical-operators"><i class="fas fa-link"></i></a>
+</h2>
+<div id="and" class="section level3" number="5.2.1">
+<h3>
+<span class="header-section-number">5.2.1</span> &amp; and |<a class="anchor" aria-label="anchor" href="#and"><i class="fas fa-link"></i></a>
+</h3>
+<div>
+<p>
+Before you work your way through the next exercises, have a look at the following R expressions. All of them will evaluate to <code>TRUE</code>:
+</p>
+<pre><code>TRUE &amp; TRUE
+FALSE | TRUE
+5 &lt;= 5 &amp; 2 &lt; 3
+3 &lt; 4 | 7 &lt; 6
+</code></pre>
+<p>
+Watch out: <code>3 &lt; x &lt; 7</code> to check if <code>x</code> is between 3 and 7 will not work; you’ll need <code>3 &lt; x &amp; x &lt; 7</code> for that.
+</p>
+<p>
+In this exercise, you’ll be working with the <code>last</code> variable. This variable equals the last value of the <code>linkedin</code> vector that you’ve worked with previously. The <code>linkedin</code> vector represents the number of LinkedIn views your profile had in the last seven days, remember? Both the variables <code>linkedin</code> and <code>last</code> have been pre-defined for you.
+</p>
+</div>
+<div class="exercise--instructions__content">
+<div class="sourceCode" id="cb58"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># The linkedin and last variable are already defined for you</span>
+<span class="va">linkedin</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">16</span>, <span class="fl">9</span>, <span class="fl">13</span>, <span class="fl">5</span>, <span class="fl">2</span>, <span class="fl">17</span>, <span class="fl">14</span><span class="op">)</span>
+<span class="va">last</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/utils/head.html">tail</a></span><span class="op">(</span><span class="va">linkedin</span>, <span class="fl">1</span><span class="op">)</span></code></pre></div>
+<p>
+Write R expressions to solve the following questions concerning the variable <code>last</code>:
+</p>
+<li>
+Is <code>last</code> under 5 or above 10?
+</li>
+<div class="sourceCode" id="cb59"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># Is last under 5 or above 10?</span>
+<span class="va">last</span> <span class="op">&lt;</span> <span class="fl">5</span> <span class="op">|</span> <span class="va">last</span> <span class="op">&gt;</span> <span class="fl">10</span>
+<span class="co">#&gt; [1] TRUE</span></code></pre></div>
+<li>
+Is <code>last</code> between 15 and 20, excluding 15 but including 20?
+</li>
+<div class="sourceCode" id="cb60"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># Is last between 15 (exclusive) and 20 (inclusive)?</span>
+<span class="va">last</span> <span class="op">&gt;</span> <span class="fl">15</span> <span class="op">&amp;</span> <span class="va">last</span> <span class="op">&lt;=</span> <span class="fl">20</span>
+<span class="co">#&gt; [1] FALSE</span></code></pre></div>
+</div>
+<p class>
+Great! Do the results of the different expressions make sense?
+</p>
+</div>
+<div id="and-2" class="section level3" number="5.2.2">
+<h3>
+<span class="header-section-number">5.2.2</span> &amp; and | (2)<a class="anchor" aria-label="anchor" href="#and-2"><i class="fas fa-link"></i></a>
+</h3>
+<div>
+<p>
+Like relational operators, logical operators work perfectly fine with vectors and matrices.
+</p>
+<p>
+Both the vectors <code>linkedin</code> and <code>facebook</code> are available again. Also a matrix - <code>views</code> - has been defined; its first and second row correspond to the <code>linkedin</code> and <code>facebook</code> vectors, respectively. Ready for some advanced queries to gain more insights into your social outreach?
+</p>
+</div>
+<li>
+When did LinkedIn views exceed 10 <em>and</em> did Facebook views fail to reach 10 for a particular day? Use the <code>linkedin</code> and <code>facebook</code> vectors.
+</li>
+<div class="sourceCode" id="cb61"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># The social data (linkedin, facebook, views) has been created for you</span>
+
+<span class="co"># linkedin exceeds 10 but facebook below 10</span>
+<span class="va">linkedin</span> <span class="op">&gt;</span> <span class="fl">10</span> <span class="op">&amp;</span> <span class="va">facebook</span> <span class="op">&lt;</span> <span class="fl">10</span>
+<span class="co">#&gt; [1] FALSE FALSE  TRUE FALSE FALSE FALSE FALSE</span></code></pre></div>
+<li>
+When were one or both of your LinkedIn and Facebook profiles visited at least 12 times?
+</li>
+<div class="sourceCode" id="cb62"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># When were one or both visited at least 12 times?</span>
+<span class="va">linkedin</span> <span class="op">&gt;=</span> <span class="fl">12</span> <span class="op">|</span> <span class="va">facebook</span> <span class="op">&gt;=</span> <span class="fl">12</span>
+<span class="co">#&gt; [1]  TRUE FALSE  TRUE  TRUE FALSE  TRUE  TRUE</span></code></pre></div>
+<li>
+When is the <code>views</code> matrix equal to a number between 11 and 14, excluding 11 and including 14?
+</li>
+<div class="sourceCode" id="cb63"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># When is views between 11 (exclusive) and 14 (inclusive)?</span>
+<span class="va">views</span> <span class="op">&gt;</span> <span class="fl">11</span> <span class="op">&amp;</span> <span class="va">views</span> <span class="op">&lt;=</span> <span class="fl">14</span>
+<span class="co">#&gt;       [,1]  [,2]  [,3]  [,4]  [,5]  [,6] [,7]</span>
+<span class="co">#&gt; [1,] FALSE FALSE  TRUE FALSE FALSE FALSE TRUE</span>
+<span class="co">#&gt; [2,] FALSE FALSE FALSE FALSE FALSE  TRUE TRUE</span></code></pre></div>
+<p class>
+Bravo! You’ll have noticed how easy it is to use logical operators to vectors and matrices. What do these results tell us? The third day of the recordings was the only day where your LinkedIn profile was visited more than 10 times, while your Facebook profile wasn’t. Can you draw similar conclusions for the other results?
+</p>
+</div>
+<div id="reverse-the-result" class="section level3" number="5.2.3">
+<h3>
+<span class="header-section-number">5.2.3</span> Reverse the result: !<a class="anchor" aria-label="anchor" href="#reverse-the-result"><i class="fas fa-link"></i></a>
+</h3>
+<div>
+<p>
+On top of the <code>&amp;</code> and <code>|</code> operators, you also learned about the <code>!</code> operator, which negates a logical value. To refresh your memory, here are some R expressions that use <code>!</code>. They all evaluate to <code>FALSE</code>:
+</p>
+<pre><code>!TRUE
+!(5 &gt; 3)
+!!FALSE
+</code></pre>
+<p>
+What would the following set of R expressions return?
+</p>
+<pre><code>x &lt;- 5
+y &lt;- 7
+!(!(x &lt; 4) &amp; !!!(y &gt; 12))
+</code></pre>
+</div>
+<ul>
+<div class=""><code>TRUE</code></div>
+<strong><li><div class=""><code>FALSE</code></div></li></strong>
+<li><div class="">Running this piece of code would throw an error.</div></li>
+</ul>
+<p class="dc-completion-pane__message dc-u-maxw-100pc">
+Great!
+</p>
+</div>
+<div id="blend-it-all-together" class="section level3" number="5.2.4">
+<h3>
+<span class="header-section-number">5.2.4</span> Blend it all together<a class="anchor" aria-label="anchor" href="#blend-it-all-together"><i class="fas fa-link"></i></a>
+</h3>
+<div>
+<p>
+With the things you’ve learned by now, you’re able to solve pretty cool problems.
+</p>
+<p>
+Instead of recording the number of views for your own LinkedIn profile, suppose you conducted a survey inside the company you’re working for. You’ve asked every employee with a LinkedIn profile how many visits their profile has had over the past seven days. You stored the results in a data frame called <code>li_df</code>. This data frame is available in the workspace; type <code>li_df</code> in the console to check it out.
+</p>
+</div>
+<li>
+Select the entire second column, named <code>day2</code>, from the <code>li_df</code> data frame as a vector and assign it to <code>second</code>.
+</li>
+<div class="sourceCode" id="cb64"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># li_df is pre-loaded in your workspace</span>
+<span class="va">li_df</span><span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/utils/read.table.html">read.csv</a></span><span class="op">(</span><span class="st">"https://docs.google.com/spreadsheets/d/e/2PACX-1vR407nDVsa6m6x-dwvqO2gbJs6Ac_gO1_5A6cQSui9Tz1_2Ev6tQUFhrFrvHdiZBhzv2_EwxZdSyxJh/pub?gid=1139830788&amp;single=true&amp;output=csv"</span><span class="op">)</span>
+<span class="co"># Select the second column, named day2, from li_df: second</span>
+<span class="va">second</span> <span class="op">&lt;-</span> <span class="va">li_df</span><span class="op">$</span><span class="va">day2</span></code></pre></div>
+<li>
+Use <code>second</code> to create a logical vector, that contains <code>TRUE</code> if the corresponding number of views is strictly greater than 25 or strictly lower than 5 and <code>FALSE</code> otherwise. Store this logical vector as <code>extremes</code>.
+</li>
+<div class="sourceCode" id="cb65"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># Build a logical vector, TRUE if value in second is extreme: extremes</span>
+<span class="va">extremes</span> <span class="op">&lt;-</span> <span class="va">second</span> <span class="op">&gt;</span> <span class="fl">25</span> <span class="op">|</span> <span class="va">second</span> <span class="op">&lt;</span> <span class="fl">5</span></code></pre></div>
+<li>
+Use <code><a href="https://rdrr.io/r/base/sum.html">sum()</a></code> on the <code>extremes</code> vector to calculate the number of <code>TRUE</code>s in <code>extremes</code> (i.e. to calculate the number of employees that are either very popular or very low-profile). Simply print this number to the console.
+</li>
+<div class="sourceCode" id="cb66"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># Count the number of TRUEs in extremes</span>
+<span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">extremes</span><span class="op">)</span>
+<span class="co">#&gt; [1] 16</span></code></pre></div>
+<p class>
+Great! Head over to the next video and learn how relational and logical operators can be used to alter the flow of your R scripts.
+</p>
+</div>
+</div>
+<div id="conditional-statements" class="section level2" number="5.3">
+<h2>
+<span class="header-section-number">5.3</span> Conditional Statements<a class="anchor" aria-label="anchor" href="#conditional-statements"><i class="fas fa-link"></i></a>
+</h2>
+<div id="the-if-statement" class="section level3" number="5.3.1">
+<h3>
+<span class="header-section-number">5.3.1</span> The if statement<a class="anchor" aria-label="anchor" href="#the-if-statement"><i class="fas fa-link"></i></a>
+</h3>
+<div>
+<p>
+Before diving into some exercises on the <code>if</code> statement, have another look at its syntax:
+</p>
+<pre><code>if (condition) {
+  expr
+}
+</code></pre>
+<p>
+Remember your vectors with social profile views? Let’s look at it from another angle. The <code>medium</code> variable gives information about the social website; the <code>num_views</code> variable denotes the actual number of views that particular <code>medium</code> had on the last day of your recordings. Both variables have been pre-defined for you.
+</p>
+</div>
+<div class="sourceCode" id="cb67"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># Variables related to your last day of recordings</span>
+<span class="va">medium</span> <span class="op">&lt;-</span> <span class="st">"LinkedIn"</span>
+<span class="va">num_views</span> <span class="op">&lt;-</span> <span class="fl">14</span></code></pre></div>
+<li>
+Examine the <code>if</code> statement that prints out <code>“Showing LinkedIn information”</code> if the <code>medium</code> variable equals <code>“LinkedIn”</code>.
+</li>
+<div class="sourceCode" id="cb68"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># Examine the if statement for medium</span>
+<span class="kw">if</span> <span class="op">(</span><span class="va">medium</span> <span class="op">==</span> <span class="st">"LinkedIn"</span><span class="op">)</span> <span class="op">{</span>
+  <span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="st">"Showing LinkedIn information"</span><span class="op">)</span>
+<span class="op">}</span>
+<span class="co">#&gt; [1] "Showing LinkedIn information"</span></code></pre></div>
+<li>
+Code an <code>if</code> statement that prints <code>“You are popular!”</code> to the console if the <code>num_views</code> variable exceeds 15.
+</li>
+<div class="sourceCode" id="cb69"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># Write the if statement for num_views</span>
+<span class="kw">if</span> <span class="op">(</span><span class="va">num_views</span> <span class="op">&gt;</span> <span class="fl">15</span><span class="op">)</span> <span class="op">{</span>
+  <span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="st">"You are popular!"</span><span class="op">)</span>
+<span class="op">}</span></code></pre></div>
+<p class>
+Great! Try to see what happens if you change the <code>medium</code> and <code>num_views</code> variables and run your code again. Let’s further customize these if statements in the next exercise.
+</p>
+</div>
+<div id="add-an-else" class="section level3" number="5.3.2">
+<h3>
+<span class="header-section-number">5.3.2</span> Add an else<a class="anchor" aria-label="anchor" href="#add-an-else"><i class="fas fa-link"></i></a>
+</h3>
+<div>
+<p>
+You can only use an <code>else</code> statement in combination with an <code>if</code> statement. The <code>else</code> statement does not require a condition; its corresponding code is simply run if all of the preceding conditions in the control structure are <code>FALSE</code>. Here’s a recipe for its usage:
+</p>
+<pre><code>if (condition) {
+  expr1
+} else {
+  expr2
+}
+</code></pre>
+<p>
+<em>It’s important that the <code>else</code> keyword comes on the same line as the closing bracket of the <code>if</code> part!</em>
+</p>
+<p>
+Both <code>if</code> statements that you coded in the previous exercises are already available to use. It’s now up to you to extend them with the appropriate <code>else</code> statements!
+</p>
+</div>
+<div class="exercise--instructions__content">
+<p>
+Add an <code>else</code> statement to both control structures, such that
+</p>
+<li>
+“Unknown medium” gets printed out to the console when the if-condition on <code>medium</code> does not hold.
+</li>
+<div class="sourceCode" id="cb70"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># Control structure for medium</span>
+<span class="kw">if</span> <span class="op">(</span><span class="va">medium</span> <span class="op">==</span> <span class="st">"LinkedIn"</span><span class="op">)</span> <span class="op">{</span>
+  <span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="st">"Showing LinkedIn information"</span><span class="op">)</span>
+<span class="op">}</span> <span class="kw">else</span> <span class="op">{</span>
+  <span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="st">"Unknown medium"</span><span class="op">)</span>
+<span class="op">}</span>
+<span class="co">#&gt; [1] "Showing LinkedIn information"</span></code></pre></div>
+<li>
+R prints out “Try to be more visible!” when the if-condition on <code>num_views</code> is not met.
+</li>
+<div class="sourceCode" id="cb71"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># Control structure for num_views</span>
+<span class="kw">if</span> <span class="op">(</span><span class="va">num_views</span> <span class="op">&gt;</span> <span class="fl">15</span><span class="op">)</span> <span class="op">{</span>
+  <span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="st">"You're popular!"</span><span class="op">)</span>
+<span class="op">}</span> <span class="kw">else</span> <span class="op">{</span>
+  <span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="st">"Try to be more visible!"</span><span class="op">)</span>
+<span class="op">}</span>
+<span class="co">#&gt; [1] "Try to be more visible!"</span></code></pre></div>
+</div>
+<p class>
+Great job! You also had Facebook information available, remember? Time to add some more statements to our control structures using <code>else if</code>!
+</p>
+</div>
+<div id="customize-further-else-if" class="section level3" number="5.3.3">
+<h3>
+<span class="header-section-number">5.3.3</span> Customize further: else if<a class="anchor" aria-label="anchor" href="#customize-further-else-if"><i class="fas fa-link"></i></a>
+</h3>
+<div>
+<p>
+The <code>else if</code> statement allows you to further customize your control structure. You can add as many <code>else if</code> statements as you like. Keep in mind that R ignores the remainder of the control structure once a condition has been found that is <code>TRUE</code> and the corresponding expressions have been executed. Here’s an overview of the syntax to freshen your memory:
+</p>
+<pre><code>if (condition1) {
+  expr1
+} else if (condition2) {
+  expr2
+} else if (condition3) {
+  expr3
+} else {
+  expr4
+}
+</code></pre>
+<p>
+<em>Again, It’s important that the <code>else if</code> keywords comes on the same line as the closing bracket of the previous part of the control construct!</em>
+</p>
+</div>
+<div class="exercise--instructions__content">
+<p>
+Add code to both control structures such that:
+</p>
+<li>
+R prints out “Showing Facebook information” if <code>medium</code> is equal to “Facebook”. Remember that R is case sensitive!
+</li>
+<div class="sourceCode" id="cb72"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># Control structure for medium</span>
+<span class="kw">if</span> <span class="op">(</span><span class="va">medium</span> <span class="op">==</span> <span class="st">"LinkedIn"</span><span class="op">)</span> <span class="op">{</span>
+  <span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="st">"Showing LinkedIn information"</span><span class="op">)</span>
+<span class="op">}</span> <span class="kw">else</span> <span class="kw">if</span> <span class="op">(</span><span class="va">medium</span> <span class="op">==</span> <span class="st">"Facebook"</span><span class="op">)</span> <span class="op">{</span>
+  <span class="co"># Add code to print correct string when condition is TRUE</span>
+  <span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="st">"Showing Facebook information"</span><span class="op">)</span>
+<span class="op">}</span> <span class="kw">else</span> <span class="op">{</span>
+  <span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="st">"Unknown medium"</span><span class="op">)</span>
+<span class="op">}</span>
+<span class="co">#&gt; [1] "Showing LinkedIn information"</span></code></pre></div>
+<li>
+“Your number of views is average” is printed if <code>num_views</code> is between 15 (inclusive) and 10 (exclusive).
+Feel free to change the variables <code>medium</code> and <code>num_views</code> to see how the control structure respond. In both cases, the existing code should be extended in the <code>else if</code> statement. No existing code should be modified.
+</li>
+<div class="sourceCode" id="cb73"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># Control structure for num_views</span>
+<span class="kw">if</span> <span class="op">(</span><span class="va">num_views</span> <span class="op">&gt;</span> <span class="fl">15</span><span class="op">)</span> <span class="op">{</span>
+  <span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="st">"You're popular!"</span><span class="op">)</span>
+<span class="op">}</span> <span class="kw">else</span> <span class="kw">if</span> <span class="op">(</span><span class="va">num_views</span> <span class="op">&lt;=</span> <span class="fl">15</span> <span class="op">&amp;</span> <span class="va">num_views</span> <span class="op">&gt;</span> <span class="fl">10</span><span class="op">)</span> <span class="op">{</span>
+  <span class="co"># Add code to print correct string when condition is TRUE</span>
+  <span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="st">"Your number of views is average"</span><span class="op">)</span>
+<span class="op">}</span> <span class="kw">else</span> <span class="op">{</span>
+  <span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="st">"Try to be more visible!"</span><span class="op">)</span>
+<span class="op">}</span>
+<span class="co">#&gt; [1] "Your number of views is average"</span></code></pre></div>
+</div>
+<p class>
+Awesome! Have another look at the second control structure. Because R abandons the control flow as soon as it finds a condition that is met, you can simplify the condition for the <code>else if</code> part in the second construct to <code>num_views &gt; 10</code>.
+</p>
+</div>
+<div id="else-if-2.0" class="section level3" number="5.3.4">
+<h3>
+<span class="header-section-number">5.3.4</span> Else if 2.0<a class="anchor" aria-label="anchor" href="#else-if-2.0"><i class="fas fa-link"></i></a>
+</h3>
+<div>
+<p>
+You can do anything you want inside if-else constructs. You can even put in another set of conditional statements. Examine the following code chunk:
+</p>
+<pre><code>if (number &lt; 10) {
+  if (number &lt; 5) {
+    result &lt;- "extra small"
+  } else {
+    result &lt;- "small"
+  }
+} else if (number &lt; 100) {
+  result &lt;- "medium"
+} else {
+  result &lt;- "large"
+}
+print(result)
+</code></pre>
+<p>
+Have a look at the following statements:
+</p>
+<ol>
+<li>
+If <code>number</code> is set to 6, “small” gets printed to the console.
+</li>
+<li>
+If <code>number</code> is set to 100, R prints out “medium”.
+</li>
+<li>
+If <code>number</code> is set to 4, “extra small” gets printed out to the console.
+</li>
+<li>
+If <code>number</code> is set to 2500, R will generate an error, as <code>result</code> will not be defined.
+</li>
+</ol>
+<p>
+Select the option that lists <u>all</u> the true statements.
+</p>
+</div>
+<ul>
+<li>
+<div class="dc-input-radio__text">
+2 and 4
+</div>
+</li>
+<li>
+<div class="dc-input-radio__text">
+1 and 4
+</div>
+</li>
+<strong>
+<li>
+<div class="dc-input-radio__text">
+1 and 3
+</div>
+</li>
+</strong>
+<li>
+<div class="dc-input-radio__text">
+2 and 3
+</div>
+</li>
+</ul>
+<p class>
+Wonderful! If you got this one right, the next exercise will be a piece of cake.
+</p>
+</div>
+<div id="take-control" class="section level3" number="5.3.5">
+<h3>
+<span class="header-section-number">5.3.5</span> Take control!<a class="anchor" aria-label="anchor" href="#take-control"><i class="fas fa-link"></i></a>
+</h3>
+<div>
+<p>
+In this exercise, you will combine everything that you’ve learned so far: relational operators, logical operators and control constructs. You’ll need it all!
+</p>
+<p>
+We’ve pre-defined two values for you: <code>li</code> and <code>fb</code>, denoting the number of profile views your LinkedIn and Facebook profile had on the last day of recordings. Go through the instructions to create R code that generates a ‘social media score’, <code>sms</code>, based on the values of <code>li</code> and <code>fb</code>.
+</p>
+</div>
+<div class="exercise--instructions__content">
+<p>
+Finish the control-flow construct with the following behavior:
+</p>
+<div class="sourceCode" id="cb74"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># Variables related to your last day of recordings</span>
+<span class="va">li</span> <span class="op">&lt;-</span> <span class="fl">15</span>
+<span class="va">fb</span> <span class="op">&lt;-</span> <span class="fl">9</span></code></pre></div>
+<li>
+If both <code>li</code> and <code>fb</code> are 15 or higher, set <code>sms</code> equal to double the sum of <code>li</code> and <code>fb</code>.
+</li>
+<li>
+If both <code>li</code> and <code>fb</code> are strictly below 10, set <code>sms</code> equal to half the sum of <code>li</code> and <code>fb</code>.
+</li>
+<li>
+In all other cases, set <code>sms</code> equal to <code>li + fb</code>.
+</li>
+<div class="sourceCode" id="cb75"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># Code the control-flow construct</span>
+<span class="kw">if</span> <span class="op">(</span><span class="va">li</span> <span class="op">&gt;=</span> <span class="fl">15</span> <span class="op">&amp;</span> <span class="va">fb</span> <span class="op">&gt;=</span> <span class="fl">15</span><span class="op">)</span> <span class="op">{</span>
+  <span class="va">sms</span> <span class="op">&lt;-</span> <span class="fl">2</span> <span class="op">*</span> <span class="op">(</span><span class="va">li</span> <span class="op">+</span> <span class="va">fb</span><span class="op">)</span>
+<span class="op">}</span> <span class="kw">else</span> <span class="kw">if</span> <span class="op">(</span><span class="va">li</span> <span class="op">&lt;</span> <span class="fl">10</span> <span class="op">&amp;</span> <span class="va">fb</span> <span class="op">&lt;</span> <span class="fl">10</span><span class="op">)</span> <span class="op">{</span>
+  <span class="va">sms</span> <span class="op">&lt;-</span> <span class="fl">0.5</span> <span class="op">*</span> <span class="op">(</span><span class="va">li</span> <span class="op">+</span> <span class="va">fb</span><span class="op">)</span>
+<span class="op">}</span> <span class="kw">else</span> <span class="op">{</span>
+  <span class="va">sms</span> <span class="op">&lt;-</span> <span class="va">li</span> <span class="op">+</span> <span class="va">fb</span>
+<span class="op">}</span></code></pre></div>
+<li>
+Finally, print the resulting <code>sms</code> variable.
+</li>
+<div class="sourceCode" id="cb76"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># Print the resulting sms to the console</span>
+<span class="va">sms</span>
+<span class="co">#&gt; [1] 24</span></code></pre></div>
+</div>
+<p class>
+Bellissimo! Feel free to play around some more with your solution by changing the values of <code>li</code> and <code>fb</code>.
+</p>
+</div>
+</div>
+</div>
+  <div class="chapter-nav">
+<div class="prev"><a href="types-of-visualizations.html"><span class="header-section-number">4</span> Types of visualizations</a></div>
+<div class="next"><a href="loops.html"><span class="header-section-number">6</span> Loops</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#conditionals-and-control-flow"><span class="header-section-number">5</span> Conditionals and Control Flow</a></li>
+<li>
+<a class="nav-link" href="#relational-operators"><span class="header-section-number">5.1</span> Relational Operators</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#equality"><span class="header-section-number">5.1.1</span> Equality</a></li>
+<li><a class="nav-link" href="#greater-and-less-than"><span class="header-section-number">5.1.2</span> Greater and less than</a></li>
+<li><a class="nav-link" href="#compare-vectors"><span class="header-section-number">5.1.3</span> Compare vectors</a></li>
+<li><a class="nav-link" href="#compare-matrices"><span class="header-section-number">5.1.4</span> Compare matrices</a></li>
+</ul>
+</li>
+<li>
+<a class="nav-link" href="#logical-operators"><span class="header-section-number">5.2</span> Logical Operators</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#and"><span class="header-section-number">5.2.1</span> &amp; and |</a></li>
+<li><a class="nav-link" href="#and-2"><span class="header-section-number">5.2.2</span> &amp; and | (2)</a></li>
+<li><a class="nav-link" href="#reverse-the-result"><span class="header-section-number">5.2.3</span> Reverse the result: !</a></li>
+<li><a class="nav-link" href="#blend-it-all-together"><span class="header-section-number">5.2.4</span> Blend it all together</a></li>
+</ul>
+</li>
+<li>
+<a class="nav-link" href="#conditional-statements"><span class="header-section-number">5.3</span> Conditional Statements</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#the-if-statement"><span class="header-section-number">5.3.1</span> The if statement</a></li>
+<li><a class="nav-link" href="#add-an-else"><span class="header-section-number">5.3.2</span> Add an else</a></li>
+<li><a class="nav-link" href="#customize-further-else-if"><span class="header-section-number">5.3.3</span> Customize further: else if</a></li>
+<li><a class="nav-link" href="#else-if-2.0"><span class="header-section-number">5.3.4</span> Else if 2.0</a></li>
+<li><a class="nav-link" href="#take-control"><span class="header-section-number">5.3.5</span> Take control!</a></li>
+</ul>
+</li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+<li><a id="book-source" href="https://github.com/hadley/r4ds/blob/master/intermediater.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/hadley/r4ds/edit/master/intermediater.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>Introduction to DataCamp</strong>" was written by Tran Thanh Dat. </p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
+</script>
+</body>
+</html>

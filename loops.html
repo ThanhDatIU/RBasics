@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>6 Loops | Introduction to DataCamp</title>
+<meta name="author" content="Tran Thanh Dat">
+<meta name="generator" content="bookdown 0.24 with bs4_book()">
+<meta property="og:title" content="6 Loops | Introduction to DataCamp">
+<meta property="og:type" content="book">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="6 Loops | Introduction to DataCamp">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/header-attrs-2.12.1/header-attrs.js"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.1.9000/transition.js"></script><script src="libs/bs3compat-0.3.1.9000/tabs.js"></script><script src="libs/bs3compat-0.3.1.9000/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=UA-115082821-1"></script><script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-115082821-1');
+    </script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><meta name="description" content="Loops can come in handy on numerous occasions. While loops are like repeated if statements, the for loop is designed to iterate over all elements in a sequence. Learn about them in this chapter. ...">
+<meta property="og:description" content="Loops can come in handy on numerous occasions. While loops are like repeated if statements, the for loop is designed to iterate over all elements in a sequence. Learn about them in this chapter. ...">
+<meta name="twitter:description" content="Loops can come in handy on numerous occasions. While loops are like repeated if statements, the for loop is designed to iterate over all elements in a sequence. Learn about them in this chapter. ...">
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">Introduction to DataCamp</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html">Welcome to DataCamp</a></li>
+<li class="book-part">R Fundamentals</li>
+<li><a class="" href="data-wrangling.html"><span class="header-section-number">1</span> Data wrangling</a></li>
+<li><a class="" href="data-visualization.html"><span class="header-section-number">2</span> Data visualization</a></li>
+<li><a class="" href="grouping-and-summarizing.html"><span class="header-section-number">3</span> Grouping and summarizing</a></li>
+<li><a class="" href="types-of-visualizations.html"><span class="header-section-number">4</span> Types of visualizations</a></li>
+<li><a class="" href="conditionals-and-control-flow.html"><span class="header-section-number">5</span> Conditionals and Control Flow</a></li>
+<li><a class="active" href="loops.html"><span class="header-section-number">6</span> Loops</a></li>
+<li><a class="" href="functions.html"><span class="header-section-number">7</span> Functions</a></li>
+<li><a class="" href="the-apply-family.html"><span class="header-section-number">8</span> The apply family</a></li>
+<li><a class="" href="utilities.html"><span class="header-section-number">9</span> Utilities</a></li>
+<li><a class="" href="data-wrangling-1.html"><span class="header-section-number">10</span> Data wrangling</a></li>
+<li><a class="" href="data-visualization-1.html"><span class="header-section-number">11</span> Data visualization</a></li>
+<li><a class="" href="grouping-and-summarizing-1.html"><span class="header-section-number">12</span> Grouping and summarizing</a></li>
+<li><a class="" href="types-of-visualizations-1.html"><span class="header-section-number">13</span> Types of visualizations</a></li>
+</ul>
+
+        <div class="book-extra">
+          <p><a id="book-repo" href="https://github.com/hadley/r4ds">View book source <i class="fab fa-github"></i></a></p>
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="loops" class="section level1" number="6">
+<h1>
+<span class="header-section-number">6</span> Loops<a class="anchor" aria-label="anchor" href="#loops"><i class="fas fa-link"></i></a>
+</h1>
+<p>
+Loops can come in handy on numerous occasions. While loops are like repeated if statements, the for loop is designed to iterate over all elements in a sequence. Learn about them in this chapter.
+</p>
+<div id="while-loop" class="section level2" number="6.1">
+<h2>
+<span class="header-section-number">6.1</span> While loop<a class="anchor" aria-label="anchor" href="#while-loop"><i class="fas fa-link"></i></a>
+</h2>
+<div id="write-a-while-loop" class="section level3" number="6.1.1">
+<h3>
+<span class="header-section-number">6.1.1</span> Write a while loop<a class="anchor" aria-label="anchor" href="#write-a-while-loop"><i class="fas fa-link"></i></a>
+</h3>
+<div>
+<p>
+Let’s get you started with building a <code>while</code> loop from the ground up. Have another look at its recipe:
+</p>
+<pre><code>while (condition) {
+  expr
+}
+</code></pre>
+<p>
+Remember that the <code>condition</code> part of this recipe should become <code>FALSE</code> at some point during the execution. Otherwise, the <code>while</code> loop will go on indefinitely.
+</p>
+<p>
+<em>If your session expires when you run your code, check the body of your <code>while</code> loop carefully.</em>
+</p>
+<p>
+Have a look at the sample code provided; it initializes the <code>speed</code> variables and already provides a <code>while</code> loop template to get you started.
+</p>
+</div>
+<div class="exercise--instructions__content">
+<p>
+Code a <code>while</code> loop with the following characteristics:
+</p>
+<ul>
+<li>
+The condition of the <code>while</code> loop should check if <code>speed</code> is higher than 30.
+</li>
+<li>
+Inside the body of the <code>while</code> loop, print out <code>“Slow down!”</code>.
+</li>
+<li>
+Inside the body of the <code>while</code> loop, decrease the <code>speed</code> by 7 units and assign this new value to <code>speed</code> again. This step is crucial; otherwise your <code>while</code> loop will never stop and <em>your session will expire</em>.
+</li>
+</ul>
+<p>
+<strong><em>If your session expires when you run your code, check the body of your <code>while</code> loop carefully: it’s likely that you made a mistake.</em></strong>
+</p>
+</div>
+<div class="sourceCode" id="cb77"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># Initialize the speed variable</span>
+<span class="va">speed</span> <span class="op">&lt;-</span> <span class="fl">64</span>
+
+<span class="co"># Code the while loop</span>
+<span class="kw">while</span> <span class="op">(</span><span class="va">speed</span> <span class="op">&gt;</span> <span class="fl">30</span><span class="op">)</span> <span class="op">{</span>
+  <span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="st">"Slow down!"</span><span class="op">)</span>
+  <span class="va">speed</span> <span class="op">&lt;-</span> <span class="va">speed</span> <span class="op">-</span> <span class="fl">7</span>
+<span class="op">}</span>
+<span class="co">#&gt; [1] "Slow down!"</span>
+<span class="co">#&gt; [1] "Slow down!"</span>
+<span class="co">#&gt; [1] "Slow down!"</span>
+<span class="co">#&gt; [1] "Slow down!"</span>
+<span class="co">#&gt; [1] "Slow down!"</span>
+
+<span class="co"># Print out the speed variable</span>
+<span class="va">speed</span>
+<span class="co">#&gt; [1] 29</span></code></pre></div>
+<p class>
+Great job! Proceed to the next exercise.
+</p>
+</div>
+<div id="throw-in-more-conditionals" class="section level3" number="6.1.2">
+<h3>
+<span class="header-section-number">6.1.2</span> Throw in more conditionals<a class="anchor" aria-label="anchor" href="#throw-in-more-conditionals"><i class="fas fa-link"></i></a>
+</h3>
+<div>
+<p>
+In the previous exercise, you simulated the interaction between a driver and a driver’s assistant: When the speed was too high, “Slow down!” got printed out to the console, resulting in a decrease of your speed by 7 units.
+</p>
+<p>
+There are several ways in which you could make your driver’s assistant more advanced. For example, the assistant could give you different messages based on your speed or provide you with a current speed at a given moment.
+</p>
+<p>
+A <code>while</code> loop similar to the one you’ve coded in the previous exercise is already available for you to use. It prints out your current speed, but there’s no code that decreases the <code>speed</code> variable yet, which is pretty dangerous. Can you make the appropriate changes?
+</p>
+</div>
+<div class="exercise--instructions__content">
+<ul>
+<li>
+If the speed is greater than 48, have R print out “Slow down big time!”, and decrease the speed by <code>11</code>.
+</li>
+<li>
+Otherwise, have R simply print out “Slow down!”, and decrease the speed by <code>6</code>.
+</li>
+</ul>
+<p>
+If the session keeps timing out and throwing an error, you are probably stuck in an infinite loop! Check the body of your <code>while</code> loop and make sure you are assigning new values to <code>speed</code>.
+</p>
+</div>
+<div class="sourceCode" id="cb78"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># Extend/adapt the while loop</span>
+<span class="kw">while</span> <span class="op">(</span><span class="va">speed</span> <span class="op">&gt;</span> <span class="fl">30</span><span class="op">)</span> <span class="op">{</span>
+  <span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span><span class="op">(</span><span class="st">"Your speed is"</span>, <span class="va">speed</span><span class="op">)</span><span class="op">)</span>
+  <span class="kw">if</span> <span class="op">(</span><span class="va">speed</span> <span class="op">&gt;</span> <span class="fl">48</span><span class="op">)</span> <span class="op">{</span>
+    <span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="st">"Slow down big time!"</span><span class="op">)</span>
+    <span class="va">speed</span> <span class="op">&lt;-</span> <span class="va">speed</span> <span class="op">-</span> <span class="fl">11</span>
+  <span class="op">}</span> <span class="kw">else</span> <span class="op">{</span>
+    <span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="st">"Slow down!"</span><span class="op">)</span>
+    <span class="va">speed</span> <span class="op">&lt;-</span> <span class="va">speed</span> <span class="op">-</span> <span class="fl">6</span>
+  <span class="op">}</span>
+<span class="op">}</span></code></pre></div>
+<p class>
+Wonderful! To further improve our driver assistant model, head over to the next exercise!
+</p>
+</div>
+<div id="stop-the-while-loop-break" class="section level3" number="6.1.3">
+<h3>
+<span class="header-section-number">6.1.3</span> Stop the while loop: break<a class="anchor" aria-label="anchor" href="#stop-the-while-loop-break"><i class="fas fa-link"></i></a>
+</h3>
+<div>
+<p>
+There are some very rare situations in which severe speeding is necessary: what if a hurricane is approaching and you have to get away as quickly as possible? You don’t want the driver’s assistant sending you speeding notifications in that scenario, right?
+</p>
+<p>
+This seems like a great opportunity to include the <code><a href="https://rdrr.io/r/base/Control.html">break</a></code> statement in the <code>while</code> loop you’ve been working on. Remember that the <code><a href="https://rdrr.io/r/base/Control.html">break</a></code> statement is a control statement. When R encounters it, the <code>while</code> loop is abandoned completely.
+</p>
+</div>
+<div class="exercise--instructions__content">
+<p>
+Adapt the <code>while</code> loop such that it is abandoned when the <code>speed</code> of the vehicle is greater than 80. This time, the <code>speed</code> variable has been initialized to 88; keep it that way.
+</p>
+</div>
+<div class="sourceCode" id="cb79"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># Initialize the speed variable</span>
+<span class="va">speed</span> <span class="op">&lt;-</span> <span class="fl">88</span>
+
+<span class="kw">while</span> <span class="op">(</span><span class="va">speed</span> <span class="op">&gt;</span> <span class="fl">30</span><span class="op">)</span> <span class="op">{</span>
+  <span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span><span class="op">(</span><span class="st">"Your speed is"</span>, <span class="va">speed</span><span class="op">)</span><span class="op">)</span>
+  
+  <span class="co"># Break the while loop when speed exceeds 80</span>
+  <span class="kw">if</span> <span class="op">(</span><span class="va">speed</span> <span class="op">&gt;</span> <span class="fl">80</span><span class="op">)</span> <span class="op">{</span>
+    <span class="kw">break</span>
+  <span class="op">}</span>
+  
+  <span class="kw">if</span> <span class="op">(</span><span class="va">speed</span> <span class="op">&gt;</span> <span class="fl">48</span><span class="op">)</span> <span class="op">{</span>
+    <span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="st">"Slow down big time!"</span><span class="op">)</span>
+    <span class="va">speed</span> <span class="op">&lt;-</span> <span class="va">speed</span> <span class="op">-</span> <span class="fl">11</span>
+  <span class="op">}</span> <span class="kw">else</span> <span class="op">{</span>
+    <span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="st">"Slow down!"</span><span class="op">)</span>
+    <span class="va">speed</span> <span class="op">&lt;-</span> <span class="va">speed</span> <span class="op">-</span> <span class="fl">6</span>
+  <span class="op">}</span>
+<span class="op">}</span>
+<span class="co">#&gt; [1] "Your speed is 88"</span></code></pre></div>
+<p class>
+Wonderful! Now that you’ve correctly solved this exercise, feel free to play around with different values of <code>speed</code> to see how the <code>while</code> loop handles the different cases.
+</p>
+</div>
+<div id="build-a-while-loop-from-scratch" class="section level3" number="6.1.4">
+<h3>
+<span class="header-section-number">6.1.4</span> Build a while loop from scratch<a class="anchor" aria-label="anchor" href="#build-a-while-loop-from-scratch"><i class="fas fa-link"></i></a>
+</h3>
+<div>
+<p>
+The previous exercises guided you through developing a pretty advanced <code>while</code> loop, containing a <code><a href="https://rdrr.io/r/base/Control.html">break</a></code> statement and different messages and updates as determined by control flow constructs. If you manage to solve this comprehensive exercise using a <code>while</code> loop, you’re totally ready for the next topic: the <code>for</code> loop.
+</p>
+</div>
+<div class="exercise--instructions__content">
+<p>
+Finish the <code>while</code> loop so that it:
+</p>
+<li>
+prints out the triple of <code>i</code>, so <code>3 * i</code>, at each run.
+</li>
+<li>
+is abandoned with a <code><a href="https://rdrr.io/r/base/Control.html">break</a></code> if the triple of <code>i</code> is divisible by 8, but still prints out this triple before breaking.
+</li>
+<div class="sourceCode" id="cb80"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># Initialize i as 1 </span>
+<span class="va">i</span> <span class="op">&lt;-</span> <span class="fl">1</span>
+
+<span class="co"># Code the while loop</span>
+<span class="kw">while</span> <span class="op">(</span><span class="va">i</span> <span class="op">&lt;=</span> <span class="fl">10</span><span class="op">)</span> <span class="op">{</span>
+  <span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="fl">3</span> <span class="op">*</span> <span class="va">i</span><span class="op">)</span>
+  <span class="kw">if</span> <span class="op">(</span> <span class="op">(</span><span class="fl">3</span> <span class="op">*</span> <span class="va">i</span><span class="op">)</span> <span class="op"><a href="https://rdrr.io/r/base/Arithmetic.html">%%</a></span> <span class="fl">8</span> <span class="op">==</span> <span class="fl">0</span><span class="op">)</span> <span class="op">{</span>
+    <span class="kw">break</span>
+  <span class="op">}</span>
+  <span class="va">i</span> <span class="op">&lt;-</span> <span class="va">i</span> <span class="op">+</span> <span class="fl">1</span>
+<span class="op">}</span>
+<span class="co">#&gt; [1] 3</span>
+<span class="co">#&gt; [1] 6</span>
+<span class="co">#&gt; [1] 9</span>
+<span class="co">#&gt; [1] 12</span>
+<span class="co">#&gt; [1] 15</span>
+<span class="co">#&gt; [1] 18</span>
+<span class="co">#&gt; [1] 21</span>
+<span class="co">#&gt; [1] 24</span></code></pre></div>
+</div>
+<p class>
+Great work! Head over to the next video!
+</p>
+</div>
+</div>
+<div id="for-loop" class="section level2" number="6.2">
+<h2>
+<span class="header-section-number">6.2</span> For loop<a class="anchor" aria-label="anchor" href="#for-loop"><i class="fas fa-link"></i></a>
+</h2>
+<div id="loop-over-a-vector" class="section level3" number="6.2.1">
+<h3>
+<span class="header-section-number">6.2.1</span> Loop over a vector<a class="anchor" aria-label="anchor" href="#loop-over-a-vector"><i class="fas fa-link"></i></a>
+</h3>
+<div>
+<p>
+In the previous video, Filip told you about two different strategies for using the <code>for</code> loop. To refresh your memory, consider the following loops that are equivalent in R:
+</p>
+<pre><code>primes &lt;- c(2, 3, 5, 7, 11, 13)
+
+# loop version 1
+for (p in primes) {
+  print(p)
+}
+
+# loop version 2
+for (i in 1:length(primes)) {
+  print(primes[i])
+}
+</code></pre>
+<p>
+Remember our <code>linkedin</code> vector? It’s a vector that contains the number of views your LinkedIn profile had in the last seven days. The <code>linkedin</code> vector has been pre-defined so that you can fully focus on the instructions!
+</p>
+</div>
+<div class="exercise--instructions__content">
+<p>
+Write a <code>for</code> loop that iterates over all the elements of <code>linkedin</code> and prints out every element separately. Do this in two ways: using the <em>loop version 1</em> and the <em>loop version 2</em> in the example code above.
+</p>
+</div>
+<div class="sourceCode" id="cb81"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># The linkedin vector has already been defined for you</span>
+<span class="va">linkedin</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">16</span>, <span class="fl">9</span>, <span class="fl">13</span>, <span class="fl">5</span>, <span class="fl">2</span>, <span class="fl">17</span>, <span class="fl">14</span><span class="op">)</span>
+
+<span class="co"># Loop version 1</span>
+<span class="kw">for</span> <span class="op">(</span><span class="va">li</span> <span class="kw">in</span> <span class="va">linkedin</span><span class="op">)</span> <span class="op">{</span>
+  <span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="va">li</span><span class="op">)</span>
+<span class="op">}</span>
+<span class="co">#&gt; [1] 16</span>
+<span class="co">#&gt; [1] 9</span>
+<span class="co">#&gt; [1] 13</span>
+<span class="co">#&gt; [1] 5</span>
+<span class="co">#&gt; [1] 2</span>
+<span class="co">#&gt; [1] 17</span>
+<span class="co">#&gt; [1] 14</span>
+
+<span class="co"># Loop version 2</span>
+<span class="kw">for</span> <span class="op">(</span><span class="va">i</span> <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="va">linkedin</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span>
+  <span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="va">linkedin</span><span class="op">[</span><span class="va">i</span><span class="op">]</span><span class="op">)</span>
+<span class="op">}</span>
+<span class="co">#&gt; [1] 16</span>
+<span class="co">#&gt; [1] 9</span>
+<span class="co">#&gt; [1] 13</span>
+<span class="co">#&gt; [1] 5</span>
+<span class="co">#&gt; [1] 2</span>
+<span class="co">#&gt; [1] 17</span>
+<span class="co">#&gt; [1] 14</span></code></pre></div>
+<p class>
+Piece of cake! Go to the next exercise.
+</p>
+</div>
+<div id="loop-over-a-list" class="section level3" number="6.2.2">
+<h3>
+<span class="header-section-number">6.2.2</span> Loop over a list<a class="anchor" aria-label="anchor" href="#loop-over-a-list"><i class="fas fa-link"></i></a>
+</h3>
+<div>
+<p>
+Looping over a list is just as easy and convenient as looping over a vector. There are again two different approaches here:
+</p>
+<pre><code>primes_list &lt;- list(2, 3, 5, 7, 11, 13)
+
+# loop version 1
+for (p in primes_list) {
+  print(p)
+}
+
+# loop version 2
+for (i in 1:length(primes_list)) {
+  print(primes_list[[i]])
+}
+</code></pre>
+<p>
+Notice that you need double square brackets - <code>[[ ]]</code> - to select the list elements in loop version 2.
+</p>
+<p>
+Suppose you have a list of all sorts of information on New York City: its population size, the names of the boroughs, and whether it is the capital of the United States. We’ve already defined a list <code>nyc</code> containing this information (source: Wikipedia).
+</p>
+</div>
+<div class="sourceCode" id="cb82"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># The nyc list is already specified</span>
+<span class="va">nyc</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>pop <span class="op">=</span> <span class="fl">8405837</span>, 
+            boroughs <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Manhattan"</span>, <span class="st">"Bronx"</span>, <span class="st">"Brooklyn"</span>, <span class="st">"Queens"</span>, <span class="st">"Staten Island"</span><span class="op">)</span>, 
+            capital <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></code></pre></div>
+<div class="exercise--instructions__content">
+<p>
+As in the previous exercise, loop over the <code>nyc</code> list in two different ways to print its elements:
+</p>
+<li>
+Loop directly over the <code>nyc</code> list (loop version 1).
+</li>
+<div class="sourceCode" id="cb83"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># Loop version 1</span>
+<span class="kw">for</span> <span class="op">(</span><span class="va">info</span> <span class="kw">in</span> <span class="va">nyc</span><span class="op">)</span> <span class="op">{</span>
+  <span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="va">info</span><span class="op">)</span>
+<span class="op">}</span>
+<span class="co">#&gt; [1] 8405837</span>
+<span class="co">#&gt; [1] "Manhattan"     "Bronx"         "Brooklyn"      "Queens"       </span>
+<span class="co">#&gt; [5] "Staten Island"</span>
+<span class="co">#&gt; [1] FALSE</span></code></pre></div>
+<li>
+Define a looping index and do subsetting using double brackets (loop version 2).
+</li>
+<div class="sourceCode" id="cb84"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># Loop version 2</span>
+<span class="kw">for</span> <span class="op">(</span><span class="va">i</span> <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="va">nyc</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span>
+  <span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="va">nyc</span><span class="op">[[</span><span class="va">i</span><span class="op">]</span><span class="op">]</span><span class="op">)</span>
+<span class="op">}</span>
+<span class="co">#&gt; [1] 8405837</span>
+<span class="co">#&gt; [1] "Manhattan"     "Bronx"         "Brooklyn"      "Queens"       </span>
+<span class="co">#&gt; [5] "Staten Island"</span>
+<span class="co">#&gt; [1] FALSE</span></code></pre></div>
+</div>
+<p class>
+Good job! Filip mentioned that <code>for</code> loops can also be used for matrices. Let’s put that to a test in the next exercise.
+</p>
+</div>
+<div id="loop-over-a-matrix" class="section level3" number="6.2.3">
+<h3>
+<span class="header-section-number">6.2.3</span> Loop over a matrix<a class="anchor" aria-label="anchor" href="#loop-over-a-matrix"><i class="fas fa-link"></i></a>
+</h3>
+<div>
+<p>
+In your workspace, there’s a matrix <code>ttt</code>, that represents the status of a <a href="http://en.wikipedia.org/wiki/Tic-tac-toe">tic-tac-toe</a> game. It contains the values “X”, “O” and “NA”. Print out <code>ttt</code> to get a closer look. On row 1 and column 1, there’s “O”, while on row 3 and column 2 there’s “NA”.
+</p>
+<div class="sourceCode" id="cb85"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">ttt</span><span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/matrix.html">matrix</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"O"</span>,<span class="cn">NA</span>,<span class="st">"X"</span>,<span class="cn">NA</span>,<span class="st">"O"</span>,<span class="st">"O"</span>,<span class="st">"X"</span>,<span class="cn">NA</span>,<span class="st">"X"</span><span class="op">)</span>,<span class="fl">3</span>,<span class="fl">3</span><span class="op">)</span></code></pre></div>
+<p>
+To solve this exercise, you’ll need a <code>for</code> loop inside a <code>for</code> loop, often called a nested loop. Doing this in R is a breeze! Simply use the following recipe:
+</p>
+<pre><code>for (var1 in seq1) {
+  for (var2 in seq2) {
+    expr
+  }
+}
+</code></pre>
+</div>
+<div class="exercise--instructions__content">
+<p>
+Finish the nested <code>for</code> loops to go over the elements in <code>ttt</code>:
+</p>
+<ul>
+<li>
+The outer loop should loop over the rows, with loop index <code>i</code> (use <code>1:nrow(ttt)</code>).
+</li>
+<li>
+The inner loop should loop over the columns, with loop index <code>j</code> (use <code>1:ncol(ttt)</code>).
+</li>
+<li>
+Inside the inner loop, make use of <code><a href="https://rdrr.io/r/base/print.html">print()</a></code> and <code><a href="https://rdrr.io/r/base/paste.html">paste()</a></code> to print out information in the following format: “On row i and column j the board contains x”, where <code>x</code> is the value on that position.
+</li>
+</ul>
+</div>
+<div class="sourceCode" id="cb86"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># The tic-tac-toe matrix ttt has already been defined for you</span>
+
+<span class="co"># define the double for loop</span>
+<span class="kw">for</span> <span class="op">(</span><span class="va">i</span> <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="fu"><a href="https://rdrr.io/r/base/nrow.html">nrow</a></span><span class="op">(</span><span class="va">ttt</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span>
+  <span class="kw">for</span> <span class="op">(</span><span class="va">j</span> <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="fu"><a href="https://rdrr.io/r/base/nrow.html">ncol</a></span><span class="op">(</span><span class="va">ttt</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span>
+    <span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span><span class="op">(</span><span class="st">"On row"</span>, <span class="va">i</span>, <span class="st">"and column"</span>, <span class="va">j</span>, <span class="st">"the board contains"</span>, <span class="va">ttt</span><span class="op">[</span><span class="va">i</span>,<span class="va">j</span><span class="op">]</span><span class="op">)</span><span class="op">)</span>
+  <span class="op">}</span>
+<span class="op">}</span>
+<span class="co">#&gt; [1] "On row 1 and column 1 the board contains O"</span>
+<span class="co">#&gt; [1] "On row 1 and column 2 the board contains NA"</span>
+<span class="co">#&gt; [1] "On row 1 and column 3 the board contains X"</span>
+<span class="co">#&gt; [1] "On row 2 and column 1 the board contains NA"</span>
+<span class="co">#&gt; [1] "On row 2 and column 2 the board contains O"</span>
+<span class="co">#&gt; [1] "On row 2 and column 3 the board contains NA"</span>
+<span class="co">#&gt; [1] "On row 3 and column 1 the board contains X"</span>
+<span class="co">#&gt; [1] "On row 3 and column 2 the board contains O"</span>
+<span class="co">#&gt; [1] "On row 3 and column 3 the board contains X"</span></code></pre></div>
+<p class>
+Awesome! You’re sufficiently comfortable with basic <code>for</code> looping, so it’s time to step it up a notch!
+</p>
+</div>
+<div id="mix-it-up-with-control-flow" class="section level3" number="6.2.4">
+<h3>
+<span class="header-section-number">6.2.4</span> Mix it up with control flow<a class="anchor" aria-label="anchor" href="#mix-it-up-with-control-flow"><i class="fas fa-link"></i></a>
+</h3>
+<div>
+<p>
+Let’s return to the <em>LinkedIn</em> profile views data, stored in a vector <code>linkedin</code>. In the first exercise on <code>for</code> loops you already did a simple printout of each element in this vector. A little more in-depth interpretation of this data wouldn’t hurt, right? Time to throw in some conditionals! As with the <code>while</code> loop, you can use the <code>if</code> and <code>else</code> statements inside the <code>for</code> loop.
+</p>
+</div>
+<div class="exercise--instructions__content">
+<p>
+Add code to the <code>for</code> loop that loops over the elements of the <code>linkedin</code> vector:
+</p>
+<div class="sourceCode" id="cb87"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># The linkedin vector has already been defined for you</span>
+<span class="va">linkedin</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">16</span>, <span class="fl">9</span>, <span class="fl">13</span>, <span class="fl">5</span>, <span class="fl">2</span>, <span class="fl">17</span>, <span class="fl">14</span><span class="op">)</span></code></pre></div>
+<li>
+If the vector element’s value exceeds 10, print out “You’re popular!”.
+</li>
+<li>
+If the vector element’s value does not exceed 10, print out “Be more visible!”
+</li>
+<div class="sourceCode" id="cb88"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># Code the for loop with conditionals</span>
+<span class="kw">for</span> <span class="op">(</span><span class="va">li</span> <span class="kw">in</span> <span class="va">linkedin</span><span class="op">)</span> <span class="op">{</span>
+  <span class="kw">if</span> <span class="op">(</span><span class="va">li</span> <span class="op">&gt;</span> <span class="fl">10</span><span class="op">)</span> <span class="op">{</span>
+    <span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="st">"You're popular!"</span><span class="op">)</span>
+  <span class="op">}</span> <span class="kw">else</span> <span class="op">{</span>
+    <span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="st">"Be more visible!"</span><span class="op">)</span>
+  <span class="op">}</span>
+  <span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="va">li</span><span class="op">)</span>
+<span class="op">}</span>
+<span class="co">#&gt; [1] "You're popular!"</span>
+<span class="co">#&gt; [1] 16</span>
+<span class="co">#&gt; [1] "Be more visible!"</span>
+<span class="co">#&gt; [1] 9</span>
+<span class="co">#&gt; [1] "You're popular!"</span>
+<span class="co">#&gt; [1] 13</span>
+<span class="co">#&gt; [1] "Be more visible!"</span>
+<span class="co">#&gt; [1] 5</span>
+<span class="co">#&gt; [1] "Be more visible!"</span>
+<span class="co">#&gt; [1] 2</span>
+<span class="co">#&gt; [1] "You're popular!"</span>
+<span class="co">#&gt; [1] 17</span>
+<span class="co">#&gt; [1] "You're popular!"</span>
+<span class="co">#&gt; [1] 14</span></code></pre></div>
+</div>
+<p class>
+Outstanding! In the next exercise, you’ll customize this <code>for</code> loop even further with <code><a href="https://rdrr.io/r/base/Control.html">break</a></code> and <code><a href="https://rdrr.io/r/base/Control.html">next</a></code> statements.
+</p>
+</div>
+<div id="next-you-break-it" class="section level3" number="6.2.5">
+<h3>
+<span class="header-section-number">6.2.5</span> Next, you break it<a class="anchor" aria-label="anchor" href="#next-you-break-it"><i class="fas fa-link"></i></a>
+</h3>
+<div>
+<p>
+A possible solution to the previous exercise has been provided for you. The code loops over the <code>linkedin</code> vector and prints out different messages depending on the values of <code>li</code>.
+</p>
+<p>
+In this exercise, you will use the <code><a href="https://rdrr.io/r/base/Control.html">break</a></code> and <code><a href="https://rdrr.io/r/base/Control.html">next</a></code> statements:
+</p>
+<ul>
+<li>
+The <code><a href="https://rdrr.io/r/base/Control.html">break</a></code> statement abandons the active loop: the remaining code in the loop is skipped and the loop is not iterated over anymore.
+</li>
+<li>
+The <code><a href="https://rdrr.io/r/base/Control.html">next</a></code> statement skips the remainder of the code in the loop, but continues the iteration.
+</li>
+</ul>
+</div>
+<div class="exercise--instructions__content">
+<p>
+Extend the <code>for</code> loop with two new, separate <code>if</code> tests as follows:
+</p>
+<li>
+If the vector element’s value exceeds 16, print out “This is ridiculous, I’m outta here!” and have R abandon the <code>for</code> loop (<code><a href="https://rdrr.io/r/base/Control.html">break</a></code>).
+</li>
+<li>
+If the value is lower than 5, print out “This is too embarrassing!” and fast-forward to the next iteration (<code><a href="https://rdrr.io/r/base/Control.html">next</a></code>).
+</li>
+<div class="sourceCode" id="cb89"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># Adapt/extend the for loop</span>
+<span class="kw">for</span> <span class="op">(</span><span class="va">li</span> <span class="kw">in</span> <span class="va">linkedin</span><span class="op">)</span> <span class="op">{</span>
+  <span class="kw">if</span> <span class="op">(</span><span class="va">li</span> <span class="op">&gt;</span> <span class="fl">10</span><span class="op">)</span> <span class="op">{</span>
+    <span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="st">"You're popular!"</span><span class="op">)</span>
+  <span class="op">}</span> <span class="kw">else</span> <span class="op">{</span>
+    <span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="st">"Be more visible!"</span><span class="op">)</span>
+  <span class="op">}</span>
+  
+  <span class="co"># Add if statement with break</span>
+  <span class="kw">if</span> <span class="op">(</span><span class="va">li</span> <span class="op">&gt;</span> <span class="fl">16</span><span class="op">)</span> <span class="op">{</span>
+    <span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="st">"This is ridiculous, I'm outta here!"</span><span class="op">)</span>
+    <span class="kw">break</span>
+  <span class="op">}</span>
+  
+  <span class="co"># Add if statement with next</span>
+  <span class="kw">if</span> <span class="op">(</span><span class="va">li</span> <span class="op">&lt;</span> <span class="fl">5</span><span class="op">)</span> <span class="op">{</span>
+    <span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="st">"This is too embarrassing!"</span><span class="op">)</span>
+    <span class="kw">next</span>
+  <span class="op">}</span>
+  
+  <span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="va">li</span><span class="op">)</span>
+<span class="op">}</span>
+<span class="co">#&gt; [1] "You're popular!"</span>
+<span class="co">#&gt; [1] 16</span>
+<span class="co">#&gt; [1] "Be more visible!"</span>
+<span class="co">#&gt; [1] 9</span>
+<span class="co">#&gt; [1] "You're popular!"</span>
+<span class="co">#&gt; [1] 13</span>
+<span class="co">#&gt; [1] "Be more visible!"</span>
+<span class="co">#&gt; [1] 5</span>
+<span class="co">#&gt; [1] "Be more visible!"</span>
+<span class="co">#&gt; [1] "This is too embarrassing!"</span>
+<span class="co">#&gt; [1] "You're popular!"</span>
+<span class="co">#&gt; [1] "This is ridiculous, I'm outta here!"</span></code></pre></div>
+</div>
+<p class>
+Great. <code>for</code>, <code><a href="https://rdrr.io/r/base/Control.html">break</a></code>, <code><a href="https://rdrr.io/r/base/Control.html">next</a></code>? We name it, you can do it!
+</p>
+</div>
+<div id="build-a-for-loop-from-scratch" class="section level3" number="6.2.6">
+<h3>
+<span class="header-section-number">6.2.6</span> Build a for loop from scratch<a class="anchor" aria-label="anchor" href="#build-a-for-loop-from-scratch"><i class="fas fa-link"></i></a>
+</h3>
+<div>
+<p>
+This exercise will not introduce any new concepts on <code>for</code> loops.
+</p>
+<p>
+We already went ahead and defined a variable <code>rquote</code>. This variable has been split up into a vector that contains separate letters and has been stored in a vector <code>chars</code> with the <a href="http://www.rdocumentation.org/packages/base/functions/strsplit"><code>strsplit()</code></a> function.
+</p>
+<p>
+Can you write code that counts the number of r’s that come before the first u in <code>rquote</code>?
+</p>
+</div>
+<li>
+Initialize the variable <code>rcount</code>, as 0.
+</li>
+<div class="sourceCode" id="cb90"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># Pre-defined variables</span>
+<span class="va">rquote</span> <span class="op">&lt;-</span> <span class="st">"r's internals are irrefutably intriguing"</span>
+<span class="va">chars</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/strsplit.html">strsplit</a></span><span class="op">(</span><span class="va">rquote</span>, split <span class="op">=</span> <span class="st">""</span><span class="op">)</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span>
+
+<span class="co"># Initialize rcount</span>
+<span class="va">rcount</span> <span class="op">&lt;-</span> <span class="fl">0</span></code></pre></div>
+<li>
+Finish the <code>for</code> loop:
+</li>
+<li>
+if <code>char</code> equals <code>“r”</code>, increase the value of <code>rcount</code> by 1.
+</li>
+<li>
+if <code>char</code> equals <code>“u”</code>, leave the <code>for</code> loop entirely with a <code><a href="https://rdrr.io/r/base/Control.html">break</a></code>.
+</li>
+<div class="sourceCode" id="cb91"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># Finish the for loop</span>
+<span class="kw">for</span> <span class="op">(</span><span class="va">char</span> <span class="kw">in</span> <span class="va">chars</span><span class="op">)</span> <span class="op">{</span>
+  <span class="kw">if</span> <span class="op">(</span><span class="va">char</span> <span class="op">==</span> <span class="st">"r"</span><span class="op">)</span> <span class="op">{</span>
+    <span class="va">rcount</span> <span class="op">&lt;-</span> <span class="va">rcount</span> <span class="op">+</span> <span class="fl">1</span>
+  <span class="op">}</span>
+  <span class="kw">if</span> <span class="op">(</span><span class="va">char</span> <span class="op">==</span> <span class="st">"u"</span><span class="op">)</span> <span class="op">{</span>
+    <span class="kw">break</span>
+  <span class="op">}</span>
+<span class="op">}</span></code></pre></div>
+<li>
+Finally, print out the variable <code>rcount</code> to the console to see if your code is correct.
+</li>
+<div class="sourceCode" id="cb92"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># Print out rcount</span>
+<span class="va">rcount</span>
+<span class="co">#&gt; [1] 5</span></code></pre></div>
+<p class>
+For-midable! This exercise concludes the chapter on <code>while</code> and <code>for</code> loops.
+</p>
+</div>
+</div>
+</div>
+  <div class="chapter-nav">
+<div class="prev"><a href="conditionals-and-control-flow.html"><span class="header-section-number">5</span> Conditionals and Control Flow</a></div>
+<div class="next"><a href="functions.html"><span class="header-section-number">7</span> Functions</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#loops"><span class="header-section-number">6</span> Loops</a></li>
+<li>
+<a class="nav-link" href="#while-loop"><span class="header-section-number">6.1</span> While loop</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#write-a-while-loop"><span class="header-section-number">6.1.1</span> Write a while loop</a></li>
+<li><a class="nav-link" href="#throw-in-more-conditionals"><span class="header-section-number">6.1.2</span> Throw in more conditionals</a></li>
+<li><a class="nav-link" href="#stop-the-while-loop-break"><span class="header-section-number">6.1.3</span> Stop the while loop: break</a></li>
+<li><a class="nav-link" href="#build-a-while-loop-from-scratch"><span class="header-section-number">6.1.4</span> Build a while loop from scratch</a></li>
+</ul>
+</li>
+<li>
+<a class="nav-link" href="#for-loop"><span class="header-section-number">6.2</span> For loop</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#loop-over-a-vector"><span class="header-section-number">6.2.1</span> Loop over a vector</a></li>
+<li><a class="nav-link" href="#loop-over-a-list"><span class="header-section-number">6.2.2</span> Loop over a list</a></li>
+<li><a class="nav-link" href="#loop-over-a-matrix"><span class="header-section-number">6.2.3</span> Loop over a matrix</a></li>
+<li><a class="nav-link" href="#mix-it-up-with-control-flow"><span class="header-section-number">6.2.4</span> Mix it up with control flow</a></li>
+<li><a class="nav-link" href="#next-you-break-it"><span class="header-section-number">6.2.5</span> Next, you break it</a></li>
+<li><a class="nav-link" href="#build-a-for-loop-from-scratch"><span class="header-section-number">6.2.6</span> Build a for loop from scratch</a></li>
+</ul>
+</li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+<li><a id="book-source" href="https://github.com/hadley/r4ds/blob/master/intermediater.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/hadley/r4ds/edit/master/intermediater.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>Introduction to DataCamp</strong>" was written by Tran Thanh Dat. </p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
+</script>
+</body>
+</html>

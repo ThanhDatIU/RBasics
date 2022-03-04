@@ -1,0 +1,957 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>8 The apply family | Introduction to DataCamp</title>
+<meta name="author" content="Tran Thanh Dat">
+<meta name="generator" content="bookdown 0.24 with bs4_book()">
+<meta property="og:title" content="8 The apply family | Introduction to DataCamp">
+<meta property="og:type" content="book">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="8 The apply family | Introduction to DataCamp">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/header-attrs-2.12.1/header-attrs.js"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.1.9000/transition.js"></script><script src="libs/bs3compat-0.3.1.9000/tabs.js"></script><script src="libs/bs3compat-0.3.1.9000/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=UA-115082821-1"></script><script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-115082821-1');
+    </script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><meta name="description" content="Whenever you’re using a for loop, you may want to revise your code to see whether you can use the lapply function instead. Learn all about this intuitive way of applying a function over a list or...">
+<meta property="og:description" content="Whenever you’re using a for loop, you may want to revise your code to see whether you can use the lapply function instead. Learn all about this intuitive way of applying a function over a list or...">
+<meta name="twitter:description" content="Whenever you’re using a for loop, you may want to revise your code to see whether you can use the lapply function instead. Learn all about this intuitive way of applying a function over a list or...">
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">Introduction to DataCamp</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html">Welcome to DataCamp</a></li>
+<li class="book-part">R Fundamentals</li>
+<li><a class="" href="data-wrangling.html"><span class="header-section-number">1</span> Data wrangling</a></li>
+<li><a class="" href="data-visualization.html"><span class="header-section-number">2</span> Data visualization</a></li>
+<li><a class="" href="grouping-and-summarizing.html"><span class="header-section-number">3</span> Grouping and summarizing</a></li>
+<li><a class="" href="types-of-visualizations.html"><span class="header-section-number">4</span> Types of visualizations</a></li>
+<li><a class="" href="conditionals-and-control-flow.html"><span class="header-section-number">5</span> Conditionals and Control Flow</a></li>
+<li><a class="" href="loops.html"><span class="header-section-number">6</span> Loops</a></li>
+<li><a class="" href="functions.html"><span class="header-section-number">7</span> Functions</a></li>
+<li><a class="active" href="the-apply-family.html"><span class="header-section-number">8</span> The apply family</a></li>
+<li><a class="" href="utilities.html"><span class="header-section-number">9</span> Utilities</a></li>
+<li><a class="" href="data-wrangling-1.html"><span class="header-section-number">10</span> Data wrangling</a></li>
+<li><a class="" href="data-visualization-1.html"><span class="header-section-number">11</span> Data visualization</a></li>
+<li><a class="" href="grouping-and-summarizing-1.html"><span class="header-section-number">12</span> Grouping and summarizing</a></li>
+<li><a class="" href="types-of-visualizations-1.html"><span class="header-section-number">13</span> Types of visualizations</a></li>
+</ul>
+
+        <div class="book-extra">
+          <p><a id="book-repo" href="https://github.com/hadley/r4ds">View book source <i class="fab fa-github"></i></a></p>
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="the-apply-family" class="section level1" number="8">
+<h1>
+<span class="header-section-number">8</span> The apply family<a class="anchor" aria-label="anchor" href="#the-apply-family"><i class="fas fa-link"></i></a>
+</h1>
+<p>
+Whenever you’re using a for loop, you may want to revise your code to see whether you can use the lapply function instead. Learn all about this intuitive way of applying a function over a list or a vector, and how to use its variants, sapply and vapply.
+</p>
+<div id="lapply" class="section level2" number="8.1">
+<h2>
+<span class="header-section-number">8.1</span> lapply<a class="anchor" aria-label="anchor" href="#lapply"><i class="fas fa-link"></i></a>
+</h2>
+<div id="use-lapply-with-a-built-in-r-function" class="section level3" number="8.1.1">
+<h3>
+<span class="header-section-number">8.1.1</span> Use lapply with a built-in R function<a class="anchor" aria-label="anchor" href="#use-lapply-with-a-built-in-r-function"><i class="fas fa-link"></i></a>
+</h3>
+<div>
+<p>
+Before you go about solving the exercises below, have a look at the documentation of the <a href="http://www.rdocumentation.org/packages/base/functions/lapply"><code>lapply()</code></a> function. The Usage section shows the following expression:
+</p>
+<pre><code>lapply(X, FUN, ...)
+</code></pre>
+<p>
+To put it generally, <code>lapply</code> takes a vector or list <code>X</code>, and applies the function <code>FUN</code> to each of its members. If <code>FUN</code> requires additional arguments, you pass them after you’ve specified <code>X</code> and <code>FUN</code> (<code>…</code>). The output of <code><a href="https://rdrr.io/r/base/lapply.html">lapply()</a></code> is a list, the same length as <code>X</code>, where each element is the result of applying <code>FUN</code> on the corresponding element of <code>X</code>.
+</p>
+<p>
+Now that you are truly brushing up on your data science skills, let’s revisit some of the most relevant figures in data science history. We’ve compiled a vector of famous mathematicians/statisticians and the year they were born. Up to you to extract some information!
+</p>
+</div>
+<li>
+Have a look at the <a href="http://www.rdocumentation.org/packages/base/functions/strsplit"><code>strsplit()</code></a> calls, that splits the strings in <code>pioneers</code> on the <code>:</code> sign. The result, <code>split_math</code> is a list of 4 character vectors: the first vector element represents the name, the second element the birth year.
+</li>
+<div class="sourceCode" id="cb121"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># The vector pioneers has already been created for you</span>
+<span class="va">pioneers</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"GAUSS:1777"</span>, <span class="st">"BAYES:1702"</span>, <span class="st">"PASCAL:1623"</span>, <span class="st">"PEARSON:1857"</span><span class="op">)</span>
+
+<span class="co"># Split names from birth year</span>
+<span class="va">split_math</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/strsplit.html">strsplit</a></span><span class="op">(</span><span class="va">pioneers</span>, split <span class="op">=</span> <span class="st">":"</span><span class="op">)</span></code></pre></div>
+<li>
+Use <a href="http://www.rdocumentation.org/packages/base/functions/lapply"><code>lapply()</code></a> to convert the character vectors in <code>split_math</code> to lowercase letters: apply <a href="http://www.rdocumentation.org/packages/base/functions/chartr"><code>tolower()</code></a> on each of the elements in <code>split_math</code>. Assign the result, which is a list, to a new variable <code>split_low</code>.
+</li>
+<div class="sourceCode" id="cb122"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># Convert to lowercase strings: split_low</span>
+<span class="va">split_low</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/lapply.html">lapply</a></span><span class="op">(</span><span class="va">split_math</span>, <span class="va">tolower</span><span class="op">)</span></code></pre></div>
+<li>
+Finally, inspect the contents of <code>split_low</code> with <a href="http://www.rdocumentation.org/packages/utils/functions/str"><code>str()</code></a>.
+</li>
+<div class="sourceCode" id="cb123"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># Take a look at the structure of split_low</span>
+<span class="fu"><a href="https://rdrr.io/r/utils/str.html">str</a></span><span class="op">(</span><span class="va">split_low</span><span class="op">)</span>
+<span class="co">#&gt; List of 4</span>
+<span class="co">#&gt;  $ : chr [1:2] "gauss" "1777"</span>
+<span class="co">#&gt;  $ : chr [1:2] "bayes" "1702"</span>
+<span class="co">#&gt;  $ : chr [1:2] "pascal" "1623"</span>
+<span class="co">#&gt;  $ : chr [1:2] "pearson" "1857"</span></code></pre></div>
+<p class>
+Great! Head over to the next exercise.
+</p>
+</div>
+<div id="use-lapply-with-your-own-function" class="section level3" number="8.1.2">
+<h3>
+<span class="header-section-number">8.1.2</span> Use lapply with your own function<a class="anchor" aria-label="anchor" href="#use-lapply-with-your-own-function"><i class="fas fa-link"></i></a>
+</h3>
+<div>
+<p>
+As Filip explained in the instructional video, you can use <a href="http://www.rdocumentation.org/packages/base/functions/lapply"><code>lapply()</code></a> on your own functions as well. You just need to code a new function and make sure it is available in the workspace. After that, you can use the function inside <a href="http://www.rdocumentation.org/packages/base/functions/lapply"><code>lapply()</code></a> just as you did with base R functions.
+</p>
+<p>
+In the previous exercise you already used <a href="http://www.rdocumentation.org/packages/base/functions/lapply"><code>lapply()</code></a> once to convert the information about your favorite pioneering statisticians to a list of vectors composed of two character strings. Let’s write some code to select the names and the birth years separately.
+</p>
+<p>
+The sample code already includes code that defined <code>select_first()</code>, that takes a vector as input and returns the first element of this vector.
+</p>
+</div>
+<li>
+Apply <code>select_first()</code> over the elements of <code>split_low</code> with <a href="http://www.rdocumentation.org/packages/base/functions/lapply"><code>lapply()</code></a> and assign the result to a new variable <code>names</code>.
+</li>
+<div class="sourceCode" id="cb124"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># Code from previous exercise:</span>
+<span class="va">pioneers</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"GAUSS:1777"</span>, <span class="st">"BAYES:1702"</span>, <span class="st">"PASCAL:1623"</span>, <span class="st">"PEARSON:1857"</span><span class="op">)</span>
+<span class="va">split</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/strsplit.html">strsplit</a></span><span class="op">(</span><span class="va">pioneers</span>, split <span class="op">=</span> <span class="st">":"</span><span class="op">)</span>
+<span class="va">split_low</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/lapply.html">lapply</a></span><span class="op">(</span><span class="va">split</span>, <span class="va">tolower</span><span class="op">)</span>
+
+<span class="co"># Write function select_first()</span>
+<span class="va">select_first</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="op">{</span>
+  <span class="va">x</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span>
+<span class="op">}</span>
+
+<span class="co"># Apply select_first() over split_low: names</span>
+<span class="va">names</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/lapply.html">lapply</a></span><span class="op">(</span><span class="va">split_low</span>, <span class="va">select_first</span><span class="op">)</span></code></pre></div>
+<li>
+Next, write a function <code>select_second()</code> that does the exact same thing for the second element of an inputted vector.
+</li>
+<div class="sourceCode" id="cb125"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># Write function select_second()</span>
+<span class="va">select_second</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="op">{</span>
+  <span class="va">x</span><span class="op">[</span><span class="fl">2</span><span class="op">]</span>
+<span class="op">}</span></code></pre></div>
+<li>
+Finally, apply the <code>select_second()</code> function over <code>split_low</code> and assign the output to the variable <code>years</code>.
+</li>
+<div class="sourceCode" id="cb126"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># Apply select_second() over split_low: years</span>
+<span class="va">years</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/lapply.html">lapply</a></span><span class="op">(</span><span class="va">split_low</span>, <span class="va">select_second</span><span class="op">)</span></code></pre></div>
+<p class>
+Nice one! Head over to the next exercise to learn about anonymous functions.
+</p>
+</div>
+<div id="lapply-and-anonymous-functions" class="section level3" number="8.1.3">
+<h3>
+<span class="header-section-number">8.1.3</span> lapply and anonymous functions<a class="anchor" aria-label="anchor" href="#lapply-and-anonymous-functions"><i class="fas fa-link"></i></a>
+</h3>
+<div>
+<p>
+Writing your own functions and then using them inside <a href="http://www.rdocumentation.org/packages/base/functions/lapply"><code>lapply()</code></a> is quite an accomplishment! But defining functions to use them only once is kind of overkill, isn’t it? That’s why you can use so-called <strong>anonymous functions</strong> in R.
+</p>
+<p>
+Previously, you learned that functions in R are objects in their own right. This means that they aren’t automatically bound to a name. When you create a function, you can use the assignment operator to give the function a name. It’s perfectly possible, however, to not give the function a name. This is called an anonymous function:
+</p>
+<pre><code># Named function
+triple &lt;- function(x) { 3 * x }
+
+# Anonymous function with same implementation
+function(x) { 3 * x }
+
+# Use anonymous function inside lapply()
+lapply(list(1,2,3), function(x) { 3 * x })
+</code></pre>
+<p>
+<code>split_low</code> is defined for you.
+</p>
+</div>
+<li>
+Transform the first call of <a href="http://www.rdocumentation.org/packages/base/functions/lapply"><code>lapply()</code></a> such that it uses an anonymous function that does the same thing.
+</li>
+<div class="sourceCode" id="cb127"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># split_low has been created for you</span>
+<span class="va">split_low</span>
+<span class="co">#&gt; [[1]]</span>
+<span class="co">#&gt; [1] "gauss" "1777" </span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; [[2]]</span>
+<span class="co">#&gt; [1] "bayes" "1702" </span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; [[3]]</span>
+<span class="co">#&gt; [1] "pascal" "1623"  </span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; [[4]]</span>
+<span class="co">#&gt; [1] "pearson" "1857"</span></code></pre></div>
+<li>
+In a similar fashion, convert the second call of <code>lapply</code> to use an anonymous version of the <code>select_second()</code> function.
+</li>
+<li>
+Remove both the definitions of <code>select_first()</code> and <code>select_second()</code>, as they are no longer useful.
+</li>
+<div class="sourceCode" id="cb128"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># Transform: use anonymous function inside lapply</span>
+<span class="va">names</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/lapply.html">lapply</a></span><span class="op">(</span><span class="va">split_low</span>, <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="op">{</span> <span class="va">x</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span> <span class="op">}</span><span class="op">)</span>
+
+
+
+
+<span class="co"># Transform: use anonymous function inside lapply</span>
+<span class="va">years</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/lapply.html">lapply</a></span><span class="op">(</span><span class="va">split_low</span>, <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="op">{</span> <span class="va">x</span><span class="op">[</span><span class="fl">2</span><span class="op">]</span> <span class="op">}</span><span class="op">)</span></code></pre></div>
+<p class>
+Great! Now, there’s another way to solve the issue of using the <code>select_*()</code> functions only once: you can make a more generic function that can be used in more places. Find out more about this in the next exercise.
+</p>
+</div>
+<div id="use-lapply-with-additional-arguments" class="section level3" number="8.1.4">
+<h3>
+<span class="header-section-number">8.1.4</span> Use lapply with additional arguments<a class="anchor" aria-label="anchor" href="#use-lapply-with-additional-arguments"><i class="fas fa-link"></i></a>
+</h3>
+<div>
+<p>
+In the video, the <code>triple()</code> function was transformed to the <code>multiply()</code> function to allow for a more generic approach. <a href="http://www.rdocumentation.org/packages/base/functions/lapply"><code>lapply()</code></a> provides a way to handle functions that require more than one argument, such as the <code>multiply()</code> function:
+</p>
+<pre><code>multiply &lt;- function(x, factor) {
+  x * factor
+}
+lapply(list(1,2,3), multiply, factor = 3)
+</code></pre>
+<p>
+On the right we’ve included a generic version of the select functions that you’ve coded earlier: <code>select_el()</code>. It takes a vector as its first argument, and an index as its second argument. It returns the vector’s element at the specified index.
+</p>
+</div>
+<div class="exercise--instructions__content">
+<p>
+Use <code><a href="https://rdrr.io/r/base/lapply.html">lapply()</a></code> twice to call <code>select_el()</code> over all elements in <code>split_low</code>: once with the <code>index</code> equal to 1 and a second time with the index equal to 2. Assign the result to <code>names</code> and <code>years</code>, respectively.
+</p>
+</div>
+<div class="sourceCode" id="cb129"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># Definition of split_low</span>
+<span class="va">pioneers</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"GAUSS:1777"</span>, <span class="st">"BAYES:1702"</span>, <span class="st">"PASCAL:1623"</span>, <span class="st">"PEARSON:1857"</span><span class="op">)</span>
+<span class="va">split</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/strsplit.html">strsplit</a></span><span class="op">(</span><span class="va">pioneers</span>, split <span class="op">=</span> <span class="st">":"</span><span class="op">)</span>
+<span class="va">split_low</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/lapply.html">lapply</a></span><span class="op">(</span><span class="va">split</span>, <span class="va">tolower</span><span class="op">)</span>
+
+<span class="co"># Generic select function</span>
+<span class="va">select_el</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">x</span>, <span class="va">index</span><span class="op">)</span> <span class="op">{</span>
+  <span class="va">x</span><span class="op">[</span><span class="va">index</span><span class="op">]</span>
+<span class="op">}</span>
+
+<span class="co"># Use lapply() twice on split_low: names and years</span>
+<span class="va">names</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/lapply.html">lapply</a></span><span class="op">(</span><span class="va">split_low</span>, <span class="va">select_el</span>, index <span class="op">=</span> <span class="fl">1</span><span class="op">)</span>
+<span class="va">years</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/lapply.html">lapply</a></span><span class="op">(</span><span class="va">split_low</span>, <span class="va">select_el</span>, index <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></code></pre></div>
+<p class>
+Awesome! Your lapply skills are growing by the minute!
+</p>
+</div>
+<div id="apply-functions-that-return-null" class="section level3" number="8.1.5">
+<h3>
+<span class="header-section-number">8.1.5</span> Apply functions that return NULL<a class="anchor" aria-label="anchor" href="#apply-functions-that-return-null"><i class="fas fa-link"></i></a>
+</h3>
+<div>
+<p>
+In all of the previous exercises, it was assumed that the functions that were applied over vectors and lists actually returned a meaningful result. For example, the <a href="http://www.rdocumentation.org/packages/base/functions/chartr"><code>tolower()</code></a> function simply returns the strings with the characters in lowercase. This won’t always be the case. Suppose you want to display the structure of every element of a list. You could use the <a href="http://www.rdocumentation.org/packages/utils/functions/str"><code>str()</code></a> function for this, which returns <code>NULL</code>:
+</p>
+<pre><code>lapply(list(1, "a", TRUE), str)
+</code></pre>
+<p>
+This call actually returns a list, the same size as the input list, containing all <code>NULL</code> values. On the other hand calling
+</p>
+<pre><code>str(TRUE)
+</code></pre>
+<p>
+on its own prints only the structure of the logical to the console, not <code>NULL</code>. That’s because <a href="http://www.rdocumentation.org/packages/utils/functions/str"><code>str()</code></a> uses <a href="http://www.rdocumentation.org/packages/base/functions/invisible"><code>invisible()</code></a> behind the scenes, which returns an <em>invisible copy</em> of the return value, <code>NULL</code> in this case. This prevents it from being printed when the result of <a href="http://www.rdocumentation.org/packages/utils/functions/str"><code>str()</code></a> is not assigned.
+</p>
+<p>
+What will the following code chunk return (<code>split_low</code> is already available in the workspace)? Try to reason about the result before simply executing it in the console!
+</p>
+<pre><code>lapply(split_low, function(x) {
+  if (nchar(x[1]) &gt; 5) {
+    return(NULL)
+  } else {
+    return(x[2])
+  }
+})
+</code></pre>
+</div>
+<ul>
+<li>
+<div class="dc-input-radio__text">
+<code>list(NULL, NULL, “1623”, “1857”)</code>
+</div>
+</li>
+<li>
+<div class="dc-input-radio__text">
+<code>list(“gauss”, “bayes”, NULL, NULL)</code>
+</div>
+</li>
+<strong>
+<li>
+<div class="dc-input-radio__text">
+<code>list(“1777”, “1702”, NULL, NULL)</code>
+</div>
+</li>
+</strong>
+<li>
+<div class="dc-input-radio__text">
+<code>list(“1777”, “1702”)</code>
+</div>
+</li>
+</ul>
+<p class>
+Wonderful! Feel free to experiment some more with your code in the console. Did you notice that <code><a href="https://rdrr.io/r/base/lapply.html">lapply()</a></code> <i>always</i> returns a list, no matter the input? This can be kind of annoying. In the next video tutorial you’ll learn about <code><a href="https://rdrr.io/r/base/lapply.html">sapply()</a></code> to solve this.
+</p>
+</div>
+</div>
+<div id="sapply" class="section level2" number="8.2">
+<h2>
+<span class="header-section-number">8.2</span> sapply<a class="anchor" aria-label="anchor" href="#sapply"><i class="fas fa-link"></i></a>
+</h2>
+<div id="how-to-use-sapply" class="section level3" number="8.2.1">
+<h3>
+<span class="header-section-number">8.2.1</span> How to use sapply<a class="anchor" aria-label="anchor" href="#how-to-use-sapply"><i class="fas fa-link"></i></a>
+</h3>
+<div>
+<p>
+You can use <a href="http://www.rdocumentation.org/packages/base/functions/lapply"><code>sapply()</code></a> similar to how you used <a href="http://www.rdocumentation.org/packages/base/functions/lapply"><code>lapply()</code></a>. The first argument of <a href="http://www.rdocumentation.org/packages/base/functions/lapply"><code>sapply()</code></a> is the list or vector <code>X</code> over which you want to apply a function, <code>FUN</code>. Potential additional arguments to this function are specified afterwards (<code>…</code>):
+</p>
+<pre><code>sapply(X, FUN, ...)
+</code></pre>
+<p>
+In the next couple of exercises, you’ll be working with the variable <code>temp</code>, that contains temperature measurements for 7 days. <code>temp</code> is a list of length 7, where each element is a vector of length 5, representing 5 measurements on a given day. This variable has already been defined in the workspace: type <code>str(temp)</code> to see its structure.
+</p>
+</div>
+<li>
+Use <a href="http://www.rdocumentation.org/packages/base/functions/lapply"><code>lapply()</code></a> to calculate the minimum (built-in function <a href="http://www.rdocumentation.org/packages/base/functions/Extremes"><code>min()</code></a>) of the temperature measurements for every day.
+</li>
+<div class="sourceCode" id="cb130"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># temp has already been defined in the workspace</span>
+<span class="va">temp</span><span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">3</span>,<span class="fl">7</span>,<span class="fl">9</span>,<span class="fl">6</span>,<span class="op">-</span><span class="fl">1</span><span class="op">)</span>,
+<span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">6</span>,<span class="fl">9</span>,<span class="fl">12</span>,<span class="fl">13</span>,<span class="fl">5</span><span class="op">)</span>,
+<span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">4</span>,<span class="fl">8</span>,<span class="fl">3</span>,<span class="op">-</span><span class="fl">1</span>,<span class="op">-</span><span class="fl">3</span><span class="op">)</span>,
+<span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">4</span>,<span class="fl">7</span>,<span class="fl">2</span>,<span class="op">-</span><span class="fl">2</span><span class="op">)</span>,
+<span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">5</span>,<span class="fl">7</span>,<span class="fl">9</span>,<span class="fl">4</span>,<span class="fl">2</span><span class="op">)</span>,
+<span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="op">-</span><span class="fl">3</span>,<span class="fl">5</span>,<span class="fl">8</span>,<span class="fl">9</span>,<span class="fl">4</span><span class="op">)</span>,
+<span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">3</span>,<span class="fl">6</span>,<span class="fl">9</span>,<span class="fl">4</span>,<span class="fl">1</span><span class="op">)</span><span class="op">)</span>
+<span class="co"># Use lapply() to find each day's minimum temperature</span>
+<span class="fu"><a href="https://rdrr.io/r/base/lapply.html">lapply</a></span><span class="op">(</span><span class="va">temp</span>, <span class="va">min</span><span class="op">)</span>
+<span class="co">#&gt; [[1]]</span>
+<span class="co">#&gt; [1] -1</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; [[2]]</span>
+<span class="co">#&gt; [1] 5</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; [[3]]</span>
+<span class="co">#&gt; [1] -3</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; [[4]]</span>
+<span class="co">#&gt; [1] -2</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; [[5]]</span>
+<span class="co">#&gt; [1] 2</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; [[6]]</span>
+<span class="co">#&gt; [1] -3</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; [[7]]</span>
+<span class="co">#&gt; [1] 1</span></code></pre></div>
+<li>
+Do the same thing but this time with <a href="http://www.rdocumentation.org/packages/base/functions/lapply"><code>sapply()</code></a>. See how the output differs.
+</li>
+<div class="sourceCode" id="cb131"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># Use sapply() to find each day's minimum temperature</span>
+<span class="fu"><a href="https://rdrr.io/r/base/lapply.html">sapply</a></span><span class="op">(</span><span class="va">temp</span>, <span class="va">min</span><span class="op">)</span>
+<span class="co">#&gt; [1] -1  5 -3 -2  2 -3  1</span></code></pre></div>
+<li>
+Use <a href="http://www.rdocumentation.org/packages/base/functions/lapply"><code>lapply()</code></a> to compute the the maximum (<a href="http://www.rdocumentation.org/packages/base/functions/Extremes"><code>max()</code></a>) temperature for each day.
+</li>
+<div class="sourceCode" id="cb132"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># Use lapply() to find each day's maximum temperature</span>
+<span class="fu"><a href="https://rdrr.io/r/base/lapply.html">lapply</a></span><span class="op">(</span><span class="va">temp</span>, <span class="va">max</span><span class="op">)</span>
+<span class="co">#&gt; [[1]]</span>
+<span class="co">#&gt; [1] 9</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; [[2]]</span>
+<span class="co">#&gt; [1] 13</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; [[3]]</span>
+<span class="co">#&gt; [1] 8</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; [[4]]</span>
+<span class="co">#&gt; [1] 7</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; [[5]]</span>
+<span class="co">#&gt; [1] 9</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; [[6]]</span>
+<span class="co">#&gt; [1] 9</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; [[7]]</span>
+<span class="co">#&gt; [1] 9</span></code></pre></div>
+<li>
+Again, use <a href="http://www.rdocumentation.org/packages/base/functions/lapply"><code>sapply()</code></a> to solve the same question and see how <a href="http://www.rdocumentation.org/packages/base/functions/lapply"><code>lapply()</code></a> and <a href="http://www.rdocumentation.org/packages/base/functions/lapply"><code>sapply()</code></a> differ.
+</li>
+<div class="sourceCode" id="cb133"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># Use sapply() to find each day's maximum temperature</span>
+<span class="fu"><a href="https://rdrr.io/r/base/lapply.html">sapply</a></span><span class="op">(</span><span class="va">temp</span>, <span class="va">max</span><span class="op">)</span>
+<span class="co">#&gt; [1]  9 13  8  7  9  9  9</span></code></pre></div>
+<p class>
+Nice! Can you tell the difference between the output of <code><a href="https://rdrr.io/r/base/lapply.html">lapply()</a></code> and <code><a href="https://rdrr.io/r/base/lapply.html">sapply()</a></code>? The former returns a list, while the latter returns a vector that is a simplified version of this list. Notice that this time, unlike in the cities example of the instructional video, the vector is not named.
+</p>
+</div>
+<div id="sapply-with-your-own-function" class="section level3" number="8.2.2">
+<h3>
+<span class="header-section-number">8.2.2</span> sapply with your own function<a class="anchor" aria-label="anchor" href="#sapply-with-your-own-function"><i class="fas fa-link"></i></a>
+</h3>
+<div>
+<p>
+Like <a href="http://www.rdocumentation.org/packages/base/functions/lapply"><code>lapply()</code></a>, <a href="http://www.rdocumentation.org/packages/base/functions/lapply"><code>sapply()</code></a> allows you to use self-defined functions and apply them over a vector or a list:
+</p>
+<pre><code>sapply(X, FUN, ...)
+</code></pre>
+<p>
+Here, <code>FUN</code> can be one of R’s built-in functions, but it can also be a function you wrote. This self-written function can be defined before hand, or can be inserted directly as an anonymous function.
+</p>
+</div>
+<li>
+Finish the definition of <code>extremes_avg()</code>: it takes a vector of temperatures and calculates the average of the minimum and maximum temperatures of the vector.
+</li>
+<div class="sourceCode" id="cb134"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># temp is already defined in the workspace</span>
+
+<span class="co"># Finish function definition of extremes_avg</span>
+<span class="va">extremes_avg</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="op">{</span>
+  <span class="op">(</span> <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">min</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">max</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="op">)</span> <span class="op">/</span> <span class="fl">2</span>
+<span class="op">}</span></code></pre></div>
+<li>
+Next, use this function inside <a href="http://www.rdocumentation.org/packages/base/functions/lapply"><code>sapply()</code></a> to apply it over the vectors inside <code>temp</code>.
+</li>
+<div class="sourceCode" id="cb135"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># Apply extremes_avg() over temp using sapply()</span>
+<span class="fu"><a href="https://rdrr.io/r/base/lapply.html">sapply</a></span><span class="op">(</span><span class="va">temp</span>, <span class="va">extremes_avg</span><span class="op">)</span>
+<span class="co">#&gt; [1] 4.0 9.0 2.5 2.5 5.5 3.0 5.0</span></code></pre></div>
+<li>
+Use the same function over <code>temp</code> with <a href="http://www.rdocumentation.org/packages/base/functions/lapply"><code>lapply()</code></a> and see how the outputs differ.
+</li>
+<div class="sourceCode" id="cb136"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># Apply extremes_avg() over temp using lapply()</span>
+<span class="fu"><a href="https://rdrr.io/r/base/lapply.html">lapply</a></span><span class="op">(</span><span class="va">temp</span>, <span class="va">extremes_avg</span><span class="op">)</span>
+<span class="co">#&gt; [[1]]</span>
+<span class="co">#&gt; [1] 4</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; [[2]]</span>
+<span class="co">#&gt; [1] 9</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; [[3]]</span>
+<span class="co">#&gt; [1] 2.5</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; [[4]]</span>
+<span class="co">#&gt; [1] 2.5</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; [[5]]</span>
+<span class="co">#&gt; [1] 5.5</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; [[6]]</span>
+<span class="co">#&gt; [1] 3</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; [[7]]</span>
+<span class="co">#&gt; [1] 5</span></code></pre></div>
+<p class>
+Great job! Of course, you could have solved this exercise using an anonymous function, but this would require you to use the code inside the definition of <code>extremes_avg()</code> twice. Duplicating code should be avoided as much as possible!
+</p>
+</div>
+<div id="sapply-with-function-returning-vector" class="section level3" number="8.2.3">
+<h3>
+<span class="header-section-number">8.2.3</span> sapply with function returning vector<a class="anchor" aria-label="anchor" href="#sapply-with-function-returning-vector"><i class="fas fa-link"></i></a>
+</h3>
+<div>
+<p>
+In the previous exercises, you’ve seen how <a href="http://www.rdocumentation.org/packages/base/functions/lapply"><code>sapply()</code></a> simplifies the list that <a href="http://www.rdocumentation.org/packages/base/functions/lapply"><code>lapply()</code></a> would return by turning it into a vector. But what if the function you’re applying over a list or a vector returns a vector of length greater than 1? If you don’t remember from the video, don’t waste more time in the valley of ignorance and head over to the instructions!
+</p>
+</div>
+<li>
+Finish the definition of the <code>extremes()</code> function. It takes a vector of numerical values and returns a vector containing the minimum and maximum values of a given vector, with the names “min” and “max”, respectively.
+</li>
+<div class="sourceCode" id="cb137"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># temp is already available in the workspace</span>
+
+<span class="co"># Create a function that returns min and max of a vector: extremes</span>
+<span class="va">extremes</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="op">{</span>
+  <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span>min <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">min</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span>, max <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">max</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span><span class="op">)</span>
+<span class="op">}</span></code></pre></div>
+<li>
+Apply this function over the vector <code>temp</code> using <a href="http://www.rdocumentation.org/packages/base/functions/lapply"><code>sapply()</code></a>.
+</li>
+<div class="sourceCode" id="cb138"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># Apply extremes() over temp with sapply()</span>
+<span class="fu"><a href="https://rdrr.io/r/base/lapply.html">sapply</a></span><span class="op">(</span><span class="va">temp</span>, <span class="va">extremes</span><span class="op">)</span>
+<span class="co">#&gt;     [,1] [,2] [,3] [,4] [,5] [,6] [,7]</span>
+<span class="co">#&gt; min   -1    5   -3   -2    2   -3    1</span>
+<span class="co">#&gt; max    9   13    8    7    9    9    9</span></code></pre></div>
+<li>
+Finally, apply this function over the vector <code>temp</code> using <a href="http://www.rdocumentation.org/packages/base/functions/lapply"><code>lapply()</code></a> as well.
+</li>
+<div class="sourceCode" id="cb139"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># Apply extremes() over temp with lapply()</span>
+<span class="fu"><a href="https://rdrr.io/r/base/lapply.html">lapply</a></span><span class="op">(</span><span class="va">temp</span>, <span class="va">extremes</span><span class="op">)</span>
+<span class="co">#&gt; [[1]]</span>
+<span class="co">#&gt; min max </span>
+<span class="co">#&gt;  -1   9 </span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; [[2]]</span>
+<span class="co">#&gt; min max </span>
+<span class="co">#&gt;   5  13 </span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; [[3]]</span>
+<span class="co">#&gt; min max </span>
+<span class="co">#&gt;  -3   8 </span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; [[4]]</span>
+<span class="co">#&gt; min max </span>
+<span class="co">#&gt;  -2   7 </span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; [[5]]</span>
+<span class="co">#&gt; min max </span>
+<span class="co">#&gt;   2   9 </span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; [[6]]</span>
+<span class="co">#&gt; min max </span>
+<span class="co">#&gt;  -3   9 </span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; [[7]]</span>
+<span class="co">#&gt; min max </span>
+<span class="co">#&gt;   1   9</span></code></pre></div>
+<p class>
+Wonderful! Have a final look at the console and see how <code><a href="https://rdrr.io/r/base/lapply.html">sapply()</a></code> did a great job at simplifying the rather uninformative ‘list of vectors’ that <code><a href="https://rdrr.io/r/base/lapply.html">lapply()</a></code> returns. It actually returned a nicely formatted matrix!
+</p>
+</div>
+<div id="sapply-cant-simplify-now-what" class="section level3" number="8.2.4">
+<h3>
+<span class="header-section-number">8.2.4</span> sapply can’t simplify, now what?<a class="anchor" aria-label="anchor" href="#sapply-cant-simplify-now-what"><i class="fas fa-link"></i></a>
+</h3>
+<div>
+<p>
+It seems like we’ve hit the jackpot with <a href="http://www.rdocumentation.org/packages/base/functions/lapply"><code>sapply()</code></a>. On all of the examples so far, <a href="http://www.rdocumentation.org/packages/base/functions/lapply"><code>sapply()</code></a> was able to nicely simplify the rather bulky output of <a href="http://www.rdocumentation.org/packages/base/functions/lapply"><code>lapply()</code></a>. But, as with life, there are things you can’t simplify. How does <a href="http://www.rdocumentation.org/packages/base/functions/lapply"><code>sapply()</code></a> react?
+</p>
+<p>
+We already created a function, <code>below_zero()</code>, that takes a vector of numerical values and returns a vector that only contains the values that are strictly below zero.
+</p>
+</div>
+<li>
+Apply <code>below_zero()</code> over <code>temp</code> using <a href="http://www.rdocumentation.org/packages/base/functions/lapply"><code>sapply()</code></a> and store the result in <code>freezing_s</code>.
+</li>
+<div class="sourceCode" id="cb140"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># temp is already prepared for you in the workspace</span>
+
+<span class="co"># Definition of below_zero()</span>
+<span class="va">below_zero</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="op">{</span>
+  <span class="kw"><a href="https://rdrr.io/r/base/function.html">return</a></span><span class="op">(</span><span class="va">x</span><span class="op">[</span><span class="va">x</span> <span class="op">&lt;</span> <span class="fl">0</span><span class="op">]</span><span class="op">)</span>
+<span class="op">}</span>
+
+<span class="co"># Apply below_zero over temp using sapply(): freezing_s</span>
+<span class="va">freezing_s</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/lapply.html">sapply</a></span><span class="op">(</span><span class="va">temp</span>, <span class="va">below_zero</span><span class="op">)</span></code></pre></div>
+<li>
+Apply <code>below_zero()</code> over <code>temp</code> using <a href="http://www.rdocumentation.org/packages/base/functions/lapply"><code>lapply()</code></a>. Save the resulting list in a variable <code>freezing_l</code>.
+</li>
+<div class="sourceCode" id="cb141"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># Apply below_zero over temp using lapply(): freezing_l</span>
+<span class="va">freezing_l</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/lapply.html">lapply</a></span><span class="op">(</span><span class="va">temp</span>, <span class="va">below_zero</span><span class="op">)</span></code></pre></div>
+<li>
+Compare <code>freezing_s</code> to <code>freezing_l</code> using the <a href="http://www.rdocumentation.org/packages/base/functions/identical"><code>identical()</code></a> function.
+</li>
+<div class="sourceCode" id="cb142"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># Are freezing_s and freezing_l identical?</span>
+<span class="fu"><a href="https://rdrr.io/r/base/identical.html">identical</a></span><span class="op">(</span><span class="va">freezing_s</span>, <span class="va">freezing_l</span><span class="op">)</span>
+<span class="co">#&gt; [1] TRUE</span></code></pre></div>
+<p class>
+Nice one! Given that the length of the output of <code>below_zero()</code> changes for different input vectors, <code><a href="https://rdrr.io/r/base/lapply.html">sapply()</a></code> is not able to nicely convert the output of <code><a href="https://rdrr.io/r/base/lapply.html">lapply()</a></code> to a nicely formatted matrix. Instead, the output values of <code><a href="https://rdrr.io/r/base/lapply.html">sapply()</a></code> and <code><a href="https://rdrr.io/r/base/lapply.html">lapply()</a></code> are exactly the same, as shown by the <code>TRUE</code> output of <code><a href="https://rdrr.io/r/base/identical.html">identical()</a></code>.
+</p>
+</div>
+<div id="sapply-with-functions-that-return-null" class="section level3" number="8.2.5">
+<h3>
+<span class="header-section-number">8.2.5</span> sapply with functions that return NULL<a class="anchor" aria-label="anchor" href="#sapply-with-functions-that-return-null"><i class="fas fa-link"></i></a>
+</h3>
+<div>
+<p>
+You already have some apply tricks under your sleeve, but you’re surely hungry for some more, aren’t you? In this exercise, you’ll see how <a href="http://www.rdocumentation.org/packages/base/functions/lapply"><code>sapply()</code></a> reacts when it is used to apply a function that returns <code>NULL</code> over a vector or a list.
+</p>
+<p>
+A function <code>print_info()</code>, that takes a vector and prints the average of this vector, has already been created for you. It uses the <a href="http://www.rdocumentation.org/packages/base/functions/cat"><code>cat()</code></a> function.
+</p>
+</div>
+<li>
+Apply <code>print_info()</code> over the contents of <code>temp</code> with <a href="http://www.rdocumentation.org/packages/base/functions/lapply"><code>sapply()</code></a>.
+</li>
+<div class="sourceCode" id="cb143"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># temp is already available in the workspace</span>
+
+<span class="co"># Definition of print_info()</span>
+<span class="va">print_info</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="op">{</span>
+  <span class="fu"><a href="https://rdrr.io/r/base/cat.html">cat</a></span><span class="op">(</span><span class="st">"The average temperature is"</span>, <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span>, <span class="st">"\n"</span><span class="op">)</span>
+<span class="op">}</span>
+
+<span class="co"># Apply print_info() over temp using sapply()</span>
+<span class="fu"><a href="https://rdrr.io/r/base/lapply.html">sapply</a></span><span class="op">(</span><span class="va">temp</span>, <span class="va">print_info</span><span class="op">)</span>
+<span class="co">#&gt; The average temperature is 4.8 </span>
+<span class="co">#&gt; The average temperature is 9 </span>
+<span class="co">#&gt; The average temperature is 2.2 </span>
+<span class="co">#&gt; The average temperature is 2.4 </span>
+<span class="co">#&gt; The average temperature is 5.4 </span>
+<span class="co">#&gt; The average temperature is 4.6 </span>
+<span class="co">#&gt; The average temperature is 4.6</span>
+<span class="co">#&gt; [[1]]</span>
+<span class="co">#&gt; NULL</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; [[2]]</span>
+<span class="co">#&gt; NULL</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; [[3]]</span>
+<span class="co">#&gt; NULL</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; [[4]]</span>
+<span class="co">#&gt; NULL</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; [[5]]</span>
+<span class="co">#&gt; NULL</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; [[6]]</span>
+<span class="co">#&gt; NULL</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; [[7]]</span>
+<span class="co">#&gt; NULL</span></code></pre></div>
+<li>
+Repeat this process with <a href="http://www.rdocumentation.org/packages/base/functions/lapply"><code>lapply()</code></a>. Do you notice the difference?
+</li>
+<div class="sourceCode" id="cb144"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># Apply print_info() over temp using lapply()</span>
+<span class="fu"><a href="https://rdrr.io/r/base/lapply.html">lapply</a></span><span class="op">(</span><span class="va">temp</span>, <span class="va">print_info</span><span class="op">)</span>
+<span class="co">#&gt; The average temperature is 4.8 </span>
+<span class="co">#&gt; The average temperature is 9 </span>
+<span class="co">#&gt; The average temperature is 2.2 </span>
+<span class="co">#&gt; The average temperature is 2.4 </span>
+<span class="co">#&gt; The average temperature is 5.4 </span>
+<span class="co">#&gt; The average temperature is 4.6 </span>
+<span class="co">#&gt; The average temperature is 4.6</span>
+<span class="co">#&gt; [[1]]</span>
+<span class="co">#&gt; NULL</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; [[2]]</span>
+<span class="co">#&gt; NULL</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; [[3]]</span>
+<span class="co">#&gt; NULL</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; [[4]]</span>
+<span class="co">#&gt; NULL</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; [[5]]</span>
+<span class="co">#&gt; NULL</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; [[6]]</span>
+<span class="co">#&gt; NULL</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; [[7]]</span>
+<span class="co">#&gt; NULL</span></code></pre></div>
+<p class>
+Great! Notice here that, quite surprisingly, <code><a href="https://rdrr.io/r/base/lapply.html">sapply()</a></code> does not simplify the list of <code>NULL’s</code>. That’s because the ‘vector-version’ of a list of <code>NULL</code>’s would simply be a <code>NULL</code>, which is no longer a vector with the same length as the input. Proceed to the next exercise.
+</p>
+</div>
+<div id="reverse-engineering-sapply" class="section level3" number="8.2.6">
+<h3>
+<span class="header-section-number">8.2.6</span> Reverse engineering sapply<a class="anchor" aria-label="anchor" href="#reverse-engineering-sapply"><i class="fas fa-link"></i></a>
+</h3>
+<div class>
+<pre><code>sapply(list(runif (10), runif (10)), 
+       function(x) c(min = min(x), mean = mean(x), max = max(x)))
+</code></pre>
+<p>
+Without going straight to the console to run the code, try to reason through which of the following statements are correct and why.
+</p>
+<p>
+</p>
+<ol style="list-style-type: decimal">
+<li>
+<a href="http://www.rdocumentation.org/packages/base/functions/lapply"><code>sapply()</code></a> can’t simplify the result that <a href="http://www.rdocumentation.org/packages/base/functions/lapply"><code>lapply()</code></a> would return, and thus returns a list of vectors.<br>
+</li>
+<li>This code generates a matrix with 3 rows and 2 columns.<br>
+</li>
+<li>The function that is used inside <a href="http://www.rdocumentation.org/packages/base/functions/lapply"><code>sapply()</code></a> is anonymous.<br>
+</li>
+<li>The resulting data structure does not contain any names.
+
+<p>
+Select the option that lists <u>all</u> correct statements.
+</p>
+</li>
+</ol>
+</div>
+
+<ul>
+<li>
+<div class="dc-input-radio__text">
+<ol style="list-style-type: decimal"><li>and (3)
+</li></ol>
+</div>
+</li>
+<strong>
+<li>
+<div class="dc-input-radio__text">
+<ol start="2" style="list-style-type: decimal"><li>and (3)
+</li></ol>
+</div>
+</li>
+</strong>
+<li>
+<div class="dc-input-radio__text">
+<ol style="list-style-type: decimal"><li>and (4)
+</li></ol>
+</div>
+</li>
+<li>
+<div class="dc-input-radio__text">
+(2), (3) and (4)
+</div>
+</li>
+</ul>
+<p class>
+Great! This concludes the exercise set on <code><a href="https://rdrr.io/r/base/lapply.html">sapply()</a></code>. Head over to another video to learn all about <code><a href="https://rdrr.io/r/base/lapply.html">vapply()</a></code>!
+</p>
+</div>
+</div>
+<div id="vapply" class="section level2" number="8.3">
+<h2>
+<span class="header-section-number">8.3</span> vapply<a class="anchor" aria-label="anchor" href="#vapply"><i class="fas fa-link"></i></a>
+</h2>
+<div id="use-vapply" class="section level3" number="8.3.1">
+<h3>
+<span class="header-section-number">8.3.1</span> Use vapply<a class="anchor" aria-label="anchor" href="#use-vapply"><i class="fas fa-link"></i></a>
+</h3>
+<div>
+<p>
+Before you get your hands dirty with the third and last apply function that you’ll learn about in this intermediate R course, let’s take a look at its syntax. The function is called <a href="http://www.rdocumentation.org/packages/base/functions/lapply"><code>vapply()</code></a>, and it has the following syntax:
+</p>
+<pre><code>vapply(X, FUN, FUN.VALUE, ..., USE.NAMES = TRUE)
+</code></pre>
+<p>
+Over the elements inside <code>X</code>, the function <code>FUN</code> is applied. The <code>FUN.VALUE</code> argument expects a template for the return argument of this function <code>FUN</code>. <code>USE.NAMES</code> is <code>TRUE</code> by default; in this case <a href="http://www.rdocumentation.org/packages/base/functions/lapply"><code>vapply()</code></a> tries to generate a named array, if possible.
+</p>
+<p>
+For the next set of exercises, you’ll be working on the <code>temp</code> list again, that contains 7 numerical vectors of length 5. We also coded a function <code>basics()</code> that takes a vector, and returns a named vector of length 3, containing the minimum, mean and maximum value of the vector respectively.
+</p>
+</div>
+<li>
+Apply the function <code>basics()</code> over the list of temperatures, <code>temp</code>, using <a href="http://www.rdocumentation.org/packages/base/functions/lapply"><code>vapply()</code></a>. This time, you can use <code>numeric(3)</code> to specify the <code>FUN.VALUE</code> argument.
+</li>
+<div class="sourceCode" id="cb145"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># temp is already available in the workspace</span>
+
+<span class="co"># Definition of basics()</span>
+<span class="va">basics</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="op">{</span>
+  <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span>min <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">min</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span>, mean <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span>, max <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">max</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span><span class="op">)</span>
+<span class="op">}</span>
+
+<span class="co"># Apply basics() over temp using vapply()</span>
+<span class="fu"><a href="https://rdrr.io/r/base/lapply.html">vapply</a></span><span class="op">(</span><span class="va">temp</span>, <span class="va">basics</span>, <span class="fu"><a href="https://rdrr.io/r/base/numeric.html">numeric</a></span><span class="op">(</span><span class="fl">3</span><span class="op">)</span><span class="op">)</span>
+<span class="co">#&gt;      [,1] [,2] [,3] [,4] [,5] [,6] [,7]</span>
+<span class="co">#&gt; min  -1.0    5 -3.0 -2.0  2.0 -3.0  1.0</span>
+<span class="co">#&gt; mean  4.8    9  2.2  2.4  5.4  4.6  4.6</span>
+<span class="co">#&gt; max   9.0   13  8.0  7.0  9.0  9.0  9.0</span></code></pre></div>
+<p class>
+Perfect! Notice how, just as with <code><a href="https://rdrr.io/r/base/lapply.html">sapply()</a></code>, <code><a href="https://rdrr.io/r/base/lapply.html">vapply()</a></code> neatly transfers the names that you specify in the <code>basics()</code> function to the row names of the matrix that it returns.
+</p>
+</div>
+<div id="use-vapply-2" class="section level3" number="8.3.2">
+<h3>
+<span class="header-section-number">8.3.2</span> Use vapply (2)<a class="anchor" aria-label="anchor" href="#use-vapply-2"><i class="fas fa-link"></i></a>
+</h3>
+<div>
+<p>
+So far you’ve seen that <a href="http://www.rdocumentation.org/packages/base/functions/lapply"><code>vapply()</code></a> mimics the behavior of <a href="http://www.rdocumentation.org/packages/base/functions/lapply"><code>sapply()</code></a> if everything goes according to plan. But what if it doesn’t?
+</p>
+<p>
+In the video, Filip showed you that there are cases where the structure of the output of the function you want to apply, <code>FUN</code>, does not correspond to the template you specify in <code>FUN.VALUE</code>. In that case, <a href="http://www.rdocumentation.org/packages/base/functions/lapply"><code>vapply()</code></a> will throw an error that informs you about the misalignment between expected and actual output.
+</p>
+</div>
+<li>
+Inspect the pre-loaded code and try to run it. If you haven’t changed anything, an error should pop up. That’s because <a href="http://www.rdocumentation.org/packages/base/functions/lapply"><code>vapply()</code></a> still expects <code>basics()</code> to return a vector of length 3. The error message gives you an indication of what’s wrong.
+</li>
+<div class="sourceCode" id="cb146"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># temp is already available in the workspace</span>
+
+<span class="co"># Definition of the basics() function</span>
+<span class="va">basics</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="op">{</span>
+  <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span>min <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">min</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span>, mean <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span>, median <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/median.html">median</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span>, max <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">max</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span><span class="op">)</span>
+<span class="op">}</span>
+
+<span class="co"># Fix the error:</span>
+<span class="co">#vapply(temp, basics, numeric(3))</span></code></pre></div>
+<li>
+Try to fix the error by editing the <a href="http://www.rdocumentation.org/packages/base/functions/lapply"><code>vapply()</code></a> command.
+</li>
+<div class="sourceCode" id="cb147"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># temp is already available in the workspace</span>
+
+<span class="co"># Definition of the basics() function</span>
+<span class="va">basics</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="op">{</span>
+  <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span>min <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">min</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span>, mean <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span>, median <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/median.html">median</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span>, max <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">max</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span><span class="op">)</span>
+<span class="op">}</span>
+
+<span class="co"># Fix the error:</span>
+<span class="fu"><a href="https://rdrr.io/r/base/lapply.html">vapply</a></span><span class="op">(</span><span class="va">temp</span>, <span class="va">basics</span>, <span class="fu"><a href="https://rdrr.io/r/base/numeric.html">numeric</a></span><span class="op">(</span><span class="fl">4</span><span class="op">)</span><span class="op">)</span>
+<span class="co">#&gt;        [,1] [,2] [,3] [,4] [,5] [,6] [,7]</span>
+<span class="co">#&gt; min    -1.0    5 -3.0 -2.0  2.0 -3.0  1.0</span>
+<span class="co">#&gt; mean    4.8    9  2.2  2.4  5.4  4.6  4.6</span>
+<span class="co">#&gt; median  6.0    9  3.0  2.0  5.0  5.0  4.0</span>
+<span class="co">#&gt; max     9.0   13  8.0  7.0  9.0  9.0  9.0</span></code></pre></div>
+<p class>
+Great job! Head over to the next exercise.
+</p>
+</div>
+<div id="from-sapply-to-vapply" class="section level3" number="8.3.3">
+<h3>
+<span class="header-section-number">8.3.3</span> From sapply to vapply<a class="anchor" aria-label="anchor" href="#from-sapply-to-vapply"><i class="fas fa-link"></i></a>
+</h3>
+<div>
+<p>
+As highlighted before, <a href="http://www.rdocumentation.org/packages/base/functions/lapply"><code>vapply()</code></a> can be considered a more robust version of <a href="http://www.rdocumentation.org/packages/base/functions/lapply"><code>sapply()</code></a>, because you explicitly restrict the output of the function you want to apply. Converting your <a href="http://www.rdocumentation.org/packages/base/functions/lapply"><code>sapply()</code></a> expressions in your own R scripts to <a href="http://www.rdocumentation.org/packages/base/functions/lapply"><code>vapply()</code></a> expressions is therefore a good practice (and also a breeze!).
+</p>
+</div>
+<div class="exercise--instructions__content">
+<p>
+Convert all the <a href="http://www.rdocumentation.org/packages/base/functions/lapply"><code>sapply()</code></a> expressions on the right to their <a href="http://www.rdocumentation.org/packages/base/functions/lapply"><code>vapply()</code></a> counterparts. Their results should be exactly the same; you’re only adding robustness. You’ll need the templates <code>numeric(1)</code> and <code>logical(1)</code>.
+</p>
+</div>
+<div class="sourceCode" id="cb148"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># temp is already defined in the workspace</span>
+
+<span class="co"># Convert to vapply() expression</span>
+<span class="fu"><a href="https://rdrr.io/r/base/lapply.html">vapply</a></span><span class="op">(</span><span class="va">temp</span>, <span class="va">max</span>, <span class="fu"><a href="https://rdrr.io/r/base/numeric.html">numeric</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span><span class="op">)</span>
+<span class="co">#&gt; [1]  9 13  8  7  9  9  9</span>
+
+<span class="co"># Convert to vapply() expression</span>
+<span class="fu"><a href="https://rdrr.io/r/base/lapply.html">vapply</a></span><span class="op">(</span><span class="va">temp</span>, <span class="kw">function</span><span class="op">(</span><span class="va">x</span>, <span class="va">y</span><span class="op">)</span> <span class="op">{</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="op">&gt;</span> <span class="va">y</span> <span class="op">}</span>, <span class="fu"><a href="https://rdrr.io/r/base/logical.html">logical</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span>, y <span class="op">=</span> <span class="fl">5</span><span class="op">)</span>
+<span class="co">#&gt; [1] FALSE  TRUE FALSE FALSE  TRUE FALSE FALSE</span></code></pre></div>
+<p class>
+Great! You’ve got no more excuses to use <code><a href="https://rdrr.io/r/base/lapply.html">sapply()</a></code> in the future!
+</p>
+</div>
+</div>
+</div>
+  <div class="chapter-nav">
+<div class="prev"><a href="functions.html"><span class="header-section-number">7</span> Functions</a></div>
+<div class="next"><a href="utilities.html"><span class="header-section-number">9</span> Utilities</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#the-apply-family"><span class="header-section-number">8</span> The apply family</a></li>
+<li>
+<a class="nav-link" href="#lapply"><span class="header-section-number">8.1</span> lapply</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#use-lapply-with-a-built-in-r-function"><span class="header-section-number">8.1.1</span> Use lapply with a built-in R function</a></li>
+<li><a class="nav-link" href="#use-lapply-with-your-own-function"><span class="header-section-number">8.1.2</span> Use lapply with your own function</a></li>
+<li><a class="nav-link" href="#lapply-and-anonymous-functions"><span class="header-section-number">8.1.3</span> lapply and anonymous functions</a></li>
+<li><a class="nav-link" href="#use-lapply-with-additional-arguments"><span class="header-section-number">8.1.4</span> Use lapply with additional arguments</a></li>
+<li><a class="nav-link" href="#apply-functions-that-return-null"><span class="header-section-number">8.1.5</span> Apply functions that return NULL</a></li>
+</ul>
+</li>
+<li>
+<a class="nav-link" href="#sapply"><span class="header-section-number">8.2</span> sapply</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#how-to-use-sapply"><span class="header-section-number">8.2.1</span> How to use sapply</a></li>
+<li><a class="nav-link" href="#sapply-with-your-own-function"><span class="header-section-number">8.2.2</span> sapply with your own function</a></li>
+<li><a class="nav-link" href="#sapply-with-function-returning-vector"><span class="header-section-number">8.2.3</span> sapply with function returning vector</a></li>
+<li><a class="nav-link" href="#sapply-cant-simplify-now-what"><span class="header-section-number">8.2.4</span> sapply can’t simplify, now what?</a></li>
+<li><a class="nav-link" href="#sapply-with-functions-that-return-null"><span class="header-section-number">8.2.5</span> sapply with functions that return NULL</a></li>
+<li><a class="nav-link" href="#reverse-engineering-sapply"><span class="header-section-number">8.2.6</span> Reverse engineering sapply</a></li>
+</ul>
+</li>
+<li>
+<a class="nav-link" href="#vapply"><span class="header-section-number">8.3</span> vapply</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#use-vapply"><span class="header-section-number">8.3.1</span> Use vapply</a></li>
+<li><a class="nav-link" href="#use-vapply-2"><span class="header-section-number">8.3.2</span> Use vapply (2)</a></li>
+<li><a class="nav-link" href="#from-sapply-to-vapply"><span class="header-section-number">8.3.3</span> From sapply to vapply</a></li>
+</ul>
+</li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+<li><a id="book-source" href="https://github.com/hadley/r4ds/blob/master/intermediater.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/hadley/r4ds/edit/master/intermediater.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>Introduction to DataCamp</strong>" was written by Tran Thanh Dat. </p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>11 Data visualization | Introduction to DataCamp</title>
+<meta name="author" content="Tran Thanh Dat">
+<meta name="generator" content="bookdown 0.24 with bs4_book()">
+<meta property="og:title" content="11 Data visualization | Introduction to DataCamp">
+<meta property="og:type" content="book">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="11 Data visualization | Introduction to DataCamp">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/header-attrs-2.12.1/header-attrs.js"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.1.9000/transition.js"></script><script src="libs/bs3compat-0.3.1.9000/tabs.js"></script><script src="libs/bs3compat-0.3.1.9000/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=UA-115082821-1"></script><script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-115082821-1');
+    </script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><meta name="description" content="Often a better way to understand and present data as a graph. In this chapter, you’ll learn the essential skills of data visualization using the ggplot2 package, and you’ll see how the dplyr and...">
+<meta property="og:description" content="Often a better way to understand and present data as a graph. In this chapter, you’ll learn the essential skills of data visualization using the ggplot2 package, and you’ll see how the dplyr and...">
+<meta name="twitter:description" content="Often a better way to understand and present data as a graph. In this chapter, you’ll learn the essential skills of data visualization using the ggplot2 package, and you’ll see how the dplyr and...">
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">Introduction to DataCamp</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html">Welcome to DataCamp</a></li>
+<li class="book-part">R Fundamentals</li>
+<li><a class="" href="data-wrangling.html"><span class="header-section-number">1</span> Data wrangling</a></li>
+<li><a class="" href="data-visualization.html"><span class="header-section-number">2</span> Data visualization</a></li>
+<li><a class="" href="grouping-and-summarizing.html"><span class="header-section-number">3</span> Grouping and summarizing</a></li>
+<li><a class="" href="types-of-visualizations.html"><span class="header-section-number">4</span> Types of visualizations</a></li>
+<li><a class="" href="conditionals-and-control-flow.html"><span class="header-section-number">5</span> Conditionals and Control Flow</a></li>
+<li><a class="" href="loops.html"><span class="header-section-number">6</span> Loops</a></li>
+<li><a class="" href="functions.html"><span class="header-section-number">7</span> Functions</a></li>
+<li><a class="" href="the-apply-family.html"><span class="header-section-number">8</span> The apply family</a></li>
+<li><a class="" href="utilities.html"><span class="header-section-number">9</span> Utilities</a></li>
+<li><a class="" href="data-wrangling-1.html"><span class="header-section-number">10</span> Data wrangling</a></li>
+<li><a class="active" href="data-visualization-1.html"><span class="header-section-number">11</span> Data visualization</a></li>
+<li><a class="" href="grouping-and-summarizing-1.html"><span class="header-section-number">12</span> Grouping and summarizing</a></li>
+<li><a class="" href="types-of-visualizations-1.html"><span class="header-section-number">13</span> Types of visualizations</a></li>
+</ul>
+
+        <div class="book-extra">
+          <p><a id="book-repo" href="https://github.com/hadley/r4ds">View book source <i class="fab fa-github"></i></a></p>
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="data-visualization-1" class="section level1" number="11">
+<h1>
+<span class="header-section-number">11</span> Data visualization<a class="anchor" aria-label="anchor" href="#data-visualization-1"><i class="fas fa-link"></i></a>
+</h1>
+<p>
+</p>
+<p>Often a better way to understand and present data as a graph.
+In this chapter, you’ll learn the essential skills of data visualization using the ggplot2 package, and you’ll see how the dplyr and ggplot2 packages work closely together to create informative graphs.</p>
+
+<div id="visualizing-with-ggplot2-1" class="section level2" number="11.1">
+<h2>
+<span class="header-section-number">11.1</span> Visualizing with ggplot2<a class="anchor" aria-label="anchor" href="#visualizing-with-ggplot2-1"><i class="fas fa-link"></i></a>
+</h2>
+<div id="variable-assignment-1" class="section level3" number="11.1.1">
+<h3>
+<span class="header-section-number">11.1.1</span> Variable assignment<a class="anchor" aria-label="anchor" href="#variable-assignment-1"><i class="fas fa-link"></i></a>
+</h3>
+<div>
+<p>
+</p>
+<p>Throughout the exercises in this chapter, you’ll be visualizing a subset of the gapminder data from the year 1952.
+First, you’ll have to load the ggplot2 package, and create a <code>gapminder_1952</code> dataset to visualize.</p>
+
+<p>
+</p>
+<p><em>By the way, if you haven’t downloaded it already, check out the <a href="https://datacamp-community-prod.s3.amazonaws.com/c1fae72f-d2d7-4646-9dce-dd0f8fb5c5e8">tidyverse for beginners Cheat Sheet</a>.
+It includes an overview of the most important concepts, functions and methods and might come in handy if you ever need a quick refresher!&lt;
+/em&gt;</em></p>
+
+</div>
+<div class="exercise--instructions__content">
+<li>
+<p>Load the <code>ggplot2</code> package after the gapminder and dplyr packages.</p>
+</li>
+<div class="sourceCode" id="cb194"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># Load the ggplot2 package as well</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/jennybc/gapminder">gapminder</a></span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org">dplyr</a></span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span></code></pre></div>
+<li>
+<p>Filter <code>gapminder</code> for observations from the year 1952, and assign it to a new dataset <code>gapminder_1952</code> using the assignment operator (<code>&lt;-</code>).</p>
+</li>
+<div class="sourceCode" id="cb195"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># Create gapminder_1952</span>
+<span class="va">gapminder_1952</span> <span class="op">&lt;-</span> <span class="va">gapminder</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>
+  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">year</span> <span class="op">==</span> <span class="fl">1952</span><span class="op">)</span></code></pre></div>
+</div>
+<p class>
+</p>
+<p>Great!
+If you typed ‘gapminder_1952’ now, you’d see the filtered dataset.</p>
+
+</div>
+<div id="comparing-population-and-gdp-per-capita-1" class="section level3" number="11.1.2">
+<h3>
+<span class="header-section-number">11.1.2</span> Comparing population and GDP per capita<a class="anchor" aria-label="anchor" href="#comparing-population-and-gdp-per-capita-1"><i class="fas fa-link"></i></a>
+</h3>
+<div>
+<p>
+</p>
+<p>In the video you learned to create a scatter plot with GDP per capita on the x-axis and life expectancy on the y-axis (the code for that graph has been provided in the exercise code).
+When you’re exploring data visually, you’ll often need to try different combinations of variables and aesthetics.</p>
+
+</div>
+<div class="exercise--instructions__content">
+<ul>
+<li>
+<p>Change the scatter plot of <code>gapminder_1952</code> so that (<code>pop</code>) is on the x-axis and GDP per capita (<code>gdpPercap</code>) is on the y-axis.</p>
+</li>
+</ul>
+</div>
+<div class="sourceCode" id="cb196"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/jennybc/gapminder">gapminder</a></span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org">dplyr</a></span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span>
+
+<span class="va">gapminder_1952</span> <span class="op">&lt;-</span> <span class="va">gapminder</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>
+  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">year</span> <span class="op">==</span> <span class="fl">1952</span><span class="op">)</span>
+
+<span class="co"># Change to put pop on the x-axis and gdpPercap on the y-axis</span>
+<span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">gapminder_1952</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">pop</span>, y <span class="op">=</span> <span class="va">gdpPercap</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
+<div class="inline-figure"><img src="introtidyverse_files/figure-html/unnamed-chunk-13-1.png" width="672"></div>
+<p class>
+</p>
+<p>Great work on your first graph!
+Each point represents a country: can you guess which country any of the points are?</p>
+
+</div>
+<div id="comparing-population-and-life-expectancy-1" class="section level3" number="11.1.3">
+<h3>
+<span class="header-section-number">11.1.3</span> Comparing population and life expectancy<a class="anchor" aria-label="anchor" href="#comparing-population-and-life-expectancy-1"><i class="fas fa-link"></i></a>
+</h3>
+<div>
+<p>
+</p>
+<p>In this exercise, you’ll use <code>ggplot2</code> to create a scatter plot from scratch, to compare each country’s population with its life expectancy in the year 1952.</p>
+
+</div>
+<div class="exercise--instructions__content">
+<ul>
+<li>
+<p>Create a scatter plot of <code>gapminder_1952</code> with population (<code>pop</code>) is on the x-axis and life expectancy (<code>lifeExp</code>) on the y-axis.</p>
+</li>
+</ul>
+</div>
+<div class="sourceCode" id="cb197"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/jennybc/gapminder">gapminder</a></span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org">dplyr</a></span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span>
+
+<span class="va">gapminder_1952</span> <span class="op">&lt;-</span> <span class="va">gapminder</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>
+  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">year</span> <span class="op">==</span> <span class="fl">1952</span><span class="op">)</span>
+
+<span class="co"># Create a scatter plot with pop on the x-axis and lifeExp on the y-axis</span>
+<span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">gapminder_1952</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">pop</span>, y <span class="op">=</span> <span class="va">lifeExp</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
+<div class="inline-figure"><img src="introtidyverse_files/figure-html/unnamed-chunk-14-1.png" width="672"></div>
+<p class>
+</p>
+<p>Great!
+You might notice the points are crowded towards the left side of the plot, making them hard to distinguish.
+This next video will help solve that problem.</p>
+
+</div>
+</div>
+<div id="log-scales-1" class="section level2" number="11.2">
+<h2>
+<span class="header-section-number">11.2</span> Log scales<a class="anchor" aria-label="anchor" href="#log-scales-1"><i class="fas fa-link"></i></a>
+</h2>
+<div id="putting-the-x-axis-on-a-log-scale-1" class="section level3" number="11.2.1">
+<h3>
+<span class="header-section-number">11.2.1</span> Putting the x-axis on a log scale<a class="anchor" aria-label="anchor" href="#putting-the-x-axis-on-a-log-scale-1"><i class="fas fa-link"></i></a>
+</h3>
+<div>
+<p>
+</p>
+<p>You previously created a scatter plot with population on the x-axis and life expectancy on the y-axis.
+Since population is spread over several orders of magnitude, with some countries having a much higher population than others, it’s a good idea to put the x-axis on a log scale.</p>
+
+</div>
+<div class="exercise--instructions__content">
+<ul>
+<li>
+<p>Change the existing scatter plot (code provided) to put the x-axis (representing population) on a log scale.</p>
+</li>
+</ul>
+</div>
+<div class="sourceCode" id="cb198"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/jennybc/gapminder">gapminder</a></span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org">dplyr</a></span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span>
+
+<span class="va">gapminder_1952</span> <span class="op">&lt;-</span> <span class="va">gapminder</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>
+  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">year</span> <span class="op">==</span> <span class="fl">1952</span><span class="op">)</span>
+
+<span class="co"># Change this plot to put the x-axis on a log scale</span>
+<span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">gapminder_1952</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">pop</span>, y <span class="op">=</span> <span class="va">lifeExp</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span>
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_x_log10</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
+<div class="inline-figure"><img src="introtidyverse_files/figure-html/unnamed-chunk-15-1.png" width="672"></div>
+<p class>
+</p>
+<p>Great!
+Notice the points are more spread out on the x-axis.
+This makes it easy to see that there isn’t a correlation between population and life expectancy.</p>
+
+</div>
+<div id="putting-the-x--and-y--axes-on-a-log-scale-1" class="section level3" number="11.2.2">
+<h3>
+<span class="header-section-number">11.2.2</span> Putting the x- and y- axes on a log scale<a class="anchor" aria-label="anchor" href="#putting-the-x--and-y--axes-on-a-log-scale-1"><i class="fas fa-link"></i></a>
+</h3>
+<div>
+<p>
+</p>
+<p>Suppose you want to create a scatter plot with population on the x-axis and GDP per capita on the y-axis.
+Both population and GDP per-capita are better represented with log scales, since they vary over many orders of magnitude.</p>
+
+</div>
+<div class="exercise--instructions__content">
+<ul>
+<li>
+<p>Create a scatter plot with population (<code>pop</code>) on the x-axis and GDP per capita (<code>gdpPercap</code>) on the y-axis.
+Put <strong>both</strong> the x- and y- axes on a log scale.</p>
+</li>
+</ul>
+</div>
+<div class="sourceCode" id="cb199"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/jennybc/gapminder">gapminder</a></span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org">dplyr</a></span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span>
+
+<span class="va">gapminder_1952</span> <span class="op">&lt;-</span> <span class="va">gapminder</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>
+  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">year</span> <span class="op">==</span> <span class="fl">1952</span><span class="op">)</span>
+
+<span class="co"># Scatter plot comparing pop and gdpPercap, with both axes on a log scale</span>
+<span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">gapminder_1952</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">pop</span>, y <span class="op">=</span> <span class="va">gdpPercap</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span>
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_x_log10</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span>
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_y_log10</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
+<div class="inline-figure"><img src="introtidyverse_files/figure-html/unnamed-chunk-16-1.png" width="672"></div>
+<p class>
+</p>
+<p>Great!
+Notice that the y-axis goes from 1e3 (1000) to 1e4 (10,000) to 1e5 (100,000) in equal increments.</p>
+
+</div>
+</div>
+<div id="additional-aesthetics-1" class="section level2" number="11.3">
+<h2>
+<span class="header-section-number">11.3</span> Additional aesthetics<a class="anchor" aria-label="anchor" href="#additional-aesthetics-1"><i class="fas fa-link"></i></a>
+</h2>
+<div id="adding-color-to-a-scatter-plot-1" class="section level3" number="11.3.1">
+<h3>
+<span class="header-section-number">11.3.1</span> Adding color to a scatter plot<a class="anchor" aria-label="anchor" href="#adding-color-to-a-scatter-plot-1"><i class="fas fa-link"></i></a>
+</h3>
+<div>
+<p>
+</p>
+<p>In this lesson you learned how to use the color aesthetic, which can be used to show which continent each point in a scatter plot represents.</p>
+
+</div>
+<div class="exercise--instructions__content">
+<ul>
+<li>
+<p>Create a scatter plot with population (<code>pop</code>) on the x-axis, life expectancy (<code>lifeExp</code>) on the y-axis, and with continent (<code>continent</code>) represented by the color of the points.
+Put the x-axis on a log scale.</p>
+</li>
+</ul>
+</div>
+<div class="sourceCode" id="cb200"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/jennybc/gapminder">gapminder</a></span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org">dplyr</a></span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span>
+
+<span class="va">gapminder_1952</span> <span class="op">&lt;-</span> <span class="va">gapminder</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>
+  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">year</span> <span class="op">==</span> <span class="fl">1952</span><span class="op">)</span>
+
+<span class="co"># Scatter plot comparing pop and lifeExp, with color representing continent</span>
+<span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">gapminder_1952</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">pop</span>, y <span class="op">=</span> <span class="va">lifeExp</span>, color <span class="op">=</span> <span class="va">continent</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span>
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_x_log10</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
+<div class="inline-figure"><img src="introtidyverse_files/figure-html/unnamed-chunk-17-1.png" width="672"></div>
+<p class>
+</p>
+<p>Good work!
+What differences can you see between continents, in terms of their population and life expectancy?</p>
+
+</div>
+<div id="adding-size-and-color-to-a-plot-1" class="section level3" number="11.3.2">
+<h3>
+<span class="header-section-number">11.3.2</span> Adding size and color to a plot<a class="anchor" aria-label="anchor" href="#adding-size-and-color-to-a-plot-1"><i class="fas fa-link"></i></a>
+</h3>
+<div>
+<p>
+</p>
+<p>In the last exercise, you created a scatter plot communicating information about each country’s population, life expectancy, and continent.
+Now you’ll use the size of the points to communicate even more.</p>
+
+</div>
+<div class="exercise--instructions__content">
+<ul>
+<li>
+<p>Modify the scatter plot so that the size of the points represents each country’s GDP per capita (<code>gdpPercap</code>).</p>
+</li>
+</ul>
+</div>
+<div class="sourceCode" id="cb201"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/jennybc/gapminder">gapminder</a></span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org">dplyr</a></span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span>
+
+<span class="va">gapminder_1952</span> <span class="op">&lt;-</span> <span class="va">gapminder</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>
+  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">year</span> <span class="op">==</span> <span class="fl">1952</span><span class="op">)</span>
+
+<span class="co"># Add the size aesthetic to represent a country's gdpPercap</span>
+<span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">gapminder_1952</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">pop</span>, y <span class="op">=</span> <span class="va">lifeExp</span>, color <span class="op">=</span> <span class="va">continent</span>, size <span class="op">=</span> <span class="va">gdpPercap</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span>
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_x_log10</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
+<div class="inline-figure"><img src="introtidyverse_files/figure-html/unnamed-chunk-18-1.png" width="672"></div>
+<p class>
+</p>
+<p>Good work!
+Are you able to guess which point represents your own country?</p>
+
+</div>
+</div>
+<div id="faceting-1" class="section level2" number="11.4">
+<h2>
+<span class="header-section-number">11.4</span> Faceting<a class="anchor" aria-label="anchor" href="#faceting-1"><i class="fas fa-link"></i></a>
+</h2>
+<div id="creating-a-subgraph-for-each-continent-1" class="section level3" number="11.4.1">
+<h3>
+<span class="header-section-number">11.4.1</span> Creating a subgraph for each continent<a class="anchor" aria-label="anchor" href="#creating-a-subgraph-for-each-continent-1"><i class="fas fa-link"></i></a>
+</h3>
+<div>
+<p>
+</p>
+<p>You’ve learned to use faceting to divide a graph into subplots based on one of its variables, such as the continent.</p>
+
+</div>
+<div class="exercise--instructions__content">
+<ul>
+<li>
+<p>Create a scatter plot of <code>gapminder_1952</code> with the x-axis representing population (<code>pop</code>), the y-axis representing life expectancy (<code>lifeExp</code>), and faceted to have one subplot per continent (<code>continent</code>).
+Put the x-axis on a log scale.</p>
+</li>
+</ul>
+</div>
+<div class="sourceCode" id="cb202"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/jennybc/gapminder">gapminder</a></span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org">dplyr</a></span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span>
+
+<span class="va">gapminder_1952</span> <span class="op">&lt;-</span> <span class="va">gapminder</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>
+  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">year</span> <span class="op">==</span> <span class="fl">1952</span><span class="op">)</span>
+
+<span class="co"># Scatter plot comparing pop and lifeExp, faceted by continent</span>
+<span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">gapminder_1952</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">pop</span>, y <span class="op">=</span> <span class="va">lifeExp</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span>
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_x_log10</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span>
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/facet_wrap.html">facet_wrap</a></span><span class="op">(</span><span class="op">~</span> <span class="va">continent</span><span class="op">)</span></code></pre></div>
+<div class="inline-figure"><img src="introtidyverse_files/figure-html/unnamed-chunk-19-1.png" width="672"></div>
+<p class>
+</p>
+<p>Great work!
+Faceting is a powerful way to understand subsets of your data separately.</p>
+
+</div>
+<div id="faceting-by-year-1" class="section level3" number="11.4.2">
+<h3>
+<span class="header-section-number">11.4.2</span> Faceting by year<a class="anchor" aria-label="anchor" href="#faceting-by-year-1"><i class="fas fa-link"></i></a>
+</h3>
+<div>
+<p>
+</p>
+<p>All of the graphs in this chapter have been visualizing statistics within one year.
+Now that you’re able to use faceting, however, you can create a graph showing <strong>all</strong> the country-level data from 1952 to 2007, to understand how global statistics have changed over time.</p>
+
+</div>
+<div class="exercise--instructions__content">
+<ul>
+<li>
+<p>Create a scatter plot of the <code>gapminder</code> data:</p>
+</li>
+<li>
+<p>Put GDP per capita (<code>gdpPercap</code>) on the x-axis and life expectancy (<code>lifeExp</code>) on the y-axis, with continent (<code>continent</code>) represented by color and population (<code>pop</code>) represented by size.</p>
+</li>
+<li>
+<p>Put the x-axis on a log scale</p>
+</li>
+<li>
+<p>Facet by the <code>year</code> variable</p>
+</li>
+</ul>
+</div>
+<div class="sourceCode" id="cb203"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/jennybc/gapminder">gapminder</a></span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org">dplyr</a></span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span>
+
+<span class="co"># Scatter plot comparing gdpPercap and lifeExp, with color representing continent</span>
+<span class="co"># and size representing population, faceted by year</span>
+<span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">gapminder</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">gdpPercap</span>, y <span class="op">=</span> <span class="va">lifeExp</span>, color <span class="op">=</span> <span class="va">continent</span>, size <span class="op">=</span> <span class="va">pop</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span>
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_x_log10</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span>
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/facet_wrap.html">facet_wrap</a></span><span class="op">(</span><span class="op">~</span> <span class="va">year</span><span class="op">)</span></code></pre></div>
+<div class="inline-figure"><img src="introtidyverse_files/figure-html/unnamed-chunk-20-1.png" width="672"></div>
+<p class>
+</p>
+<p>Awesome!
+That’s a lot of information you’re now able to share in one graph.</p>
+
+</div>
+</div>
+</div>
+  <div class="chapter-nav">
+<div class="prev"><a href="data-wrangling-1.html"><span class="header-section-number">10</span> Data wrangling</a></div>
+<div class="next"><a href="grouping-and-summarizing-1.html"><span class="header-section-number">12</span> Grouping and summarizing</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#data-visualization-1"><span class="header-section-number">11</span> Data visualization</a></li>
+<li>
+<a class="nav-link" href="#visualizing-with-ggplot2-1"><span class="header-section-number">11.1</span> Visualizing with ggplot2</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#variable-assignment-1"><span class="header-section-number">11.1.1</span> Variable assignment</a></li>
+<li><a class="nav-link" href="#comparing-population-and-gdp-per-capita-1"><span class="header-section-number">11.1.2</span> Comparing population and GDP per capita</a></li>
+<li><a class="nav-link" href="#comparing-population-and-life-expectancy-1"><span class="header-section-number">11.1.3</span> Comparing population and life expectancy</a></li>
+</ul>
+</li>
+<li>
+<a class="nav-link" href="#log-scales-1"><span class="header-section-number">11.2</span> Log scales</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#putting-the-x-axis-on-a-log-scale-1"><span class="header-section-number">11.2.1</span> Putting the x-axis on a log scale</a></li>
+<li><a class="nav-link" href="#putting-the-x--and-y--axes-on-a-log-scale-1"><span class="header-section-number">11.2.2</span> Putting the x- and y- axes on a log scale</a></li>
+</ul>
+</li>
+<li>
+<a class="nav-link" href="#additional-aesthetics-1"><span class="header-section-number">11.3</span> Additional aesthetics</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#adding-color-to-a-scatter-plot-1"><span class="header-section-number">11.3.1</span> Adding color to a scatter plot</a></li>
+<li><a class="nav-link" href="#adding-size-and-color-to-a-plot-1"><span class="header-section-number">11.3.2</span> Adding size and color to a plot</a></li>
+</ul>
+</li>
+<li>
+<a class="nav-link" href="#faceting-1"><span class="header-section-number">11.4</span> Faceting</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#creating-a-subgraph-for-each-continent-1"><span class="header-section-number">11.4.1</span> Creating a subgraph for each continent</a></li>
+<li><a class="nav-link" href="#faceting-by-year-1"><span class="header-section-number">11.4.2</span> Faceting by year</a></li>
+</ul>
+</li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+<li><a id="book-source" href="https://github.com/hadley/r4ds/blob/master/introtidyverse.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/hadley/r4ds/edit/master/introtidyverse.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>Introduction to DataCamp</strong>" was written by Tran Thanh Dat. </p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
+</script>
+</body>
+</html>

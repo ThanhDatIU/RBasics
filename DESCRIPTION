@@ -1,0 +1,50 @@
+Package: r4ds
+Title: R for data science.
+Version: 0.1
+Authors@R: c(
+    person("Hadley", "Wickham", , "hadley@rstudio.com", role = c("aut", "cre")),
+    person("Garrett", "Grolemund", , "garrett@rstudio.com", role = "aut")
+    person("Mine", "\u00C7etinkaya-Rundel", , "mine@rstudio.com", role = "aut")
+  )
+URL: https://github.com/hadley/r4ds
+Depends: 
+    R (>= 3.1.0)
+Imports:
+    babynames,
+    feather,
+    gapminder,
+    ggrepel,
+    hexbin,
+    janitor,
+    Lahman,
+    leaflet,
+    maps,
+    microbenchmark,
+    nycflights13,
+    openxlsx,
+    palmerpenguins,
+    pryr,
+    readxl,
+    stringr,
+    tidyverse,
+    viridis,
+    writexl
+Suggests:
+    bookdown,
+    bslib,
+    downlit,
+    htmltools,
+    htmlwidgets,
+    jpeg,
+    jsonlite,
+    knitr,
+    png,
+    sessioninfo,
+    xml2
+Remotes:
+    r-lib/downlit,
+    rstudio/bookdown,
+    rstudio/bslib,
+    tidyverse/stringr
+Encoding: UTF-8
+License: CC NC ND 3.0
